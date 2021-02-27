@@ -7,6 +7,7 @@
     <title>Kej Play Station</title>
     <link rel="stylesheet" href="./assets/grid.css">
     <link rel="stylesheet" href="./assets/style.css">
+    <link rel="stylesheet" href="./assets/template.css">
 </head>
 <body>
     
