@@ -203,6 +203,15 @@
     .col-sm-12 {
       width: 100%;
     }
+    .column {
+      display: flex;
+      flex-direction: column;
+    }
+  
+    .column-reverse {
+      display: flex;
+      flex-direction: column-reverse;
+    }
   }
   
   /* mobile below */

@@ -21,7 +21,9 @@ body{
 ul {
   list-style-type: none;
 }
-
+a{
+  text-decoration: none;
+}
 .d-flex {
   display: flex;
 }
@@ -46,7 +48,13 @@ img {
   -ms-flex: 1;
   /* IE 10 */
 }
-
+/*positions*/
+.position-relative{
+  position: relative;
+}
+.position-absolute{
+  position:absolute;
+}
 
 /*text templates*/
 /* header texts*/
@@ -72,25 +80,25 @@ h1 {
   font-size: var(--font);
 }
 h2 {
-  font-weight: 300;
+  font-weight: 700;
   --max-font: 38;
   --min-font: 28;
   font-size: var(--font);
 }
 h3 {
-  font-weight: 300;
+  font-weight: 700;
   --max-font: 30;
   --min-font: 20;
   font-size: var(--font);
 }
 h4 {
-  font-weight: 300;
+  font-weight: 700;
   --max-font: 22;
   --min-font: 16;
   font-size: var(--font);
 }
 h5 {
-  font-weight: 600;
+  font-weight: 700;
   --max-font: 19;
   --min-font: 16;
   font-size: var(--font);
@@ -220,3 +228,4 @@ p{
 .p-5 {
   margin: 50px 50px;
 }
+
