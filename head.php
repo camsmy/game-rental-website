@@ -1,3 +1,7 @@
+<?php
+//session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +13,3 @@
     <link rel="stylesheet" href="./assets/style.css">
     <link rel="stylesheet" href="./assets/template.css">
 </head>
-<body>
-    
-</body>
-</html>
