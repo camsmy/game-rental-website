@@ -33,7 +33,25 @@
 .img-d{
   display:none;
 }
-
+.head.img-m img{
+  border-radius: 30px;
+}
+/*Footer section*/
+footer{
+  background-color: rgb(26, 24, 24);
+}
+footer .logo{
+  color:#fefefe;
+  --max-font: 30;
+  --min-font: 20;
+  font-size: var(--font);
+}
+footer img{
+  max-width: 200px;
+}
+.foot-column{
+  color:#fefefe;
+}
   @media (max-width: 575px) { /*mobile phone*/
     /*header*/
     /* section 1 styles */
