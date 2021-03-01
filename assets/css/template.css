@@ -82,19 +82,19 @@ h1 {
 h2 {
   font-weight: 700;
   --max-font: 38;
-  --min-font: 28;
+  --min-font: 30;
   font-size: var(--font);
 }
 h3 {
   font-weight: 300;
   --max-font: 30;
-  --min-font: 20;
+  --min-font: 35;
   font-size: var(--font);
 }
 h4 {
   font-weight: 700;
   --max-font: 22;
-  --min-font: 16;
+  --min-font: 18;
   font-size: var(--font);
 }
 h5 {
@@ -105,6 +105,7 @@ h5 {
 }
 p{
   font-size: 16px;
+  line-height: 22px;
 }
 
 /*aligning*/
@@ -115,8 +116,8 @@ p{
   justify-content: space-between;
 }
 
-.justify-content {
-  justify-content: center;
+.justify-content-flex-end {
+  justify-content: flex-end;
 }
 
 .align-items-center {
@@ -213,60 +214,65 @@ p{
 
 /*-------PADDINGS---------*/
 .p-1 {
-  margin: 10px 10px;
+  padding: 10px 10px;
 }
 .p-2 {
-  margin: 20px 20px;
+  padding: 20px 20px;
 }
 .p-3 {
-  margin: 30px 30px;
+  padding: 30px 30px;
 }
 .p-4 {
-  margin: 40px 40px;
+  padding: 40px 40px;
 }
 .p-5 {
-  margin: 50px 50px;
+  padding: 50px 50px;
 }
 
 .py-1 {
-  margin: 10px 0px;
+  padding: 10px 0px;
 }
 .py-2 {
-  margin: 20px 0px;
+  padding: 20px 0px;
 }
-
 .py-3 {
-  margin: 30px 0px;
+  padding: 30px 0px;
 }
-
 .py-4 {
-  margin: 40px 0px;
+  padding: 40px 0px;
 }
 .py-5 {
-  margin: 50px 0px;
+  padding: 50px 0px;
 }
-
 
 .px-1 {
-  margin: 0px 10px;
+  padding: 0px 10px;
 }
-
 .px-2 {
-  margin: 0px 20px;
+  padding: 0px 20px;
 }
 .px-3 {
-  margin: 0px 30px;
+  padding: 0px 30px;
 }
 .px-4 {
-  margin: 0px 40px;
+  padding: 0px 40px;
 }
 .px-5 {
-  margin: 0px 50px;
+  padding: 0px 50px;
 }
+
 
 /* Flex directions */
   
 .row-reverse {
   display: flex;
   flex-direction: row-reverse;
+}
+
+/* Floats */
+.float-left{
+  float: left;
+}
+.float-right{
+  float: left;
 }
