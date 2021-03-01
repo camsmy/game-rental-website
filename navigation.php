@@ -10,24 +10,10 @@
                 <div class="nav-links">
                     <ul>
                         <li class="nav-link" style="--i: .6s">
-                            <a href="#">Discover</a>
+                            <a href="index.php">Discover</a>
                         </li>
                         <li class="nav-link" style="--i: .85s">
-                            <a href="#">Menu<i class="fas fa-caret-down"></i></a>
-                            <div class="dropdown">
-                                <ul>
-                                    <li class="dropdown-link">
-                                        <a href="#">FAQs</a>
-                                    </li>
-                                    <li class="dropdown-link">
-                                        <a href="#">Contact Us</a>
-                                    </li>
-                                    <li class="dropdown-link">
-                                        <a href="#">Suggestions</a>
-                                    </li>
-                                    <div class="arrow"></div>
-                                </ul>
-                            </div>
+                            <a href="contact.php">Contact</a>
                         </li>
                         <li class="nav-link" style="--i: 1.35s">
                             <a href="#">About</a>
