@@ -10,7 +10,7 @@
                 <div class="nav-links">
                     <ul>
                         <li class="nav-link" style="--i: .6s">
-                            <a href="index.php">Discover</a>
+                            <a href="index.php">Home</a>
                         </li>
                         <li class="nav-link" style="--i: .85s">
                             <a href="contact.php">Contact</a>
