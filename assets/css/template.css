@@ -131,11 +131,9 @@ p{
   align-content: center;
   flex-wrap: wrap;
 }
-
 .text-align-left {
   text-align: left;
 }
-
 .text-align-right {
   text-align: right;
 }
@@ -165,15 +163,12 @@ p{
 .my-1 {
   margin: 10px 0px;
 }
-
 .my-2 {
   margin: 20px 0px;
 }
-
 .my-3 {
   margin: 30px 0px;
 }
-
 .my-4 {
   margin: 40px 0px;
 }

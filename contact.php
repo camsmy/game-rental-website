@@ -39,9 +39,11 @@ include 'navigation.php';
                     </div>
                 </div>
             </div>
+            
             <div class="contact-form2 position-relative">
                 <span class="contact-circle one position-absolute"></span>
                 <span class="contact-circle two position-absolute"></span>
+
                 <form action="contactform-code.php" method="post">
                     <h3 class="contact-title">Contact Us</h3>
                     <div class="contact-input-container focus">
@@ -66,6 +68,7 @@ include 'navigation.php';
                     </div>
                     <input type="submit" value="Send Mail" class="contact-btn">
                 </form>
+                
             </div>
         </div>
     </div>

@@ -16,13 +16,13 @@
                             <a href="contact.php">Contact</a>
                         </li>
                         <li class="nav-link" style="--i: 1.35s">
-                            <a href="#">About</a>
+                            <a href="about.php">About</a>
                         </li>
                     </ul>
                 </div>
 
                 <div class="log-sign" style="--i: 1.8s">
-                    <a href="#" class="btn-nav transparent">Log in</a>
+                    <a href="login.php" class="btn-nav transparent">Log in</a>
                     <a href="#" class="btn-nav solid">Sign up</a>
                 </div>
             </div>
