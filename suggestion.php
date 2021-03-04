@@ -7,9 +7,15 @@
         include 'navigation.php';
     ?>
 
-    <div class="contact-container position-relative d-flex justify-content-center align-items-center">
-        <div class="row">
-
+    <div class="suggestion-container position-relative d-flex justify-content-center align-items-center">
+        <div class="row suggestion-form">
+            <form action="send_suggestion.php" method="post">
+                <h3 class="suggestion-title">Suggestion</h3>
+                <div class="suggestion-input-container focus">
+                    <textarea name="suggestion-message" id="suggestion-message" class="suggestion-input"></textarea>
+                </div>
+                <input type="submit" value="Send Message" class="suggestion-btn">
+            </form>
         </div>
     </div>
 

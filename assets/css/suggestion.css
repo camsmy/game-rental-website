@@ -1,0 +1,64 @@
+.suggestion-container {
+    width: 100%;
+    min-height: 100vh;
+    padding: 2rem;
+}
+
+.suggestion-form {
+    width: 100%;
+    max-width: 800px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    z-index: 800;
+    overflow: hidden;
+    display: grid;
+    padding: 5%;
+}
+
+.suggestion-title {
+    font-weight: 500;
+    font-size: 1.5rem;
+    line-height: 1;
+    margin-bottom: 0.7rem;
+    
+}
+
+.suggestion-input-container {
+    position: relative;
+    margin: 1rem 0;
+}
+
+.suggestion-input {
+    width: 100%;
+    outline: none;
+    background: none;
+    padding: 0.6rem 1.2rem;
+    font-weight: 500;
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
+    border-radius: 25px;
+    transition: 0.3s;
+    height: 200px;
+}
+
+.suggestion-btn {
+    padding: 0.6rem 1.3rem;
+    font-size: 0.95rem;
+    line-height: 1;
+    border-radius: 25px;
+    outline: none;
+    cursor: pointer;
+    transition: 0.3s;
+    margin: 0;
+}
+
+.suggestion-btn:hover {
+    background-color: transparent;
+}
+
+
+
+
+
+
+
