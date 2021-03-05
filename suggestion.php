@@ -1,7 +1,6 @@
 <?php
     /* Attempt MySQL server connection. Assuming you are running MySQL
     server with default setting (user 'root' with no password) */
-    /*
     $link = mysqli_connect("localhost", "root", "password", "dbname");
     // Check connection
     if($link === false){
@@ -20,7 +19,7 @@
     }
     // Close connection
     mysqli_close($link);
-    */
+    
 ?>
 
 
@@ -40,7 +39,7 @@
                 <form action="<?php $_SERVER["PHP_SELF"]; ?>" method="post">
                     <h3 class="contact-title">Suggestion</h3>
                     <div class="contact-input-container contact-textarea focus">
-                        <textarea name="message" id="message" class="contact-input"></textarea>
+                        <textarea name="suggestion-message" id="suggestion-message" class="contact-input"></textarea>
                         <label for="">Message</label>
                         <span>Message</span>
                     </div>
