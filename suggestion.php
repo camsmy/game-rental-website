@@ -1,4 +1,30 @@
 <?php
+    /* Attempt MySQL server connection. Assuming you are running MySQL
+    server with default setting (user 'root' with no password) */
+    /*
+    $link = mysqli_connect("localhost", "root", "password", "dbname");
+    // Check connection
+    if($link === false){
+    die("ERROR: Could not connect. " . mysqli_connect_error());
+
+    }
+    // Escape user inputs for security
+    $sg_msg = mysqli_real_escape_string($link, $_REQUEST['suggestion-message']);
+
+    // Attempt insert query execution
+    $sql = "INSERT INTO dbname (msg) VALUES('$sg_msg')";
+    if(mysqli_query($link, $sql)){
+    echo "Records added successfully.";
+    } else{
+    echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
+    }
+    // Close connection
+    mysqli_close($link);
+    */
+?>
+
+
+<?php
     include 'head.php';
 ?>
 
@@ -6,18 +32,24 @@
     <?php
         include 'navigation.php';
     ?>
-
-    <div class="suggestion-container position-relative d-flex justify-content-center align-items-center">
-        <div class="row suggestion-form">
-            <form action="send_suggestion.php" method="post">
-                <h3 class="suggestion-title">Suggestion</h3>
-                <div class="suggestion-input-container focus">
-                    <textarea name="suggestion-message" id="suggestion-message" class="suggestion-input"></textarea>
-                </div>
-                <input type="submit" value="Send Message" class="suggestion-btn">
-            </form>
+    <div class="contact-container position-relative d-flex justify-content-center align-items-center">
+    <span class="contact-big-circle"></span>  
+        <div class="contact-form2 position-relative">
+                <span class="contact-circle one position-absolute"></span>
+                <span class="contact-circle two position-absolute"></span>
+                <form action="<?php $_SERVER["PHP_SELF"]; ?>" method="post">
+                    <h3 class="contact-title">Suggestion</h3>
+                    <div class="contact-input-container contact-textarea focus">
+                        <textarea name="message" id="message" class="contact-input"></textarea>
+                        <label for="">Message</label>
+                        <span>Message</span>
+                    </div>
+                    <input type="submit" value="Send Message" class="contact-btn">
+                </form>             
+            </div>
         </div>
     </div>
+
 
     <div class="custom-shape-divider-top-1614623845 mt-5">
         <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
