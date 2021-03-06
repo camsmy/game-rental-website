@@ -19,31 +19,27 @@
     }
     // Close connection
     mysqli_close($link);
-    
 ?>
 
 
 <?php
-    include 'head.php';
+    include 'head.php'; 
 ?>
 
 <body>
     <?php
         include 'navigation.php';
     ?>
-    <div class="contact-container position-relative d-flex justify-content-center align-items-center">
-    <span class="contact-big-circle"></span>  
-        <div class="contact-form2 position-relative">
-                <span class="contact-circle one position-absolute"></span>
-                <span class="contact-circle two position-absolute"></span>
+    <div class="suggestion-container">
+        <div class="suggestion-form ">
                 <form action="<?php $_SERVER["PHP_SELF"]; ?>" method="post">
-                    <h3 class="contact-title">Suggestion</h3>
-                    <div class="contact-input-container contact-textarea focus">
-                        <textarea name="suggestion-message" id="suggestion-message" class="contact-input"></textarea>
+                    <h3 class="suggestion-title">Suggestion</h3>
+                    <div class="suggestion-input-container suggestion-textarea focus">
+                        <textarea name="suggestion-message" id="suggestion-message" class="suggestion-input"></textarea>
                         <label for="">Message</label>
                         <span>Message</span>
                     </div>
-                    <input type="submit" value="Send Message" class="contact-btn">
+                    <input type="submit" value="Send Message" class="suggestion-btn">
                 </form>             
             </div>
         </div>
