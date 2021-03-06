@@ -23,7 +23,7 @@
 
                 <div class="log-sign" style="--i: 1.8s">
                     <a href="login.php" class="btn-nav transparent">Log in</a>
-                    <a href="#" class="btn-nav solid">Sign up</a>
+                    <a href="signup.php" class="btn-nav solid">Sign up</a>
                 </div>
             </div>
 

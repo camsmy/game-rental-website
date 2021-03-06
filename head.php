@@ -18,4 +18,6 @@
     <link rel="stylesheet" href="./assets/css/contact.css">
     <link rel="stylesheet" href="./assets/css/suggestion.css">
     <link rel="stylesheet" href="./assets/css/log-in.css">
+    <link rel="stylesheet" href="./assets/css/signup.css">
+
 </head>

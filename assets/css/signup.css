@@ -1,0 +1,46 @@
+
+.signup-form2 {
+    background: linear-gradient(184deg, rgba(235,94,80,1) 0%, rgba(235,94,80,1) 0%, rgba(242,148,139,1) 100%);
+}
+.signup-form2:before {
+    content: "";
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    background-color: #fafafa;
+    transform: rotate(45deg);
+    top: 50px;
+    right: -13px;
+}
+
+.signup-form2 {
+    padding: 2.3rem 2.2rem;
+    z-index: 10;
+    overflow: hidden;
+    position: relative;
+}
+
+.phonenum::placeholder {
+  color: #fefefe;
+  opacity: 1; /* Firefox */
+}
+
+@media (max-width: 850px) {
+  
+    .signup-form2:before {
+      top: 255px;
+      left: initial;
+      right: 70px;
+    }
+
+  }
+  
+  @media (max-width: 480px) {
+  
+    .signup-form2:before {
+        top: 280px;
+        left: initial;
+        right: 70px;
+      }
+  
+  }
