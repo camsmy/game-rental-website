@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Ubuntu+Condensed&family=Ubuntu:wght@300&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
 
 *,
 *::before,
@@ -6,16 +6,10 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  --Ubuntu-Condensed: 'Ubuntu Condensed', sans-serif;
-  /*400*/
-  --Roboto: 'Roboto', sans-serif;
-  /* 400 or 700*/
-  --Ubuntu: 'Ubuntu', sans-serif;
-  /*300*/
   --font: calc((var(--min-font) * 1px) + (var(--max-font) - var(--min-font)) * ((100vw - 420px) / (1200 - 420)));
 }
 body{
-  font-size: var(--Roboto);
+  font-family: "Poppins", sans-serif;
 }
 
 ul {
@@ -80,25 +74,25 @@ h1 {
   font-size: var(--font);
 }
 h2 {
-  font-weight: 700;
+  font-weight: 600;
   --max-font: 38;
   --min-font: 30;
   font-size: var(--font);
 }
 h3 {
-  font-weight: 300;
+  font-weight: 400;
   --max-font: 30;
   --min-font: 35;
   font-size: var(--font);
 }
 h4 {
-  font-weight: 700;
+  font-weight: 300;
   --max-font: 22;
   --min-font: 18;
   font-size: var(--font);
 }
 h5 {
-  font-weight: 700;
+  font-weight: 200;
   --max-font: 19;
   --min-font: 16;
   font-size: var(--font);

@@ -8,21 +8,12 @@ include 'navigation.php';
 ?>
 
     <div class="login-container position-relative d-flex justify-content-center align-items-center">
-    <!-- <span class="contact-big-circle"></span>   -->
     <div class="row login-form">
-            <div class="contact-info">
-            <span class="login-circle first position-absolute"></span>
-                <h3 class="login-title">New here?</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe similique, hic nam necessitatibus
-                    excepturi doloremque aliquid quibusdam placeat, aliquam quod adipisci inventore. Ex dolore, saepe
-                    quasi alias ab corrupti cum?</p>
-                <input type="submit" value="Sign up" class="signup-btn my-3">
-                <img src="./assets/img/register.svg" class="text-align-right px-4" alt="" />
+            <div class="login-info">
+                <img src="./assets/img/register.svg" class="p-2 my-5 text-align-center" alt="" />
             </div>
             
-            <div class="login-form2 position-relative  d-flex justify-content-center align-items-center">
-                <span class="login-circle one position-absolute"></span>
-                <span class="login-circle two position-absolute"></span>
+            <div class="login-form2 position-relative d-flex justify-content-center align-items-center">
 
                 <form action="#" method="post">
                     <h3 class="login-title text-align-center">Log In</h3>
@@ -36,7 +27,7 @@ include 'navigation.php';
                         <label for="">Password</label>
                         <span>Password</span>
                     </div>
-                    <input type="submit" value="Log in" class="signup-btn-two">
+                    <input type="submit" value="Log in" class="login-btn">
                 </form>
                 
             </div>
