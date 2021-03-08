@@ -19,5 +19,6 @@
     <link rel="stylesheet" href="./assets/css/suggestion.css">
     <link rel="stylesheet" href="./assets/css/log-in.css">
     <link rel="stylesheet" href="./assets/css/signup.css">
+    <link rel="stylesheet" href="./assets/css/about.css">
 
 </head>
