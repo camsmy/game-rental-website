@@ -13,7 +13,7 @@
                             <a href="index.php">Home</a>
                         </li>
                         <li class="nav-link" style="--i: 1.35s">
-                            <a href="gamegallery.php">Game Gallery</a>
+                            <a href="games-landing.php">Games</a>
                         </li>
                         <li class="nav-link" style="--i: .85s">
                             <a href="contact.php">Contact</a>

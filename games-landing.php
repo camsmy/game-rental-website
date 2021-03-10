@@ -4,7 +4,7 @@ include 'head.php';
 
 <body>
 <?php
-include 'navigation.php';
+include 'customer-navigation.php';
 
 ?>
     <section class="heads-1">
