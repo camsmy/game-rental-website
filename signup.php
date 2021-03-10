@@ -57,7 +57,7 @@ include 'opendb.php';
                         <label for="">Email</label>
                         <span>Email</span>
                     </div>
-                    <input type="submit" name="Submit" value="Log in" class="login-btn">
+                    <input type="submit" name="Submit" value="Sign Up" class="login-btn">
                 </form>
 
             </div>
