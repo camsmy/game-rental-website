@@ -6,12 +6,14 @@ include 'head.php';
     <?php
 include 'navigation.php';
 ?>
-
+<?php // OPENS THE DATABASE
+include 'opendb.php';
+?>
     <div class="login-container position-relative d-flex justify-content-center align-items-center">
         <div class="row login-form">
             <div class="signup-form2 position-relative d-flex justify-content-center align-items-center">
 
-                <form action="#" method="post">
+                <form name="signup" method="post">
                     <h3 class="login-title text-align-center">Sign up</h3>
                     <div class="login-input-container focus">
                         <input type="text" name="fname" class="login-input" required>
@@ -40,7 +42,7 @@ include 'navigation.php';
                         <span>Contact Number</span>
                     </div>
                     <div class="login-input-container focus">
-                        <input type="text" name="address" class="login-input address" required>
+                        <input type="text" name="uname" class="login-input address" required>
                         <label for="">Username</label>
                         <span>Username</span>
                     </div>
@@ -55,7 +57,7 @@ include 'navigation.php';
                         <label for="">Email</label>
                         <span>Email</span>
                     </div>
-                    <input type="submit" value="Log in" class="login-btn">
+                    <input type="submit" name="Submit" value="Log in" class="login-btn">
                 </form>
 
             </div>
@@ -78,9 +80,18 @@ include 'navigation.php';
             </script>
         </div>
     </div>
-
-
-
+    <?php
+    if(isset($_POST['Submit'])){
+        $v1 = $_POST['fname'];
+        $v2 = $_POST['mname'];
+        $v3 = $_POST['lname'];
+        $v4 = $_POST['address'];
+        $v5 = $_POST['phonenum'];
+        $v6 = $_POST['uname'];
+        $v7 = $_POST['password'];
+        $v8 = $_POST['email'];
+        mysqli_query($DBConnect,"INSERT INTO userinfo (fname,mname,lname,address,contactno,uname,pw,email) VALUES ('$v1','$v2','$v3','$v4','$v5','$v6','$v7','$v8')");
+    }?>
     <div class="custom-shape-divider-top-1614623845 mt-5">
         <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
             <path

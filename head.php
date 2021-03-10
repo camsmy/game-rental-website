@@ -20,5 +20,5 @@
     <link rel="stylesheet" href="./assets/css/log-in.css">
     <link rel="stylesheet" href="./assets/css/signup.css">
     <link rel="stylesheet" href="./assets/css/about.css">
-
+    <link rel="stylesheet" href="./assets/css/navbar-admin.css">
 </head>

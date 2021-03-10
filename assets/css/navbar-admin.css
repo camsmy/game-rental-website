@@ -1,0 +1,67 @@
+.adminnavbar-wrapper{
+    display: flex;
+    position: relative;
+}
+.adminnavbar-wrapper .adminnavbar-sidebar{
+    position:fixed;
+    width: 200px;
+    height:100%;
+    background:#E94C3D;
+    padding: 30px 0;
+}
+.adminnavbar-wrapper .adminnavbar-sidebar h2{
+    text-align: center;
+    margin-bottom: 30px;
+}
+.adminnavbar-wrapper .adminnavbar-sidebar ul li{
+    padding: 15px;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    border-top: 1px solid rgba(225,225,225,0.05);
+}
+.adminnavbar-wrapper .adminnavbar-sidebar ul li a{
+    color: black;
+    display: block;
+}
+.adminnavbar-wrapper .adminnavbar-sidebar ul li a .fas{
+    width:25px;
+}
+.adminnavbar-wrapper .adminnavbar-sidebar ul li:hover{
+    background: #EB984E;
+}
+.adminnavbar-wrapper .adminnavbar-sidebar ul li:hover a{
+    color:#fff;
+}
+.adminnavbar-wrapper .adminnavbar-sidebar .adminnavbar-social_media{
+    position:absolute;
+    bottom:0;
+    left:50%;
+    transform:translateX(-50%);
+    display:flex;
+}
+.adminnavbar-wrapper .adminnavbar-sidebar .adminnavbar-social_media a{
+    display: block;
+    width: 40px;
+    background: #EB984E;
+    height:40px;
+    line-height:40px;
+    text-align:center;
+    margin:0 5px;
+    color: #bdb8d7;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+}
+.adminnavbar-wrapper .adminnavbar-main_content{
+    width:100%;
+    margin-left:200px;
+}
+.adminnavbar-wrapper .adminnavbar-main_content .adminnavbar-header{
+    padding:20px;
+    background:#fff;
+    color: #717171;
+    border-bottom: 1px solid #e0e4e8;
+}
+.adminnavbar-wrapper .adminnavbar-main_content .adminnavbar-info{
+    margin: 20px;
+    color: #717171;
+    line-height:25px;
+}
