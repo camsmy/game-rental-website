@@ -5,7 +5,6 @@ include 'head.php';
 <body>
 <?php
 include 'navigation.php';
-
 ?>
     <section class="heads-1">
         <div class="container">

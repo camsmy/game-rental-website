@@ -21,4 +21,6 @@
     <link rel="stylesheet" href="./assets/css/signup.css">
     <link rel="stylesheet" href="./assets/css/about.css">
     <link rel="stylesheet" href="./assets/css/navbar-admin.css">
+    <link rel="stylesheet" href="./assets/css/customer-navigation.css">
+
 </head>

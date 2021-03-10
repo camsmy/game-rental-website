@@ -291,6 +291,7 @@ header{
         width: 100%;
         opacity: 0;
         transform: translateY(15px);
+        position: relative;
     }
 
     .nav-link > a{
