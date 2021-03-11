@@ -68,7 +68,7 @@ function loginUser(){
             }}
             ?>
         if(Boolean(isUser)){
-            document.signin.action = "index.php";
+            document.signin.action = "games-landing.php";
             return true;
         }else{
             alert("Invalid username or password!");
