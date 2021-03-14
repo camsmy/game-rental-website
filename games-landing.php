@@ -5,7 +5,10 @@ include 'head.php';
 <body>
     <?php
 include 'customer-navigation.php';
-
+if(isset($_SESSION['user'])){
+    echo '<script> alert("Login first!"); </script>';
+    echo '<script> window.location="login.php"; </script>';
+}
 ?>
     <section>
         <div class="container">
