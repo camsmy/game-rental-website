@@ -20,7 +20,40 @@
             </div>
         </div>
         <div class="reserve-body">
-            
+            <div class="row reserve-detail-head">
+                <div class="col reserve-detail-title">ORDER ID</div>
+                <div class="col reserve-detail-title">NAME</div>
+                <div class="col reserve-detail-title">PICK UP DATE</div>
+                <div class="col reserve-detail-title">PRICE</div>
+                <div class="col"></div>
+            </div>
+            <?php
+            include 'opendb.php';
+            /* Attempt MySQL server connection. Assuming you are running MySQL
+            server with default setting (user 'root' with no password) */
+            //$link = mysqli_connect("localhost", "root", "password", "dbname");
+            // Check connection
+            if($DBConnect === false){
+            die("ERROR: Could not connect. " . mysqli_connect_error());
+            }
+
+            $sql = "SELECT order_id, res_game, pickup_date, price FROM reserved";
+            $result = mysqli_query($DBConnect, $sql);
+            if (mysqli_num_rows($result) > 0) {
+                // output data of each row
+                while($row = mysqli_fetch_assoc($result)) {
+                    echo "<div class=row reserve-detail-head>";
+                        echo "<div class=col reserve-detail-text>".$row["order_id"]."</div>";
+                        echo "<div class=col reserve-detail-text>".$row["res_game"]."</div>";
+                        echo "<div class=col reserve-detail-text>".$row["pickup_date"]."</div>";
+                        echo "<div class=col reserve-detail-text>".$row["price"]."</div>";
+                        echo "<div class=col reserve-btn-container><button class=reserve-btn type=Submit value=Submit>CANCEL</button></div>";
+                    echo "</div>";
+                }
+            } 
+            // Close connection
+            mysqli_close($DBConnect);
+            ?>
         </div>
     </div>
 
