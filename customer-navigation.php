@@ -25,7 +25,7 @@
                                 <li class="dropdown-link"><a href="suggestion.php">Suggestions</a></li>
                                 <li class="dropdown-link"><a href="#">Contact Us</a></li>
                                 <li class="dropdown-link"><a href="#">Edit Profile</a></li>
-                                <li class="dropdown-link"><a href="#">Log out</a></li>
+                                <li class="dropdown-link"><a href="logout.php">Log out</a></li>
                             </ul>
                         </div>
                     </li>
