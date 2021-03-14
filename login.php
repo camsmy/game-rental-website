@@ -36,7 +36,6 @@ include 'opendb.php';
         </div>
 </div>
 <?php
-session_start();
 if(isset($_POST['Submit'])){
     if($_POST['username']=="admin"){
         if($_POST['password']=="admin"){

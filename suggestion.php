@@ -1,24 +1,25 @@
 <?php
+    include 'opendb.php';
     /* Attempt MySQL server connection. Assuming you are running MySQL
     server with default setting (user 'root' with no password) */
-    $link = mysqli_connect("localhost", "root", "password", "dbname");
+    //$link = mysqli_connect("localhost", "root", "password", "dbname");
     // Check connection
-    if($link === false){
+    if($DBConnect === false){
     die("ERROR: Could not connect. " . mysqli_connect_error());
 
     }
     // Escape user inputs for security
-    $sg_msg = mysqli_real_escape_string($link, $_REQUEST['suggestion-message']);
-
+    $sg_msg = mysqli_real_escape_string($DBConnect, $_REQUEST['suggestion-message']);
+    $currentDateTime = date('Y-m-d');
     // Attempt insert query execution
-    $sql = "INSERT INTO dbname (msg) VALUES('$sg_msg')";
-    if(mysqli_query($link, $sql)){
+    $sql = "INSERT INTO suggestion VALUES('$currentDateTime','$sg_msg')";
+    if(mysqli_query($DBConnect, $sql)){
     echo "Records added successfully.";
     } else{
-    echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
+    echo "ERROR: Could not able to execute $sql. " . mysqli_error($DBConnect);
     }
     // Close connection
-    mysqli_close($link);
+    mysqli_close($DBConnect);
 ?>
 
 
