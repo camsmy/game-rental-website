@@ -24,12 +24,12 @@ include 'customer-navigation.php';
             $bgimg = array("adventure.jpg", "horror.png", "action.jpg","sports.jpg");
         ?>
                 <!-- <div class="col-xl-4 categories">adventure</div> -->
-                <div class="col-xl-3 col-md-6 col-sm-12 categories mx-1"
+                <!-- <div class="col-xl-3 col-md-6 col-sm-12 categories mx-1"
                     style="background-image: url('assets/img/<?php echo $bgimg[1];?>');">Horror</div>
                 <div class="col-xl-3 col-md-6 col-sm-12 categories mx-1"
                     style="background-image: url('assets/img/<?php echo $bgimg[1];?>');">Horror</div>
                 <div class="col-xl-3 col-md-6 col-sm-12 categories mx-1"
-                    style="background-image: url('assets/img/<?php echo $bgimg[2];?>');">Action</div>
+                    style="background-image: url('assets/img/<?php echo $bgimg[2];?>');">Action</div> -->
             </div>
         </div>
     </section>
