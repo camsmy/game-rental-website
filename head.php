@@ -22,5 +22,6 @@
     <link rel="stylesheet" href="./assets/css/about.css">
     <link rel="stylesheet" href="./assets/css/navbar-admin.css">
     <link rel="stylesheet" href="./assets/css/customer-navigation.css">
+    <link rel="stylesheet" href="./assets/css/games-landing.css">
 
 </head>
