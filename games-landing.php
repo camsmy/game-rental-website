@@ -3,29 +3,68 @@ include 'head.php';
 ?>
 
 <body>
-<?php
+    <?php
 include 'customer-navigation.php';
 
 ?>
-<section>
-<div class="container">
-       <div class="row text-align-center  m-2">
-           <div class="col-xl-12">
-           <h2>Categories</h2>
-           </div>
-       </div>
-   </div>
-</section>
+    <section>
+        <div class="container">
+            <div class="row text-align-center  m-2">
+                <div class="col-xl-12">
+                    <h2>Categories</h2>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<section>
-    <div class="container">
-    <div class="row text-align-center">
-    <div class="col-xl-4 categories">adventure</div>
-    <div class="col-xl-4 categories">funny</div>
-    <div class="col-xl-4 categories">lalala</div>
-    </div>
-    </div>
-</section>
+    <section>
+        <div class="container">
+            <div class="row justify-content-center align-items-center">
+                <?php
+            $bgimg = array("adventure.jpg", "horror.png", "action.jpg","sports.jpg");
+        ?>
+                <!-- <div class="col-xl-4 categories">adventure</div> -->
+                <div class="col-xl-3 col-md-6 col-sm-12 categories mx-1"
+                    style="background-image: url('assets/img/<?php echo $bgimg[1];?>');">Horror</div>
+                <div class="col-xl-3 col-md-6 col-sm-12 categories mx-1"
+                    style="background-image: url('assets/img/<?php echo $bgimg[1];?>');">Horror</div>
+                <div class="col-xl-3 col-md-6 col-sm-12 categories mx-1"
+                    style="background-image: url('assets/img/<?php echo $bgimg[2];?>');">Action</div>
+            </div>
+        </div>
+    </section>
+
+
+    <section>
+        <div class="container">
+            <div class="row my-2">
+                <div class="col-xl-3 categories mx-1">
+                <img src="assets/img/adventure.jpg" alt="playing">
+                    <div class="col-xl-12 text-align-center categories-h3">
+                    <h3>Adventure</h3>
+                    </div>
+                </div>
+                <!-- <div class="col-xl-3 categories mx-1"
+                    style="background-image: url('assets/img/adventure.jpg');">
+                    <div class="col-xl-12 text-align-center">
+                    <h3>Horror</h3>
+                    </div>
+                </div> -->
+                <div class="col-xl-3 categories mx-1">
+                <img src="assets/img/adventure.jpg" alt="playing">
+                    <div class="col-xl-12 text-align-center categories-h3">
+                    <h3>Adventure</h3>
+                    </div>
+                </div>
+                <div class="col-xl-3 categories mx-1">
+                <img src="assets/img/adventure.jpg" alt="playing">
+                    <div class="col-xl-12 text-align-center categories-h3">
+                    <h3>Adventure</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
 
     <div class="custom-shape-divider-top-1614623845 mt-5">
