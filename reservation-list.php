@@ -1,19 +1,4 @@
 <?php
-    include 'opendb.php';
-    /* Attempt MySQL server connection. Assuming you are running MySQL
-    server with default setting (user 'root' with no password) */
-    //$link = mysqli_connect("localhost", "root", "password", "dbname");
-    // Check connection
-    if($DBConnect === false){
-    die("ERROR: Could not connect. " . mysqli_connect_error());
-
-   
-    // Close connection
-    mysqli_close($DBConnect);
-?>
-
-
-<?php
     include 'head.php'; 
 ?>
 
@@ -21,8 +6,19 @@
     <?php
         include 'navigation.php';
     ?>
-
-
+    
+    <div class="reserve-container">
+        <div class="reserve-header">
+            <div class= "row text-align-center reserve-top">
+                <div class= "col-xl-7 reserve-title p-4 ">
+                    RESERVATION LIST
+                </div>
+            </div>
+        </div>
+        <div class="reserve-body">
+            
+        </div>
+    </div>
 
     <div class="custom-shape-divider-top-1614623845 mt-5">
         <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
