@@ -23,8 +23,9 @@ session_start();
     <link rel="stylesheet" href="./assets/css/navbar-admin.css">
     <link rel="stylesheet" href="./assets/css/customer-navigation.css">
     <link rel="stylesheet" href="./assets/css/games-landing.css">
+    <link rel="stylesheet" href="./assets/css/rented-list.css">
+    <link rel="stylesheet" href="./assets/css/reservation-list.css">
     <link rel="stylesheet" href="./assets/css/search.css">
     <link rel="stylesheet" href="./assets/css/gameinfo.css">
     <link rel="stylesheet" href="./assets/css/gallery.css">
-
 </head>
