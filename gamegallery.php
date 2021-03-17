@@ -4,12 +4,42 @@ include 'head.php';
 <body>
 <?php
 include 'navigation.php';
-?>
-<?php
 include 'opendb.php';
+include 'search.php';
+$game = $_SESSION['Search'];
+$query = mysqli_query($DBConnect, "SELECT * FROM gameinfo WHERE gname LIKE '%$game%';");
+$gamecount = mysqli_num_rows($query);
+$lgames = array();
+$temp = array();
+if($gamecount==0){
+    $display = "No game found!";
+}else{
+    $temp = 0;
+    echo '<section>';
+    echo '<div class="gallery-container">';
+    while($games=mysqli_fetch_array($query)){
+        
+        /*$temp[0] = $games['sku'];
+        $temp[0] = $games['sku'];
+        $temp[0] = $games['sku'];
+        $temp[0] = $games['sku'];
+        $temp[0] = $games['sku'];
+        $temp[0] = $games['sku'];
+        $temp[0] = $games['img'];
+        $temp[0] = $games['genre'];
+        $temp[0] = $games['gdesc'];*/
+        if($temp)
+        echo '<div class="row align-items-center">';
+        echo '<div class="col mx-3 gallery-game">';
+        echo '<img src="data:image/jpeg;base64,'.base64_encode($games['img'] ).'" class="gallery-img">';
+        echo '<div class="text-align-left"><h2 class="gallery-h2">'.$games['gname'].'</h2><h3 class="gallery-h3">Php '.$games['price'].'</h3></div>';
+        echo '</div>';
+        echo '</div>';
+        $temp++;
+    }
+    echo '</div></section>';
+}
 ?>
-
-
 
 
  <div class="custom-shape-divider-top-1614623845 mt-5">
