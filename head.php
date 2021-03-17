@@ -23,7 +23,5 @@
     <link rel="stylesheet" href="./assets/css/navbar-admin.css">
     <link rel="stylesheet" href="./assets/css/customer-navigation.css">
     <link rel="stylesheet" href="./assets/css/games-landing.css">
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />
-<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 
 </head>
