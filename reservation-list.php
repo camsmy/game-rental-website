@@ -1,7 +1,6 @@
 <?php
     include 'head.php'; 
 ?>
-
 <body>
     <?php
     include 'customer-navigation.php';
@@ -10,7 +9,6 @@
         echo '<script> window.location="login.php"; </script>';
     }
     ?>
-    
     <div class="reserve-container">
         <div class="reserve-header">
             <div class= "row text-align-center reserve-top">
@@ -33,21 +31,26 @@
             server with default setting (user 'root' with no password) */
             //$link = mysqli_connect("localhost", "root", "password", "dbname");
             // Check connection
+
             if($DBConnect === false){
             die("ERROR: Could not connect. " . mysqli_connect_error());
             }
-
-            $sql = "SELECT order_id, res_game, pickup_date, price FROM reserved";
+            $sql = "SELECT order_id, res_game, pickup, price FROM reserved";
             $result = mysqli_query($DBConnect, $sql);
+            $temp = 0;
             if (mysqli_num_rows($result) > 0) {
                 // output data of each row
                 while($row = mysqli_fetch_assoc($result)) {
-                    echo "<div class=row reserve-detail-head>";
-                        echo "<div class=col reserve-detail-text>".$row["order_id"]."</div>";
-                        echo "<div class=col reserve-detail-text>".$row["res_game"]."</div>";
-                        echo "<div class=col reserve-detail-text>".$row["pickup_date"]."</div>";
-                        echo "<div class=col reserve-detail-text>".$row["price"]."</div>";
-                        echo "<div class=col reserve-btn-container><button class=reserve-btn type=Submit value=Submit>CANCEL</button></div>";
+                    $temp = $row["order_id"];
+                    echo "<div class='row reserve-detail-head'>";
+                        echo "<div class='col reserve-detail-text'>".$row["order_id"]."</div>";
+                        echo "<div class='col reserve-detail-text'>".$row["res_game"]."</div>";
+                        echo "<div class='col reserve-detail-text'>".$row["pickup"]."</div>";
+                        echo "<div class='col reserve-detail-text'>".$row["price"]."</div>";
+                        echo "<div class='col reserve-btn-container'>";
+                            echo "<form action='reserve-cancel.php?id='".$temp."' method='POST'>";
+                                echo "<input type='submit' name='cancel' class='reserve-btn'>";
+                        echo"</form></div>";
                     echo "</div>";
                 }
             } 
