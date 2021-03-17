@@ -15,11 +15,23 @@ include 'navigation.php';//hello
                         <p class="py-2">A Philippine game rental store that aims to make it easy for
                             gamers to play their favorite games in the comfort of their home.
                         </p>
-                        <button type="button" class="btn-signupnow"><a href="signup.php">Sign Up Now!</a></button>
-                        <!-- <form id="search-form-head" role="form" method="post" action="www.google.com" target="_blank">
-                            <input type="text" class="search-form" placeholder="Search" id="search" name="search">
-                            <button type="button" class="btn-search">Search</button>
-                        </form> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="heads-2">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12 section-1 text-align-left my-5 py-5 col-m">
+                    <div class="col-xl-5 col-xs-12 col-md-8 col-lg-7 my-5 py-5 vr-txt">
+                        <h1>PlayStation VR games</h1>
+                        <p class="my-3">
+                        Immerse yourself in over 500 incredible games and experiences with the transformative power of PS VR.
+                        <br><br>
+                        Home to a unique selection of VR experiences – discover unbelievable new worlds waiting to be explored.
+                        </p>
                     </div>
                 </div>
             </div>
