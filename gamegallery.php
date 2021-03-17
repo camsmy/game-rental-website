@@ -6,6 +6,17 @@ include 'head.php';
 include 'navigation.php';
 include 'opendb.php';
 include 'search.php';
+?>
+<section><!--lalagay pa ako condition-->
+        <div class="container">
+            <div class="row text-align-center  m-2">
+                <div class="col-xl-12">
+                    <h2>Categories</h2>
+                </div>
+            </div>
+        </div>
+    </section>
+<?php
 $game = $_SESSION['Search'];
 $query = mysqli_query($DBConnect, "SELECT * FROM gameinfo WHERE gname LIKE '%$game%';");
 $gamecount = mysqli_num_rows($query);
@@ -14,11 +25,10 @@ $temp = array();
 if($gamecount==0){
     $display = "No game found!";
 }else{
-    $temp = 0;
+    $temp = 1;
     echo '<section>';
     echo '<div class="gallery-container">';
     while($games=mysqli_fetch_array($query)){
-        
         /*$temp[0] = $games['sku'];
         $temp[0] = $games['sku'];
         $temp[0] = $games['sku'];
@@ -28,16 +38,18 @@ if($gamecount==0){
         $temp[0] = $games['img'];
         $temp[0] = $games['genre'];
         $temp[0] = $games['gdesc'];*/
-        if($temp)
-        echo '<div class="row align-items-center">';
-        echo '<div class="col mx-3 gallery-game">';
+        if($temp%4 == 1)
+            echo '<div class="row gallery-row my-2 p-1 justify-content-center align-items-center">';
+        echo '<div class="col-sm-1 m-2 p-1 gallery-game text-align-center align-items-center">';
         echo '<img src="data:image/jpeg;base64,'.base64_encode($games['img'] ).'" class="gallery-img">';
-        echo '<div class="text-align-left"><h2 class="gallery-h2">'.$games['gname'].'</h2><h3 class="gallery-h3">Php '.$games['price'].'</h3></div>';
+        echo '<div class="p-1 text-align-left"><h2 class="gallery-h2">'.$games['gname'].'</h2><h3 class="gallery-h3">Php '.$games['price'].'</h3></div>';
         echo '</div>';
-        echo '</div>';
+        if($temp%4==0)
+            echo '</div>';
         $temp++;
     }
     echo '</div></section>';
+    
 }
 ?>
 

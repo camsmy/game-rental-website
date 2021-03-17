@@ -2,8 +2,10 @@
     padding: 2rem;
 }
 .gallery-game{
-    background-color: #E94C3D;
-    padding:10px;
+    background-color: #EC6558;
+    width:auto;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
 }
 .gallery-img{
     width:300px;
@@ -18,5 +20,7 @@
 .gallery-h3{
     color: #000;
     font-size:0.9em;
-    font-weight: 600;
+}
+.gallery-row{
+    flex-direction:row;
 }

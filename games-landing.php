@@ -19,6 +19,9 @@ include 'customer-navigation.php';
   </div>
 </div>
 </section>
+<?php
+include 'search.php';
+?>
     <section>
         <div class="container">
             <div class="row text-align-center  m-2">
