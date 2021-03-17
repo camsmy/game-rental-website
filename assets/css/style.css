@@ -13,17 +13,11 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
-.btn-signupnow {
-  padding: 10px 20px;
-  margin-top: 6px;
-  border: none;
-  right: 140px;
-  border-radius: 30px;
-  line-height: 1;
-  text-transform: uppercase;
-  background-color: #E94C3D;
+.heads-2{
+  background-image: url("../img/vrD.jfif");
+  background-repeat: no-repeat;
+  background-size: cover;
   color: #fefefe;
-  cursor:pointer;
 }
 
 /*Footer section*/
@@ -80,6 +74,7 @@ footer img{
     padding-top: 50px;
     margin: 30px 30px;
   }
+  
 }
 
   /*tablet - SM*/
@@ -88,6 +83,18 @@ footer img{
     .head{
       padding-top: 100px;
       margin: 30px 30px;
+    }
+    .heads-2{
+      background-image: url("../img/vrM.jfif");
+      background-repeat: no-repeat;
+      background-size: cover;
+      color: #fefefe;
+    }
+    .vr-txt{
+      padding-top: 320px !important;
+      padding-bottom: 0px!important;
+      text-align: center !important;
+      margin: 0px !important;
     }
 }
 
@@ -103,18 +110,14 @@ footer img{
       padding-top: 200px;
       margin: 30px 30px;
     }
-    .btn-signupnow {
-      padding: 10px 10px;
-      margin-top: 6px;
-      border: none;
-      right: 5%;
-      border-radius: 30px;
-      line-height: 1;
-      text-transform: uppercase;
-      background-color: #E94C3D;
+    .heads-2{
+      background-image: url("../img/vrM.jfif");
+      background-repeat: no-repeat;
+      background-size: cover;
       color: #fefefe;
-      cursor:pointer;
     }
-    
+    .vr-txt{
+      padding-top: 200px !important;
+    }
   }
   
