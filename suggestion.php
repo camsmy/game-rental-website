@@ -6,22 +6,17 @@
     // Check connection
     if($DBConnect === false){
     die("ERROR: Could not connect. " . mysqli_connect_error());
-    }
-    function alert($msg) {
-        echo "<script type='text/javascript'>alert('$msg');</script>";
+
     }
     // Escape user inputs for security
     $sg_msg = mysqli_real_escape_string($DBConnect, $_REQUEST['suggestion-message']);
     $currentDateTime = date('Y-m-d');
     // Attempt insert query execution
-    if(isset($_POST['submit'])) {
-        $sql = "INSERT INTO suggestion VALUES('$currentDateTime','$sg_msg')";
-        if(mysqli_query($DBConnect, $sql)){
-            alert("Message successfully sent!");
-        } else{
-            alert("ERROR: Could not able to execute $sql");
-            mysqli_error($DBConnect);
-        }
+    $sql = "INSERT INTO suggestion VALUES('$currentDateTime','$sg_msg')";
+    if(mysqli_query($DBConnect, $sql)){
+    echo "Records added successfully.";
+    } else{
+    echo "ERROR: Could not able to execute $sql. " . mysqli_error($DBConnect);
     }
     // Close connection
     mysqli_close($DBConnect);
@@ -34,11 +29,7 @@
 
 <body>
     <?php
-    include 'customer-navigation.php';
-    if(isset($_SESSION['user'])){
-        echo '<script> alert("Login first!"); </script>';
-        echo '<script> window.location="login.php"; </script>';
-    }
+        include 'navigation.php';
     ?>
     <div class="suggestion-container">
         <div class="suggestion-form ">
@@ -49,7 +40,7 @@
                         <label for="">Message</label>
                         <span>Message</span>
                     </div>
-                    <input type="submit" name="submit" value="Send Message" class="suggestion-btn">
+                    <input type="submit" value="Send Message" class="suggestion-btn">
                 </form>             
             </div>
         </div>

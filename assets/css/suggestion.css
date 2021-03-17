@@ -6,9 +6,8 @@
 }
 
 .suggestion-form {
-  padding: 50px;
   margin: auto;
-  width: 80%;
+  width: 50%;
   border-radius: 10px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
   background-image: linear-gradient(to top, #37ecba 0%, #72afd3 100%);
@@ -23,6 +22,13 @@
   transform: rotate(45deg);
   top: 50px;
   left: -13px;
+}
+
+.suggestion-form {
+  padding: 2.3rem 2.2rem;
+  z-index: 10;
+  overflow: hidden;
+  position: relative;
 }
 
 .suggestion-title {
@@ -148,9 +154,6 @@ textarea.suggestion-input {
 
 
 @media (max-width: 850px) {
-  .suggestion-form {
-    width: 100%;
-  }
   .suggestion-form:before {
     top: -13px;
     left: initial;
@@ -167,11 +170,9 @@ textarea.suggestion-input {
 
 @media (max-width: 480px) {
   .suggestion-container {
-    padding: 3rem;
+    padding: 1.5rem;
   }
-  .suggestion-form {
-    padding: 20px;
-  }
+
   .suggestion-info:before {
     display: none;
   }
