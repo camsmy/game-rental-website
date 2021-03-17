@@ -18,64 +18,56 @@ include 'opendb.php';
             
             <div class="login-form2 position-relative d-flex justify-content-center align-items-center">
 
-                <form name="signin" method="post">
+                <form method="post">
                     <h3 class="login-title text-align-center">Log In</h3>
                     <div class="login-input-container focus">
-                        <input type="text" name="username" class="login-input" id="username">
+                        <input type="text" name="username" class="login-input">
                         <label for="">Username</label>
                         <span>Username</span>
                     </div>
                     <div class="login-input-container focus">
-                        <input type="password" name="password" class="login-input" id="password">
+                        <input type="password" name="password" class="login-input">
                         <label for="">Password</label>
                         <span>Password</span>
                     </div>
-                    <input type="submit" name="Submit" value="Log in" class="login-btn" onclick="return loginUser()">
+                    <input type="submit" name="Submit" value="Log in" class="login-btn">
                 </form>
             </div>
         </div>
 </div>
-<script>
-function loginUser(){
-    var x = document.getElementById("username").value;
-    var y = document.getElementById("password").value;
-    if(x == "admin"){ //admin access
-        if(y =="admin"){
-            document.signin.action = "dashboard.php";
-            return true;
-        }else{
-            alert("Invalid username or password!");
-        }
+<?php
+if(isset($_POST['Submit'])){
+    if($_POST['username']=="admin"){
+        if($_POST['password']=="admin"){
+            $_SESSION['user'] = $_POST['username'];
+            $_SESSION['pass'] = $_POST['password'];
+            header('location: dashboard.php');
+        }else{ echo '<script> alert("Invalid username or password!"); </script>'; }   
     }else{
-        var isUser = false;
-        <?php
         $data = mysqli_query($DBConnect,"SELECT * from userinfo");
         $total = mysqli_num_rows($data);
         $v1=$v2="";
+        $isTrue = false;
         if($total!=0){
             while($user=mysqli_fetch_array($data)){
-                $v1 = $user['uname'];
-                $v2 = $user['pw'];
-                ?>
-                var username = <?php echo json_encode($v1); ?>;
-                var password = <?php echo json_encode($v2); ?>;
-                if(username == x){
-                    if(password == y){
-                        isUser = true;
+                if($user['uname']==$_POST['username']){
+                    if($user['pw']==$_POST['password']){
+                        $isTrue = true;
+                        $_SESSION['user'] = $user['uname'];
+                        $_SESSION['pass'] = $user['pw'];
+                        $_SESSION['fullname'] = $user['fname']." ".$user['mname']." ".$user['lname'];
+                        $_SESSION['add'] = $user['address'];
+                        $_SESSION['connum'] = $user['contactno'];
+                        $_SESSION['email'] = $user['email'];
+                        header('location: games-landing.php');
                     }
                 }
-                <?php
-            }}
-            ?>
-        if(Boolean(isUser)){
-            document.signin.action = "index.php";
-            return true;
-        }else{
-            alert("Invalid username or password!");
+            }
         }
+        if(!$isTrue){ echo '<script> alert("Invalid password!"); </script>'; }
     }
 }
-</script>
+?>
     <div class="custom-shape-divider-top-1614623845 mt-5">
         <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
             <path

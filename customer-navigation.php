@@ -10,13 +10,13 @@
             <div class="nav-links">
                 <ul>
                     <li class="nav-link" style="--i: .35s">
-                        <a href="index.php">Games</a>
+                        <a href="games-landing.php">Games</a>
                     </li>
                     <li class="nav-link" style="--i: .6s">
-                        <a href="games-landing.php">Rented</a>
+                        <a href="rented-list.php">Rented</a>
                     </li>
                     <li class="nav-link" style="--i: .85s">
-                        <a href="#">Reserve</a>
+                        <a href="reservation-list.php">Reserve</a>
                     </li>
                     <li class="nav-link display" style="--i: .95s">
                         <a href="#">Menu<i class="fas fa-caret-down"></i></a>
@@ -39,7 +39,7 @@
                         <li class="dropdown-link"><a href="suggestion.php">Suggestions</a></li>
                         <li class="dropdown-link"><a href="contact.php">Contact Us</a></li>
                         <li class="dropdown-link"><a href="#">Edit Profile</a></li>
-                        <li class="dropdown-link"><a href="#">Log out</a></li>
+                        <li class="dropdown-link"><a href="logout.php">Log out</a></li>
                     </ul>
                 </div>
             </div>

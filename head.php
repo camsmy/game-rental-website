@@ -1,5 +1,5 @@
 <?php
-//session_start();
+session_start();
 ?>
 
 <!DOCTYPE html>
@@ -23,4 +23,7 @@
     <link rel="stylesheet" href="./assets/css/navbar-admin.css">
     <link rel="stylesheet" href="./assets/css/customer-navigation.css">
     <link rel="stylesheet" href="./assets/css/games-landing.css">
+    <link rel="stylesheet" href="./assets/css/rented-list.css">
+    <link rel="stylesheet" href="./assets/css/reservation-list.css">
+
 </head>

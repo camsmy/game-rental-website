@@ -1,24 +1,30 @@
 <?php
+    include 'opendb.php';
     /* Attempt MySQL server connection. Assuming you are running MySQL
     server with default setting (user 'root' with no password) */
-    $link = mysqli_connect("localhost", "root", "password", "dbname");
+    //$link = mysqli_connect("localhost", "root", "password", "dbname");
     // Check connection
-    if($link === false){
+    if($DBConnect === false){
     die("ERROR: Could not connect. " . mysqli_connect_error());
-
+    }
+    function alert($msg) {
+        echo "<script type='text/javascript'>alert('$msg');</script>";
     }
     // Escape user inputs for security
-    $sg_msg = mysqli_real_escape_string($link, $_REQUEST['suggestion-message']);
-
+    $sg_msg = mysqli_real_escape_string($DBConnect, $_REQUEST['suggestion-message']);
+    $currentDateTime = date('Y-m-d');
     // Attempt insert query execution
-    $sql = "INSERT INTO dbname (msg) VALUES('$sg_msg')";
-    if(mysqli_query($link, $sql)){
-    echo "Records added successfully.";
-    } else{
-    echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
+    if(isset($_POST['submit'])) {
+        $sql = "INSERT INTO suggestion VALUES('$currentDateTime','$sg_msg')";
+        if(mysqli_query($DBConnect, $sql)){
+            alert("Message successfully sent!");
+        } else{
+            alert("ERROR: Could not able to execute $sql");
+            mysqli_error($DBConnect);
+        }
     }
     // Close connection
-    mysqli_close($link);
+    mysqli_close($DBConnect);
 ?>
 
 
@@ -28,7 +34,11 @@
 
 <body>
     <?php
-        include 'navigation.php';
+    include 'customer-navigation.php';
+    if(isset($_SESSION['user'])){
+        echo '<script> alert("Login first!"); </script>';
+        echo '<script> window.location="login.php"; </script>';
+    }
     ?>
     <div class="suggestion-container">
         <div class="suggestion-form ">
@@ -39,7 +49,7 @@
                         <label for="">Message</label>
                         <span>Message</span>
                     </div>
-                    <input type="submit" value="Send Message" class="suggestion-btn">
+                    <input type="submit" name="submit" value="Send Message" class="suggestion-btn">
                 </form>             
             </div>
         </div>
