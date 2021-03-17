@@ -1,6 +1,5 @@
 <?php
-$id = $_POST['temp'];
-echo "$id";
+$id = $_POST['id'];
 
 include 'opendb.php';
 /* Attempt MySQL server connection. Assuming you are running MySQL

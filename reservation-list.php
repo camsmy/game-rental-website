@@ -12,7 +12,7 @@
     <div class="reserve-container">
         <div class="reserve-header">
             <div class= "row text-align-center reserve-top">
-                <div class= "col-xl-7 reserve-title p-4 ">
+                <div class= "col-xl-7 reserve-title p-2 ">
                     RESERVATION LIST
                 </div>
             </div>
@@ -41,15 +41,15 @@
             if (mysqli_num_rows($result) > 0) {
                 // output data of each row
                 while($row = mysqli_fetch_assoc($result)) {
-                    $temp = $row["order_id"];
                     echo "<div class='row reserve-detail-head'>";
                         echo "<div class='col reserve-detail-text'>".$row["order_id"]."</div>";
                         echo "<div class='col reserve-detail-text'>".$row["res_game"]."</div>";
                         echo "<div class='col reserve-detail-text'>".$row["pickup"]."</div>";
                         echo "<div class='col reserve-detail-text'>".$row["price"]."</div>";
                         echo "<div class='col reserve-btn-container'>";
-                            echo "<form action='reserve-cancel.php?id='".$temp."' method='POST'>";
-                                echo "<input type='submit' name='cancel' class='reserve-btn'>";
+                            echo "<form action='reserve-cancel.php' method='POST'>";
+                                echo "<input type='hidden' name='id' value='".$row["order_id"]."'>";
+                                echo "<input type='submit' name='cancel' value='Cancel' class='reserve-btn'>";
                         echo"</form></div>";
                     echo "</div>";
                 }
