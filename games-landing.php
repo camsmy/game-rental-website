@@ -7,6 +7,15 @@ include 'head.php';
 include 'customer-navigation.php';
 
 ?>
+<section>
+<div class="hero-image">
+  <div class="col-xl-4 hero-text">
+    <h2>PS4 games</h2>
+    <h5>Experience an overwhelming generation of critically-acclaimed games, including stand-out exclusives from PlayStation Studios.
+</h5>
+  </div>
+</div>
+</section>
     <section>
         <div class="container">
             <div class="row text-align-center  m-2">
@@ -16,56 +25,43 @@ include 'customer-navigation.php';
             </div>
         </div>
     </section>
-
+    <?php
+    $bgimg = array("adventure.jpg", "horror.png", "action.jpg","sports.jpg","fighting.jpg","shooting.jpg");
+            $categories = array("Adventure","Horror","Action","Sports","Fighting","Shooter");
+    ?>
     <section>
         <div class="container">
-            <div class="row justify-content-center align-items-center">
-                <?php
-            $bgimg = array("adventure.jpg", "horror.png", "action.jpg","sports.jpg");
-        ?>
-                <!-- <div class="col-xl-4 categories">adventure</div> -->
-                <!-- <div class="col-xl-3 col-md-6 col-sm-12 categories mx-1"
-                    style="background-image: url('assets/img/<?php echo $bgimg[1];?>');">Horror</div>
-                <div class="col-xl-3 col-md-6 col-sm-12 categories mx-1"
-                    style="background-image: url('assets/img/<?php echo $bgimg[1];?>');">Horror</div>
-                <div class="col-xl-3 col-md-6 col-sm-12 categories mx-1"
-                    style="background-image: url('assets/img/<?php echo $bgimg[2];?>');">Action</div> -->
+            <div class="row my-2">
+            <?php
+            for($x=3;$x<=5;$x++){
+                    echo "<div class='col-xl-3 categories m-1'>";
+                    echo "<img src='assets/img/".$bgimg[$x]."' alt='categories image'>";
+                    echo "<div class='col-xl-12 text-align-center categories-h3'>";
+                    echo  "<h3>".$categories[$x]."</h3>";
+                    echo   "</div>";
+                    echo "</div>";
+            }
+            ?>
             </div>
         </div>
     </section>
-
 
     <section>
         <div class="container">
             <div class="row my-2">
-                <div class="col-xl-3 categories mx-1">
-                <img src="assets/img/adventure.jpg" alt="playing">
-                    <div class="col-xl-12 text-align-center categories-h3">
-                    <h3>Adventure</h3>
-                    </div>
-                </div>
-                <!-- <div class="col-xl-3 categories mx-1"
-                    style="background-image: url('assets/img/adventure.jpg');">
-                    <div class="col-xl-12 text-align-center">
-                    <h3>Horror</h3>
-                    </div>
-                </div> -->
-                <div class="col-xl-3 categories mx-1">
-                <img src="assets/img/adventure.jpg" alt="playing">
-                    <div class="col-xl-12 text-align-center categories-h3">
-                    <h3>Adventure</h3>
-                    </div>
-                </div>
-                <div class="col-xl-3 categories mx-1">
-                <img src="assets/img/adventure.jpg" alt="playing">
-                    <div class="col-xl-12 text-align-center categories-h3">
-                    <h3>Adventure</h3>
-                    </div>
-                </div>
+            <?php
+            for($x=3;$x<=5;$x++){
+                    echo "<div class='col-xl-3 categories m-1'>";
+                    echo "<img src='assets/img/".$bgimg[$x]."' alt='categories image'>";
+                    echo "<div class='col-xl-12 text-align-center categories-h3'>";
+                    echo  "<h3>".$categories[$x]."</h3>";
+                    echo   "</div>";
+                    echo "</div>";
+            }
+            ?>
             </div>
         </div>
     </section>
-
 
     <div class="custom-shape-divider-top-1614623845 mt-5">
         <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
@@ -80,6 +76,7 @@ include 'customer-navigation.php';
 include 'footer.php';
 ?>
     </footer>
+
 </body>
 
 </html>
