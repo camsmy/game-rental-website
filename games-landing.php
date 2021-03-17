@@ -9,7 +9,6 @@ include 'customer-navigation.php';
     echo '<script> alert("Login first!"); </script>';
     echo '<script> window.location="login.php"; </script>';
 }*/
-include 'search.php';
 ?>
 <section>
 <div class="hero-image">
