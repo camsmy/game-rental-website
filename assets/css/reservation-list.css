@@ -53,15 +53,21 @@
 }
 
 .reserve-btn {
-    background-image: url("../img/head.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-    text-shadow: 3px 3px #c0bfbf;
-    color: white;
-    border: transparent;
-    border-radius: 20px;
-    padding: 10px;
-    font-size:25px;
+    padding: 10px 100px;
+    background-color: #fff;
+    border: 2px solid #fafafa;
+    font-size: 0.95rem;
+    color: #EB5E50;
+    line-height: 1;
+    border-radius: 25px;
+    outline: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.reserve-btn:hover {
+    background-color: transparent;
+    color: #fff;
 }
 
   /* small desktop - LG*/

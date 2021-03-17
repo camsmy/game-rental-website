@@ -15,7 +15,7 @@
     <div class="rented-container">
         <div class="rented-header">
             <div class= "row text-align-center rented-top">
-                <div class= "col-xl-7 rented-title p-4 ">
+                <div class= "col-xl-7 rented-title p-2 ">
                     RENTED LIST
                 </div>
             </div>
