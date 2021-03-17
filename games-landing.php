@@ -33,7 +33,7 @@ include 'customer-navigation.php';
         <div class="container">
             <div class="row my-2">
             <?php
-            for($x=3;$x<=5;$x++){
+            for($x=0;$x<=2;$x++){
                     echo "<div class='col-xl-3 categories m-1'>";
                     echo "<img src='assets/img/".$bgimg[$x]."' alt='categories image'>";
                     echo "<div class='col-xl-12 text-align-center categories-h3'>";

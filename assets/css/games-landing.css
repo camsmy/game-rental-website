@@ -31,11 +31,11 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    background-image: url("../img/banner-landing2.jfif");
+    background-image: url("../img/banner-landing.jfif");
 }
 @media (max-width: 575px) {
     .hero-image {
-        background-image: url("../img/banner-landing.jfif");
+        background-image: url("../img/banner-landingm.jfif");
     }
     .hero-text{
         -ms-transform: translate(-50%, -50%);
