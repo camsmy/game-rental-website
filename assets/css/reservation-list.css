@@ -1,0 +1,175 @@
+.reserve-container {
+    width: 80%;
+    padding: 5rem;
+    margin: auto;
+    
+}
+
+.reserve-container .reserve-header {
+    width: 100%;
+    background-color: #fefefe;
+    margin: auto;
+}
+
+.reserve-container .reserve-header .reserve-top{
+    background-image: url("../img/head.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+.reserve-container .reserve-header .reserve-top .reserve-title {
+    text-shadow: 3px 3px #c0bfbf;
+    color: white;
+    font-size:60px;
+    font-weight: 600;
+}
+
+.reserve-body {
+    padding: 20px;
+    min-height: 600px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    z-index: 800;
+}
+
+.reserve-body .reserve-detail-head {
+    text-align: center;
+    padding: 20px;
+}
+
+.reserve-body .reserve-detail-head .reserve-detail-title {
+    text-shadow: 3px 3px #c0bfbf;
+    color: #351072;
+    font-size:30px;
+    font-weight: 600;
+}
+
+.reserve-body .reserve-detail-head .reserve-detail-text {
+    text-shadow: 3px 3px #c0bfbf;
+    color: #351072;
+    font-size:25px;
+    font-weight: 600;
+}
+
+.reserve-btn {
+    background-image: url("../img/head.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-shadow: 3px 3px #c0bfbf;
+    color: white;
+    border: transparent;
+    border-radius: 20px;
+    padding: 10px;
+    font-size:25px;
+}
+
+  /* small desktop - LG*/
+@media (min-width: 992px) and (max-width: 1199px) {
+    .reserve-container {
+        width: 95%;
+        padding: 3.5rem;
+    }
+    .reserve-container .reserve-header .reserve-top .reserve-title {
+        font-size: 50px;
+    }
+    .reserve-body {
+        min-height: 400px;
+        padding: 15px;
+    }
+    .reserve-body .reserve-detail-head {
+        padding: 15px;
+    }
+    .reserve-body .reserve-detail-head .reserve-detail-title {
+        font-size:25px;
+    }
+    .reserve-body .reserve-detail-head .reserve-detail-text {
+        font-size:20px;
+    }
+    .reserve-btn {
+        padding: 10px;
+        font-size:20px;
+    }
+  }
+  
+    /* small laptop until tablet - MD*/
+@media (min-width: 768px) and (max-width: 991px) {
+    .reserve-container {
+        width: 90%;
+        padding: 3rem;
+    }
+    .reserve-container .reserve-header .reserve-top .reserve-title {
+        font-size: 40px;
+    }
+    .reserve-body {
+        min-height: 350px;
+        padding: 12px;
+    }
+    .reserve-body .reserve-detail-head {
+        padding: 12px;
+    }
+    .reserve-body .reserve-detail-head .reserve-detail-title {
+        font-size:20px;
+    }
+    .reserve-body .reserve-detail-head .reserve-detail-text {
+        font-size:18px;
+    }
+    .reserve-btn {
+        padding: 10px;
+        font-size:20px;
+    }
+  }
+  
+    /*tablet - SM*/
+@media (min-width: 576px) and (max-width: 767px) { 
+    .reserve-container {
+        width: 100%;
+        padding: 2rem;
+    }
+    .reserve-container .reserve-header .reserve-top .reserve-title {
+        font-size:35px;
+    }
+    .reserve-body {
+        min-height: 300px;
+    }
+    .reserve-body .reserve-detail-head {
+        padding: 8px;
+    }
+    .reserve-body .reserve-detail-head .reserve-detail-title {
+        font-size:16px;
+    }
+    .reserve-body .reserve-detail-head .reserve-detail-text {
+        font-size:14px;
+    }
+    .reserve-btn {
+        padding: 8px;
+        font-size:14px;
+    }
+  }
+  
+  /*mobile phone - XS*/
+@media (max-width: 576px) {
+    .reserve-container {
+        width: 100%;
+        padding: 1.5rem;
+    }
+    .reserve-container .reserve-header .reserve-top .reserve-title {
+        font-size:30px;
+    }
+    .reserve-body {
+        min-height: 200px;
+    }
+    .reserve-body .reserve-detail-head {
+        padding: 6px;
+    }
+    .reserve-body .reserve-detail-head .reserve-detail-title {
+        font-size:14px;
+    }
+    .reserve-body .reserve-detail-head .reserve-detail-text {
+        font-size:12px;
+    }
+    .reserve-btn {
+        padding: 5px;
+        font-size:12px;
+    }
+}
