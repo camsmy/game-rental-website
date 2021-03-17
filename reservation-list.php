@@ -37,6 +37,7 @@
             die("ERROR: Could not connect. " . mysqli_connect_error());
             }
 
+            
             $sql = "SELECT order_id, res_game, pickup_date, price FROM reserved";
             $result = mysqli_query($DBConnect, $sql);
             if (mysqli_num_rows($result) > 0) {
