@@ -1,5 +1,4 @@
 .categories{
-    height: 200px;
     /* background-repeat: no-repeat;
     background-size: cover; */
     border-radius: 20px;
@@ -11,8 +10,32 @@
     font-weight: 600;
     background-color: #E94C3D;
 }
-
-.categories-h3{
-    /* position: absolute; */
+.hero-text{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, 50%);
+    margin: 0;
+    color: white;
+    text-align: center;
 }
-
+.hero-image {
+    /* Set a specific height */
+    height: 100vh;
+  position: relative;
+    /* Position and center the image to scale nicely on all screens */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("../img/banner-landing.jfif");
+}
+@media (max-width: 575px) {
+    .hero-image {
+        background-image: url("../img/banner-landingm.jfif");
+    }
+    .hero-text{
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -40%);
+    }
+}
