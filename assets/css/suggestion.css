@@ -8,10 +8,11 @@
 .suggestion-form {
   padding: 50px;
   margin: auto;
-  width: 80%;
+  width: 70%;
   border-radius: 10px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-  background-image: linear-gradient(to top, #37ecba 0%, #72afd3 100%);
+  background: linear-gradient(184deg, rgba(235,94,80,1) 0%, rgba(235,94,80,1) 0%, rgba(242,148,139,1) 100%);
+  border-radius: 25px;
 }
 
 .suggestion-form:before {
@@ -19,7 +20,7 @@
   position: absolute;
   width: 26px;
   height: 26px;
-  background-color: #72afd3;
+  background-color: #EB5E50;;
   transform: rotate(45deg);
   top: 50px;
   left: -13px;
@@ -85,7 +86,7 @@ textarea.suggestion-input {
   background-color: #fff;
   border: 2px solid #fafafa;
   font-size: 0.95rem;
-  color: #1abc9c;
+  color: #EB5E50;;
   line-height: 1;
   border-radius: 25px;
   outline: none;
@@ -119,7 +120,7 @@ textarea.suggestion-input {
   opacity: 0;
   transition: 0.3s;
   height: 5px;
-  background-color: #1abc9c;
+  background-color: rgba(242,148,139,1);
   top: 50%;
   transform: translateY(-50%);
 }
