@@ -28,4 +28,5 @@ session_start();
     <link rel="stylesheet" href="./assets/css/search.css">
     <link rel="stylesheet" href="./assets/css/gameinfo.css">
     <link rel="stylesheet" href="./assets/css/gallery.css">
+    <link rel="stylesheet" href="./assets/css/gamecategory.css">
 </head>
