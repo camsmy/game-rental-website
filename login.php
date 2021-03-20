@@ -5,11 +5,13 @@ include 'head.php';
 <?php
 include 'navigation.php';
 include 'opendb.php';
+if(isset($_SESSION['user']))
+echo '<script> window.location="games-landing.php"; </script>';
 ?>
 <?php
 if(isset($_POST['Submit'])){
     if($_POST['username']=="admin"){
-        if($_POST['password']=="admin"){
+        if($_POST['password']=="ADETWebsiteProject"){
             $_SESSION['user'] = $_POST['username'];
             $_SESSION['pass'] = $_POST['password'];
             header('location: dashboard.php');

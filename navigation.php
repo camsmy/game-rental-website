@@ -12,9 +12,6 @@
                         <li class="nav-link" style="--i: .6s">
                             <a href="index.php">Home</a>
                         </li>
-                        <li class="nav-link" style="--i: 1.35s">
-                            <a href="games-landing.php">Games</a>
-                        </li>
                         <li class="nav-link" style="--i: .85s">
                             <a href="contact.php">Contact</a>
                         </li>

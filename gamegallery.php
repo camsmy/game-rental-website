@@ -7,33 +7,26 @@ include 'block.php';
 include 'customer-navigation.php';
 include 'opendb.php';
 include 'search.php';
-//session_start();
-/*
-function gameInfo(){
-    $_SESSION['sku'] = $_GET['gname'];
-}
-if(isset($_GET['gname'])){
-    header('location: gameinfo.php');
-    gameInfo();
-}*/
 ?>
-<section><!--lalagay pa ako condition-->
-        <div class="container">
-            <div class="row text-align-center m-2">
-                <div class="col-xl-12">
-                    <h2>Categories</h2>
-                </div>
-            </div>
-        </div>
-    </section>
+
 <?php
+if(!isset($_SESSION['Search']))
+    echo '<script> window.location="login.php"; </script>';
 $game = $_SESSION['Search'];
 $query = mysqli_query($DBConnect, "SELECT * FROM gameinfo WHERE gname LIKE '%$game%';");
 $gamecount = mysqli_num_rows($query);
 $lgames = array();
 $temps = array();
-if($gamecount==0){
-    $display = "No game found!";
+if($gamecount==0){ //pagwalang game na nahanap
+    echo '<section>
+        <div class="container">
+            <div class="row text-align-center m-2">
+                <div class="col-xl-12">
+                    <h2>No game found!</h2>
+                </div>
+            </div>
+        </div>
+    </section>';
 }else{
     $temp = 1;
     echo '<section>';

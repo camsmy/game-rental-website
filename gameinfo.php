@@ -1,26 +1,12 @@
-<?php
+<?php //                                        DESIGN KULANG
 include 'head.php';
 ?>
 <body>
-    <?php
-    if(!isset($_GET['gname']))
-        echo '<script> window.location="gamegallery.php"; </script>';
+<?php
+if(!isset($_GET['gname']))
+    echo '<script> window.location="gamegallery.php"; </script>';
 include 'customer-navigation.php';
 include 'opendb.php';
-/*if(!isset($_SESSION['user'])){
-    echo '<script> alert("Login first!"); </script>';
-    echo '<script> window.location="login.php"; </script>';
-}
-$game = $_SESSION['Search'];
-$query = mysqli_query($DBConnect, "SELECT * FROM gameinfo WHERE gname LIKE '%$game%';");
-if(mysqli_num_rows($query)==0){
-    $display = "No game found!";
-}else{
-    while($games=mysqli_fetch_array($query)){
-        echo $games['gname'].'<br>';
-    }
-}*/
-//$game = $_SESSION['sku'];
 $game = $_GET['gname'];
 $gameinfo = array();
 $rented=$reserved=0;
@@ -37,7 +23,7 @@ if(isset($_POST['Rent'])){
     include 'rentgame.php';
 }
 ?>
-<section><!--lalagay pa ako condition-->
+<section>
         <div class="container">
             <div class="row text-align-center  m-2">
                 <div class="col-xl-12">
@@ -64,7 +50,6 @@ if(isset($_POST['Rent'])){
                 </div>
             </div>
         </div>
-
     </section>
 <script>
 window.onhashchange = function{

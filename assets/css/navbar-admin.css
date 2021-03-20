@@ -19,7 +19,7 @@
     border-top: 1px solid rgba(225,225,225,0.05);
 }
 .adminnavbar-wrapper .adminnavbar-sidebar ul li a{
-    color: black;
+    color: white;
     display: block;
 }
 .adminnavbar-wrapper .adminnavbar-sidebar ul li a .fas{
@@ -64,4 +64,31 @@
     margin: 20px;
     color: #717171;
     line-height:25px;
+}
+
+/* Style the buttons */
+.adminnav-btn {
+    border: none;
+    outline: none;
+    padding: 10px 16px;
+    background-color: #E94C3D;
+    cursor: pointer;
+    color:#000;
+  }
+  
+  /* Style the active class (and buttons on mouse-over) */
+.active, .adminnav-btn:hover {
+    background-color: #EB984E;
+    color: #000;
+  }
+.admin-logo{
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    line-height: 3rem;
+}
+.admin-logo span{
+    font-weight: 300;
 }
