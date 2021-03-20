@@ -38,8 +38,10 @@
                 <a class="btn-nav solid">Account<i class="fas fa-caret-down"></i></a>
                 <div class="dropdown">
                     <ul>
+                        <li class="dropdown-link"><a href="index.php">Home</a></li>
                         <li class="dropdown-link"><a href="suggestion.php">Suggestions</a></li>
                         <li class="dropdown-link"><a href="contact.php">Contact Us</a></li>
+                        <li class="dropdown-link"><a href="about.php">About</a></li>
                         <li class="dropdown-link"><a href="#">Edit Profile</a></li>
                         <li class="dropdown-link"><a href="logout.php">Log out</a></li>
                     </ul>
