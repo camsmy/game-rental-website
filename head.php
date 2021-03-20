@@ -25,5 +25,6 @@ session_start();
     <link rel="stylesheet" href="./assets/css/games-landing.css">
     <link rel="stylesheet" href="./assets/css/rented-list.css">
     <link rel="stylesheet" href="./assets/css/reservation-list.css">
+    <link rel="stylesheet" href="./assets/css/gamelist.css">
 
 </head>
