@@ -6,8 +6,11 @@ include 'opendb.php';
 
 <section>
     <div class= "glist-backcolor">
+        <form method="post" action="addgame.php">
+                <button type="submit" class = "glist-addbtn" style="width:auto;" name="add">Add New Product</button>
+        </form><br><br>
         <div class = "glist-container">
-           <div class = "glist-boxy">
+            <div class = "glist-boxy">
                <div class = "row glist-tr">
                <div class = "col glist-labels text-align-center">Product name</div>
                <div class = "col glist-labels text-align-center">Sku</div>
@@ -38,7 +41,7 @@ include 'opendb.php';
                                         <div class="col glist-list text-align-center"><?php echo $total; ?></div>
                                         <form method="post" action="gamelist-update.php" target="popUp" onsubmit="popup(this);">
                                             <div class="col text-align-center">
-                                            <input type="submit" class = "glist-button" style="width:auto;" onclick="document.getElementById('edit').style.display='block';" id="myBtn" name="Edit" value="Edit">
+                                            <input type="submit" class = "glist-button" style="width:auto;" id="myBtn" name="Edit" value="Edit">
                                             </div><input type="hidden" name="sku" value="<?php echo $row["sku"]; ?>"/>
                                         </form>
                                         &nbsp;&nbsp;&nbsp;

@@ -3,8 +3,8 @@
     <h2 class="admin-logo">KEJ<span>PlayStation</span></h2>
     <ul id="wew">
     <li class="adminnav-btn active"><a href="dashboard.php">Dashboard</a></li>
-    <li class="adminnav-btn"><a href="addgame.php">Games</a></li>
-    <li class="adminnav-btn"><a href="">Rented Items</a></li>
+    <li class="adminnav-btn"><a href="gamelist.php">Games</a></li>
+    <li class="adminnav-btn"><a href="admin-rented.php">Rented Items</a></li>
     <li class="adminnav-btn"><a href="">Reservations</a></li>
     <li class="adminnav-btn"><a href="">Suggestions</a></li>
     <li class="adminnav-btn"><a href="logout.php">Logout</a></li>
