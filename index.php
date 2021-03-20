@@ -4,7 +4,8 @@ include 'head.php';
 
 <body>
 <?php
-include 'navigation.php';//hello
+if(!isset($_SESSION['user'])){ include 'navigation.php'; }
+else{ include 'customer-navigation.php'; }
 ?>
     <section class="heads-1">
         <div class="container">

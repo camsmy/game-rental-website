@@ -1,0 +1,35 @@
+.gallery-container{
+    padding: 2rem;
+}
+.gallery-game{
+    background-color: #EC6558;
+    width:auto;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+.gallery-img{
+    width:300px;
+    height:300px;
+    padding: 1rem;
+}
+.gallery-h2{
+    color: #000;
+    font-size:1em;
+    font-weight: 600;
+}
+.gallery-h3{
+    color: #000;
+    font-size:0.9em;
+}
+.gallery-row{
+    display:flex;
+    justify-content:left;
+    flex-wrap:nowrap;
+}
+
+@media (max-width: 575px) {
+    .gallery-img{
+        width:200px;
+        height:200px;
+    }
+}

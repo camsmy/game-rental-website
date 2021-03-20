@@ -35,10 +35,7 @@
 <body>
     <?php
     include 'customer-navigation.php';
-    if(isset($_SESSION['user'])){
-        echo '<script> alert("Login first!"); </script>';
-        echo '<script> window.location="login.php"; </script>';
-    }
+    include 'block.php';
     ?>
     <div class="suggestion-container">
         <div class="suggestion-form ">

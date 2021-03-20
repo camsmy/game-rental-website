@@ -4,10 +4,7 @@
 <body>
     <?php
     include 'customer-navigation.php';
-    if(isset($_SESSION['user'])){
-        echo '<script> alert("Login first!"); </script>';
-        echo '<script> window.location="login.php"; </script>';
-    }
+    include 'block.php';
     ?>
     <div class="reserve-container">
         <div class="reserve-header">

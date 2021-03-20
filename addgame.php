@@ -1,16 +1,13 @@
 <?php include 'head.php'; ?>
 <body>
-    <?php
-
+<?php
 include 'admin-navigation.php';
-?>
-<?php // OPENS THE DATABASE
 include 'opendb.php';
 ?>  
 <div class="adminnavbar-main_content">
     <div class="login-container position-relative d-flex justify-content-center align-items-center">
 
-                <form class="form-style-9">
+                <form action="<?php echo $_SERVER['PHP_SELF']?>" class="form-style-9" method="post" enctype="multipart/form-data">
                   <h3 class="add-game text-align-center">Add New Game</h3>
 <ul>
 <li>
@@ -23,7 +20,7 @@ include 'opendb.php';
     <input type="text" name="available" class="field-style field-split align-right" placeholder="Availability" />
 </li>
 <li>
-<input type="file" name="image" class="field-style field-full align-none" placeholder="image" />
+<input type="file" name="image" id="image" class="field-style field-full align-none" placeholder="image" />
 </li>
 <li>
   <div class = "field-style field-full align-none"> Genre: &nbsp &nbsp &nbsp  <select name ="genre">
@@ -41,7 +38,7 @@ include 'opendb.php';
 <textarea name="gamedes" class="field-style" placeholder="Game Description"></textarea>
 </li>
 <li>
-<input type="submit" value="Add Game" />
+<input type="submit" name="Add" value="Add Game" />
 </li>
 </ul>
 </form>
@@ -51,14 +48,15 @@ include 'opendb.php';
 
 </div>
     <?php
-    if(isset($_POST['Submit'])){
+    if(isset($_POST['Add'])){
         $v1 = $_POST['sk'];
-        $v2 = $_POST['gamen'];
+        $v2 = $_POST['gname'];
         $v3 = $_POST['price'];
         $v4 = $_POST['available'];
         $v5 = addslashes(file_get_contents($_FILES["image"]["tmp_name"]));
         $v6 = $_POST['genre'];
         $v7 = $_POST['gamedes'];
+        echo $v1.$v2.$v3.$v4.$v6.$v7;
         mysqli_query($DBConnect,"INSERT INTO gameinfo (sku,gname,price,avail,img,genre,gdesc) VALUES ('$v1','$v2','$v3','$v4','$v5','$v6','$v7')");
     }?>
 </body>
