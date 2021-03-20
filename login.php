@@ -1,44 +1,17 @@
 <?php
 include 'head.php';
 ?>
-
 <body>
-    <?php
-include 'navigation.php';
-?>
 <?php
+include 'navigation.php';
 include 'opendb.php';
-//mysqli_query($DBConnect,"DELETE from userinfo");
+if(isset($_SESSION['user']))
+echo '<script> window.location="games-landing.php"; </script>';
 ?>
-    <div class="login-container position-relative d-flex justify-content-center align-items-center">
-    <div class="row login-form">
-            <div class="login-info">
-                <img src="./assets/img/register.svg" class="p-2 my-5 text-align-center" alt="" />
-            </div>
-            
-            <div class="login-form2 position-relative d-flex justify-content-center align-items-center">
-
-                <form method="post">
-                    <h3 class="login-title text-align-center">Log In</h3>
-                    <div class="login-input-container focus">
-                        <input type="text" name="username" class="login-input">
-                        <label for="">Username</label>
-                        <span>Username</span>
-                    </div>
-                    <div class="login-input-container focus">
-                        <input type="password" name="password" class="login-input">
-                        <label for="">Password</label>
-                        <span>Password</span>
-                    </div>
-                    <input type="submit" name="Submit" value="Log in" class="login-btn">
-                </form>
-            </div>
-        </div>
-</div>
 <?php
 if(isset($_POST['Submit'])){
     if($_POST['username']=="admin"){
-        if($_POST['password']=="admin"){
+        if($_POST['password']=="ADETWebsiteProject"){
             $_SESSION['user'] = $_POST['username'];
             $_SESSION['pass'] = $_POST['password'];
             header('location: dashboard.php');
@@ -68,6 +41,32 @@ if(isset($_POST['Submit'])){
     }
 }
 ?>
+    <div class="login-container position-relative d-flex justify-content-center align-items-center">
+    <div class="row login-form">
+            <div class="login-info">
+                <img src="./assets/img/register.svg" class="p-2 my-5 text-align-center" alt="" />
+            </div>
+            
+            <div class="login-form2 position-relative d-flex justify-content-center align-items-center">
+
+                <form method="post">
+                    <h3 class="login-title text-align-center">Log In</h3>
+                    <div class="login-input-container focus">
+                        <input type="text" name="username" class="login-input">
+                        <label for="">Username</label>
+                        <span>Username</span>
+                    </div>
+                    <div class="login-input-container focus">
+                        <input type="password" name="password" class="login-input">
+                        <label for="">Password</label>
+                        <span>Password</span>
+                    </div>
+                    <input type="submit" name="Submit" value="Log in" class="login-btn">
+                </form>
+            </div>
+        </div>
+</div>
+
     <div class="custom-shape-divider-top-1614623845 mt-5">
         <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
             <path

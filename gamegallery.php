@@ -3,13 +3,48 @@ include 'head.php';
 ?>
 <body>
 <?php
-include 'navigation.php';
-?>
-<?php
+include 'block.php';
+include 'customer-navigation.php';
 include 'opendb.php';
+include 'search.php';
 ?>
 
-
+<?php
+if(!isset($_SESSION['Search']))
+    echo '<script> window.location="login.php"; </script>';
+$game = $_SESSION['Search'];
+$query = mysqli_query($DBConnect, "SELECT * FROM gameinfo WHERE gname LIKE '%$game%';");
+$gamecount = mysqli_num_rows($query);
+$lgames = array();
+$temps = array();
+if($gamecount==0){ //pagwalang game na nahanap
+    echo '<section>
+        <div class="container">
+            <div class="row text-align-center m-2">
+                <div class="col-xl-12">
+                    <h2>No game found!</h2>
+                </div>
+            </div>
+        </div>
+    </section>';
+}else{
+    $temp = 1;
+    echo '<section>';
+    echo '<div class="gallery-container">';
+    while($games=mysqli_fetch_array($query)){        
+        if($temp%4 == 1)
+            echo '<div class="gallery-row my-2 p-1 justify-content-flex-end align-items-center">';
+        echo '<div class="col-sm-1 m-2 p-1 gallery-game align-items-center">';
+        echo '<a href="gameinfo.php?gname='.$games['sku'].'"><img src="data:image/jpeg;base64,'.base64_encode($games['img'] ).'" class="gallery-img"></a>';
+        echo '<div class="p-1 gallery-text text-align-left"><h2 class="gallery-h2">'.$games['gname'].'</h2><h3 class="gallery-h3">Php '.$games['price'].'</h3></div>';
+        echo '</div>';
+        if($temp%4==0)
+            echo '</div>';
+        $temp++;
+    }
+    echo '</div></section>';
+}
+?>
 
 
  <div class="custom-shape-divider-top-1614623845 mt-5">

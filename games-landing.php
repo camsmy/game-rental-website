@@ -1,14 +1,10 @@
 <?php
 include 'head.php';
 ?>
-
 <body>
     <?php
-include 'customer-navigation.php';
-if(isset($_SESSION['user'])){
-    echo '<script> alert("Login first!"); </script>';
-    echo '<script> window.location="login.php"; </script>';
-}
+    include 'block.php';    
+    include 'customer-navigation.php';
 ?>
 <section>
 <div class="hero-image">
@@ -19,6 +15,9 @@ if(isset($_SESSION['user'])){
   </div>
 </div>
 </section>
+<?php
+include 'search.php';
+?>
     <section>
         <div class="container">
             <div class="row text-align-center  m-2">
@@ -31,6 +30,7 @@ if(isset($_SESSION['user'])){
     <?php
     $bgimg = array("adventure.jpg", "horror.png", "action.jpg","sports.jpg","fighting.jpg","shooting.jpg");
             $categories = array("Adventure","Horror","Action","Sports","Fighting","Shooter");
+        
     ?>
     <section>
         <div class="container">
@@ -38,7 +38,7 @@ if(isset($_SESSION['user'])){
             <?php
             for($x=0;$x<=2;$x++){
                     echo "<div class='col-xl-3 categories m-1'>";
-                    echo "<img src='assets/img/".$bgimg[$x]."' alt='categories image'>";
+                    echo "<a href='gamecategory.php?category=".$categories[$x]."'><img src='assets/img/".$bgimg[$x]."' alt='categories image'></a>";
                     echo "<div class='col-xl-12 text-align-center categories-h3'>";
                     echo  "<h3>".$categories[$x]."</h3>";
                     echo   "</div>";
@@ -48,14 +48,13 @@ if(isset($_SESSION['user'])){
             </div>
         </div>
     </section>
-
     <section>
         <div class="container">
             <div class="row my-2">
             <?php
             for($x=3;$x<=5;$x++){
                     echo "<div class='col-xl-3 categories m-1'>";
-                    echo "<img src='assets/img/".$bgimg[$x]."' alt='categories image'>";
+                    echo "<a href='gamecategory.php?category=".$categories[$x]."'><img src='assets/img/".$bgimg[$x]."' alt='categories image'></a>";
                     echo "<div class='col-xl-12 text-align-center categories-h3'>";
                     echo  "<h3>".$categories[$x]."</h3>";
                     echo   "</div>";

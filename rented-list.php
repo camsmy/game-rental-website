@@ -6,10 +6,7 @@
 <body>
     <?php
     include 'customer-navigation.php';
-    if(isset($_SESSION['user'])){
-        echo '<script> alert("Login first!"); </script>';
-        echo '<script> window.location="login.php"; </script>';
-    }
+    include 'block.php';
     ?>
     
     <div class="rented-container">
@@ -43,7 +40,7 @@
                 // output data of each row
                 while($row = mysqli_fetch_assoc($result)) {
                     echo '<div class="row rented-detail-head">';
-                        echo '<div class="col rented-detail-text">'.$row["order_id"].'</div>';
+                        echo '<div class="col rented-detail-text">'.getOID($row["order_id"]).'</div>';
                         echo '<div class="col rented-detail-text">'.$row["rent_game"].'</div>';
                         echo '<div class="col rented-detail-text">'.$row["deadline"].'</div>';
                         echo '<div class="col rented-detail-text">'.$row["penalty"].'</div>';
@@ -52,8 +49,18 @@
             } 
             // Close connection
             mysqli_close($DBConnect);
+            function getOID($order_id) {
+                $temp = date("Ymd");
+                $ID = "";
+                for($i =0; $i< strlen($temp); $i++){
+                    if($i > 1)
+                    {
+                        $ID= $ID.$temp[$i];
+                    }
+                }
+                return $ID. "R7MT" . $order_id;
+            }
             ?>
-            
         </div>
     </div>
 

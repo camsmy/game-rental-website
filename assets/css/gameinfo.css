@@ -1,0 +1,15 @@
+
+.gameinfo-row{
+    flex-direction: row;
+}
+.gameinfo-col-1{
+    flex:30%;
+}
+.gameinfo-col-2{
+    flex:60%;
+}
+.gameinfo-img{
+    width:100%;
+    height:auto;
+    padding: 1rem;
+}

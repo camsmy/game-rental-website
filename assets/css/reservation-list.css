@@ -2,7 +2,6 @@
     width: 80%;
     padding: 5rem;
     margin: auto;
-    
 }
 
 .reserve-container .reserve-header {
@@ -12,9 +11,9 @@
 }
 
 .reserve-container .reserve-header .reserve-top{
-    background-image: url("../img/head.png");
-    background-repeat: no-repeat;
-    background-size: cover;
+    background: linear-gradient(184deg, rgba(235,94,80,1) 0%, rgba(235,94,80,1) 0%, rgba(242,148,139,1) 100%);
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
 }
 
 
@@ -39,25 +38,27 @@
 }
 
 .reserve-body .reserve-detail-head .reserve-detail-title {
-    text-shadow: 3px 3px #c0bfbf;
-    color: #351072;
+    color: #1A1818;
     font-size:30px;
     font-weight: 600;
 }
 
 .reserve-body .reserve-detail-head .reserve-detail-text {
-    text-shadow: 3px 3px #c0bfbf;
-    color: #351072;
-    font-size:25px;
+    color: #1A1818;
+    font-size:20px;
     font-weight: 600;
 }
 
+form{
+    margin:0px; padding: 0px;
+}
+
 .reserve-btn {
-    padding: 10px 100px;
-    background-color: #fff;
+    padding: 10px 50px;
+    background-color: #EB5E50;
     border: 2px solid #fafafa;
     font-size: 0.95rem;
-    color: #EB5E50;
+    color:#fff;
     line-height: 1;
     border-radius: 25px;
     outline: none;
@@ -67,7 +68,8 @@
 
 .reserve-btn:hover {
     background-color: transparent;
-    color: #fff;
+    border: 2px solid #EB5E50;
+    color: #E94C3D;
 }
 
   /* small desktop - LG*/
@@ -154,7 +156,7 @@
   }
   
   /*mobile phone - XS*/
-@media (max-width: 576px) {
+@media (min-width: 401px) and (max-width: 575px) {
     .reserve-container {
         width: 100%;
         padding: 1.5rem;
@@ -178,4 +180,31 @@
         padding: 5px;
         font-size:12px;
     }
+}
+
+@media(max-width:400px) {
+    .reserve-container {
+        width: 100%;
+        padding: 1rem;
+    }
+    .reserve-container .reserve-header .reserve-top .reserve-title {
+        font-size:16px;
+    }
+    .reserve-body {
+        min-height: 180px;
+    }
+    .reserve-body .reserve-detail-head {
+        padding: 6px;
+    }
+    .reserve-body .reserve-detail-head .reserve-detail-title {
+        font-size:8px;
+    }
+    .reserve-body .reserve-detail-head .reserve-detail-text {
+        font-size:6px;
+    }
+    .reserve-btn {
+        padding: 2px;
+        font-size:6px;
+    }
+    
 }
