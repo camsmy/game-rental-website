@@ -58,6 +58,7 @@ include 'opendb.php';
         $v7 = $_POST['gamedes'];
         echo $v1.$v2.$v3.$v4.$v6.$v7;
         mysqli_query($DBConnect,"INSERT INTO gameinfo (sku,gname,price,avail,img,genre,gdesc) VALUES ('$v1','$v2','$v3','$v4','$v5','$v6','$v7')");
+        header('Location: gamelist.php');
     }?>
 </body>
  <script>  

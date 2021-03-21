@@ -1,0 +1,55 @@
+.adrent-container {
+    width: 80%;
+    padding: 2rem;
+    margin-left: 15%;
+    background-color: #f0f0f0;
+}
+
+.adrent-table {
+    border-radius: 20px;
+    background-color:#6D7AE0;
+    box-shadow: 5px 10px #888888;
+    width: 100%;
+}
+
+.adrent-items{
+    border-radius: 20px;
+    background-color:ivory;
+}
+
+.adrent-labels{
+    font-size:25px;
+    font-weight: 400;
+    color: white;
+    width: 300px;
+    text-shadow: 3px 3px #959393;
+}
+
+.adrent-list{
+    font-size: 20px;
+    font-weight: 100;
+    color: black;
+    width: 200px;
+}
+
+.adrent-row{
+    padding: 20px;
+}
+
+.adrent-button {
+    border: none;
+    color: white;
+    background-color:rgba(235,94,80,1);
+    padding: 15px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.adrent-button:hover {
+    opacity: 0.8;
+    background-color: transparent;
+    color: black;
+}

@@ -1,0 +1,223 @@
+.glist-backcolor{
+    background-color: #f0f0f0;
+}
+
+.glist-container {
+    width: 80%;
+    padding: 2rem;
+    margin-left: 15%;
+    background-color: #f0f0f0;
+}
+
+.glist-boxy {
+    border-radius: 20px;
+    background-color:#6D7AE0;
+    box-shadow: 5px 10px #888888;
+    width: 100%;
+}
+
+.glist-contents{
+    border-radius: 20px;
+    background-color:ivory;
+}
+
+.glist-labels{
+    font-size:25px;
+    font-weight: 400;
+    color: white;
+    width: 300px;
+    text-shadow: 3px 3px #959393;
+}
+
+.glist-list{
+    font-size: 20px;
+    font-weight: 100;
+    color: black;
+    width: 200px;
+}
+
+.glist-tr{
+    padding: 20px;
+}
+
+.glist-addbtn {
+    border: none;
+    color: white;
+    background-color:rgba(235,94,80,1);
+    padding: 15px 20px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    float: right;
+    margin-top: 20px;
+    margin-right: 20px;
+}
+
+.glist-button {
+    border: none;
+    color: white;
+    background-color:#6D7AE0;
+    padding: 15px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.glist-button:hover {
+    opacity: 0.8;
+    background-color: transparent;
+    color: black;
+}
+
+.glist-confirm{
+    float: right;
+}
+
+/* Full-width input fields */
+.glist-input {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+
+.glist-pop {
+    background-color:#f1f1f1;
+    margin: auto;
+    padding: 16px;
+    overflow: auto;
+    width:90%;
+}
+
+/* The Modal (background) */
+.glist-edit {
+    display: block; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    padding-top: 60px;
+}
+
+/* Modal Content/Box */
+.glist-edit-box {
+    margin: 5% auto 15% auto; 
+    width: 90%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button (x) */
+.close {
+    float: right;
+    top: 0;
+    color: #000;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.close:hover,.close:focus {
+    color: red;
+    cursor: pointer;
+}
+
+/* small desktop - LG*/
+@media (min-width: 992px) and (max-width: 1199px) {
+    .glist-container {
+        margin-left: 25%;
+    }
+
+    .glist-labels{
+        font-size:20px;
+        width: 250px;
+    }
+    
+    .glist-list{
+        font-size: 15px;
+        width: 200px;
+    }
+}
+  
+    /* small laptop until tablet - MD*/
+@media (min-width: 768px) and (max-width: 991px) {
+    .glist-container {
+        margin-left: 30%;
+    }
+
+    .glist-labels{
+        font-size:20px;
+        width: 250px;
+    }
+    
+    .glist-list{
+        font-size: 15px;
+        width: 200px;
+    }
+}
+  
+    /*tablet - SM*/
+@media (min-width: 576px) and (max-width: 767px) {
+    .glist-container {
+        margin-left: 30%;
+    }
+
+    .glist-boxy {
+        box-shadow: 2px 5px #888888;
+    }
+
+    .glist-labels{
+        font-size:15px;
+        width: 150px;
+    }
+    
+    .glist-list{
+        font-size: 15px;
+        width: 150px;
+    }
+    
+    .glist-tr{
+        padding: 10px;
+    }
+    
+    .glist-button {
+        padding: 10px 15px;
+        font-size: 12px;
+    }
+}
+  
+  /*mobile phone - XS*/
+@media (max-width: 576px) {
+    .glist-container {
+        margin-left: 30%;
+    }
+
+    .glist-boxy {
+        box-shadow: 2px 5px #888888;
+    }
+
+    .glist-labels{
+        font-size:15px;
+        width: 100px;
+    }
+    
+    .glist-list{
+        font-size: 15px;
+        width: 100px;
+    }
+    
+    .glist-tr{
+        padding: 10px;
+    }
+    
+    .glist-button {
+        padding: 10px 15px;
+        font-size: 12px;
+    }
+}
