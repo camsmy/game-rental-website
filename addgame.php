@@ -1,4 +1,4 @@
-<?php include 'head.php'; ?>
+<?php include 'head.php'; include 'adblock.php';?>
 <body>
 <?php
 include 'admin-navigation.php';

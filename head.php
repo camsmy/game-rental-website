@@ -33,4 +33,5 @@ session_start();
     <link rel="stylesheet" href="./assets/css/addgame.css">
     <link rel="stylesheet" href="./assets/css/admin-rented.css">
     <link rel="stylesheet" href="./assets/css/profile.css">
+    <link rel="stylesheet" href="./assets/css/dashboard.css">
 </head>

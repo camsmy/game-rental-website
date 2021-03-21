@@ -32,7 +32,8 @@
             if($DBConnect === false){
             die("ERROR: Could not connect. " . mysqli_connect_error());
             }
-            $sql = "SELECT order_id, res_game, pickup, price FROM reserved";
+            $user = $_SESSION['user'];
+            $sql = "SELECT order_id, res_game, pickup, price FROM reserved WHERE customer='$user'";
             $result = mysqli_query($DBConnect, $sql);
             $temp = 0;
             if (mysqli_num_rows($result) > 0) {
