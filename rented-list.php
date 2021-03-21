@@ -34,7 +34,8 @@
             if($DBConnect === false){
             die("ERROR: Could not connect. " . mysqli_connect_error());
             }
-            $sql = "SELECT order_id, rent_game, deadline, penalty FROM rented";
+            $user = $_SESSION['user'];
+            $sql = "SELECT order_id, rent_game, deadline, penalty FROM rented WHERE customer='$user'";
             $result = mysqli_query($DBConnect, $sql);
             if (mysqli_num_rows($result) > 0) {
                 // output data of each row

@@ -1,0 +1,12 @@
+.dashboard-col{
+    border-style: solid;
+    border-width:thin;
+    border-color: #000;
+    color:#000;
+}
+.dashboard-col h2{
+    padding:1rem;
+}
+.dashboard-info{
+    padding:2rem;
+}

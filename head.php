@@ -29,4 +29,5 @@ session_start();
     <link rel="stylesheet" href="./assets/css/gameinfo.css">
     <link rel="stylesheet" href="./assets/css/gallery.css">
     <link rel="stylesheet" href="./assets/css/gamecategory.css">
+    <link rel="stylesheet" href="./assets/css/dashboard.css">
 </head>
