@@ -3,7 +3,6 @@ include 'head.php';
 include 'admin-navigation.php';
 include 'opendb.php';
 ?>
-
 <section>
         <div class = "adrent-container">
             <div class = "adrent-table">
@@ -36,11 +35,6 @@ include 'opendb.php';
                                         <div class="col adrent-list text-align-center"><?php echo $row["rent"]; ?></div>
                                         <div class="col adrent-list text-align-center"><?php echo $row["avail"]; ?></div>
                                         <div class="col adrent-list text-align-center"><?php echo $total; ?></div>
-                                        <form method="post" action="gamelist-update.php" target="popUp" onsubmit="popup(this);">
-                                            <div class="col text-align-center">
-                                            <input type="submit" class = "adrent-button" style="width:auto;" id="myBtn" name="Edit" value="Edit">
-                                            </div><input type="hidden" name="sku" value="<?php echo $row["sku"]; ?>"/>
-                                        </form>
                                         &nbsp;&nbsp;&nbsp;
                                         <form method="post" action="gamelist.php">
                                             <div class="col text-align-center">
