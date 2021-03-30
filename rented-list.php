@@ -1,5 +1,6 @@
 <?php
     include 'head.php'; 
+    include 'opendb.php';
     include 'penalty.php';
 ?>
 
@@ -26,7 +27,6 @@
                 <div class="col rented-detail-title">PENALTY</div>
             </div>
             <?php
-            include 'opendb.php';
             /* Attempt MySQL server connection. Assuming you are running MySQL
             server with default setting (user 'root' with no password) */
             //$link = mysqli_connect("localhost", "root", "password", "dbname");
