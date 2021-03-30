@@ -90,7 +90,20 @@ include 'opendb.php';
         $v6 = $_POST['uname'];
         $v7 = $_POST['password'];
         $v8 = $_POST['email'];
-        mysqli_query($DBConnect,"INSERT INTO userinfo (fname,mname,lname,address,contactno,uname,pw,email) VALUES ('$v1','$v2','$v3','$v4','$v5','$v6','$v7','$v8')");
+        $userExists = false;
+        $query = mysqli_query($DBConnect,"SELECT uname from userinfo") or die("ERROR");
+        while($username = mysqli_fetch_array($query)){
+            echo $v6.'<br>'.$username;
+            if($v6 ==$username['uname']){
+                $userExists = true;
+            }
+        }
+        if(!$userExists){
+            echo '<script> alert("Signed up successfully!");</script>';
+            mysqli_query($DBConnect,"INSERT INTO userinfo (fname,mname,lname,address,contactno,uname,pw,email) VALUES ('$v1','$v2','$v3','$v4','$v5','$v6','$v7','$v8')") or die("Unable to signup");
+        }else{
+            echo '<script> alert("User already exists!"); window.location = "signup.php"; </script>';
+        }
     }?>
     <div class="custom-shape-divider-top-1614623845 mt-5">
         <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">

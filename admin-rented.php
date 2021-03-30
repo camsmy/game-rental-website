@@ -1,9 +1,10 @@
 <?php
 include 'head.php';
+include 'adblock.php';
 include 'admin-navigation.php';
 include 'opendb.php';
+include 'penalty.php';
 ?>
-
 <section>
     <div class = "adrent-container">
         <table class = "adrent-table">

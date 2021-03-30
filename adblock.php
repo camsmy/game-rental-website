@@ -1,4 +1,4 @@
 <?php
-if(!isset($_SESSION['user']) || $_SESSION['pass'] != "ADETWebsiteProject")
+if(!isset($_SESSION['access']))
     echo '<script> window.location="login.php"; </script>';
 ?>
