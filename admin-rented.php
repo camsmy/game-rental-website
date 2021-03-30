@@ -88,6 +88,7 @@ include 'penalty.php';
 
         if (mysqli_query($DBConnect, $sql)) {
             mysqli_close($DBConnect);
+            echo '<script>window.location = "admin-rented.php";</script>';
         } else {
             echo "Error deleting of game";
         }
