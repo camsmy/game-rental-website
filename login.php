@@ -11,9 +11,12 @@ echo '<script> window.location="games-landing.php"; </script>';
 <?php
 if(isset($_POST['Submit'])){
     if($_POST['username']=="admin"){
-        if($_POST['password']=="ADETWebsiteProject"){
+        $query = mysqli_query($DBConnect,"SELECT pw from userinfo WHERE uname='admin'");
+        $pw = mysqli_fetch_array($query);
+        if($_POST['password']==$pw['pw']){
             $_SESSION['user'] = $_POST['username'];
             $_SESSION['pass'] = $_POST['password'];
+            $_SESSION['access'] = "admin";
             header('location: dashboard.php');
         }else{ echo '<script> alert("Invalid username or password!"); </script>'; }   
     }else{

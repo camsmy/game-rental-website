@@ -29,7 +29,7 @@ include 'search.php';
     </section>
     <?php
     $bgimg = array("adventure.jpg", "horror.png", "action.jpg","sports.jpg","fighting.jpg","shooting.jpg");
-            $categories = array("Adventure","Horror","Action","Sports","Fighting","Shooter");
+    $categories = array("Adventure","Horror","Action","Sports","Fighting","Shooter");
         
     ?>
     <section>
