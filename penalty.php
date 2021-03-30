@@ -7,7 +7,6 @@ while($rent = mysqli_fetch_array($query)){
     $duration = date_create() -> diff($date1);
     $interval = $duration->days;
     $duration = $duration->format('%R%a');
-    echo $duration;
     switch(substr($duration,0,1)){
         case "+": 
             break;
