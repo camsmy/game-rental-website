@@ -4,23 +4,38 @@ include 'head.php';
 <body>
 <?php
 include 'block.php';
-include 'navigation.php';
+include 'customer-navigation.php';
 include 'opendb.php';
-?>
-<?php
-    $data = mysqli_query($DBConnect,"SELECT * from userinfo");
-    $total = mysqli_num_rows($data);
-    $user=mysqli_fetch_array($data);
-    $isTrue = true;
-        $_SESSION['user'] = $user['uname'];
-        $_SESSION['pass'] = $user['pw'];
-        $_SESSION['fullname'] = $user['fname']." ".$user['mname']." ".$user['lname'];
-        $_SESSION['add'] = $user['address'];
-        $_SESSION['connum'] = $user['contactno'];
-        $_SESSION['email'] = $user['email'];
+$user = $_SESSION['user'];
+$fullname = $_SESSION['fullname'];
+$address = $_SESSION['add'];
+$cnum = $_SESSION['connum'];
+$email = $_SESSION['email'];
+if(isset($_POST['editProfile'])){
+  $_SESSION['add'] = $_POST['add'];
+  $fullname = explode(" ",$_POST['fname']);
+  //$surnames = array("De","Del","Dela","Delos","San","Santa","Sta.");
+  $_SESSION['fullname'] = $_POST['fname'];
+  $_SESSION['connum'] = $_POST['contact'];
+  $_SESSION['email'] = $_POST['email'];
+  mysqli_query($DBConnect,"UPDATE userinfo SET fname='".$fullname[0]."',mname='".$fullname[1]."',lname='".$fullname[2]."',address='".$_POST['add']."',
+  contactno='".$_POST['contact']."',email='".$_POST['email']."' WHERE uname='".$user."'") or die("ERROR");
+  echo '<script>window.location ="profile.php";</script>';
+}
+if(isset($_POST['back'])){
+  unset($_POST['edit']);
+}
 ?>
       <div class="adminnavbar-main_content">
         <form action="<?php echo $_SERVER['PHP_SELF']?>" class="form-style-profile" method="post" enctype="multipart/form-data">
+        <div class="edit"><h1>User Information</h1>
+        <?php
+        if(!isset($_POST['edit'])){
+          echo '<input type="submit" name="edit" value="Edit" class="edit-btn">';
+        }else{
+          echo '<input type="submit" name="back" value="Back" class="edit-btn">';
+        }
+        ?></div>
         <div class="col-md-8">
               <div class="card mb-3">
                 <div class="card-body">
@@ -28,48 +43,109 @@ include 'opendb.php';
                     <div class="col-sm-3">
                       <h4 class="mb-0">Username:</h4>
                     </div>
-                    <div class="col-sm-9 text-secondary">
-                      <?php echo $_SESSION['user']; ?>
-                    </div>
-                  </div>
-                  <hr>
-                  <div class="row">
-                    <div class="col-sm-3">
-                      <h4 class="mb-0">Full Name:</h4>
-                    </div>
-                    <div class="col-sm-9 text-secondary">
-                     <?php echo $_SESSION['fullname']; ?>
-                    </div>
-                  </div>
-                  <hr>
-                  <div class="row">
-                    <div class="col-sm-3">
-                      <h4 class="mb-0">Home Address:</h4>
-                    </div>
-                    <div class="col-sm-9 text-secondary">
-                      <?php echo $_SESSION['add']; ?>
-                    </div>
-                  </div>
-                  <hr>
-                  <div class="row">
-                    <div class="col-sm-3">
-                      <h4 class="mb-0">Contact #:</h4>
-                    </div>
-                    <div class="col-sm-9 text-secondary">
-                      <?php echo $_SESSION['connum']; ?>
-                    </div>
-                  </div>
-                  <hr>
-                  <div class="row">
-                    <div class="col-sm-3">
-                      <h4 class="mb-0">Email Address:</h4>
-                    </div>
-                    <div class="col-sm-9 text-secondary">
-                      <?php echo $_SESSION['email']; ?>
+                    <div class="col-sm-9 text-secondary profile">
+                      <?php 
+                        echo $user; 
+                      ?>
                     </div>
                   </div>
                 </div>
               </div>
+                  <hr>
+              <div class="card mb-3">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h4 class="mb-0">Full Name:</h4>
+                    </div>
+                    <div class="col-sm-9 text-secondary profile">
+                    <?php 
+                      if(!isset($_POST['edit'])){
+                        echo $fullname; 
+                      }else{
+                        echo '<input type="text" name="fname" class="editprofile-input" value="'.$fullname.'">';
+                      }  
+                      ?>
+                    </div>
+                  </div>
+                </div>
+              </div>
+                  <hr>
+              <div class="card mb-3">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h4 class="mb-0">Home Address:</h4>
+                    </div>
+                    <div class="col-sm-9 text-secondary profile">
+                    <?php 
+                      if(!isset($_POST['edit'])){
+                        echo $address; 
+                      }else{
+                        echo '<input type="text" name="add" class="editprofile-input"value="'.$address.'">';
+                      }  
+                      ?>
+                    </div>
+                  </div>
+                </div>
+              </div>
+                  <hr>
+              <div class="card mb-3">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h4 class="mb-0">Contact Number:</h4>
+                    </div>
+                    <div class="col-sm-9 text-secondary profile">
+                    <?php 
+                      if(!isset($_POST['edit'])){
+                        echo $cnum; 
+                      }else{
+                        echo '<input type="text" name="contact" class="editprofile-input" placeholder="Format:639-1234-56789" pattern="[0-9]{3}-[0-9]{4}-[0-9]{5}" value="'.$cnum.'">';
+                      }  
+                      ?>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+                  <hr>
+              <div class="card mb-3">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h4 class="mb-0">Email Address:</h4>
+                    </div>
+                    <div class="col-sm-9 text-secondary profile">
+                    <?php 
+                      if(!isset($_POST['edit'])){
+                        echo $email; 
+                      }else{
+                        echo '<input type="email" name="email" class="editprofile-input" value="'.$email.'">';
+                      }  
+                      ?>
+                    </div>
+                  </div>
+                </div>
+              </div>
+                  <hr>
+              <div class="card mb-3">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h4 class="mb-0">Password:</h4>
+                    </div>
+                    <div class="col-sm-9 text-secondary profile">
+                      <sub>****************</sub><a href="changepw.php" style="font-size:0.5em">[Change Password]</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <?php
+              if(isset($_POST['edit'])){
+                echo '<div class="edit"><input type="submit" name="editProfile" value="Edit Profile" class="edit-btn" id="search"></div>';
+              }
+                ?>
             </form>
             </div>
               <div class="custom-shape-divider-top-1614623845 mt-5">

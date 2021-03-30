@@ -11,10 +11,11 @@
         echo "<script type='text/javascript'>alert('$msg');</script>";
     }
     // Escape user inputs for security
-    $sg_msg = mysqli_real_escape_string($DBConnect, $_REQUEST['suggestion-message']);
-    $currentDateTime = date('Y-m-d');
+    
     // Attempt insert query execution
     if(isset($_POST['submit'])) {
+        $sg_msg = mysqli_real_escape_string($DBConnect, $_REQUEST['suggestion-message']);
+        $currentDateTime = date('Y-m-d');
         $sql = "INSERT INTO suggestion VALUES('$currentDateTime','$sg_msg')";
         if(mysqli_query($DBConnect, $sql)){
             alert("Message successfully sent!");
