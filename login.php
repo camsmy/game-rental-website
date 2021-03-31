@@ -8,42 +8,6 @@ include 'opendb.php';
 if(isset($_SESSION['user']))
 echo '<script> window.location="games-landing.php"; </script>';
 ?>
-<?php
-if(isset($_POST['Submit'])){
-    if($_POST['username']=="admin"){
-        $query = mysqli_query($DBConnect,"SELECT pw from userinfo WHERE uname='admin'");
-        $pw = mysqli_fetch_array($query);
-        if($_POST['password']==$pw['pw']){
-            $_SESSION['user'] = $_POST['username'];
-            $_SESSION['pass'] = $_POST['password'];
-            $_SESSION['access'] = "admin";
-            header('location: dashboard.php');
-        }else{ echo '<script> alert("Invalid username or password!"); </script>'; }   
-    }else{
-        $data = mysqli_query($DBConnect,"SELECT * from userinfo");
-        $total = mysqli_num_rows($data);
-        $v1=$v2="";
-        $isTrue = false;
-        if($total!=0){
-            while($user=mysqli_fetch_array($data)){
-                if($user['uname']==$_POST['username']){
-                    if($user['pw']==$_POST['password']){
-                        $isTrue = true;
-                        $_SESSION['user'] = $user['uname'];
-                        $_SESSION['pass'] = $user['pw'];
-                        $_SESSION['fullname'] = $user['fname']." ".$user['mname']." ".$user['lname'];
-                        $_SESSION['add'] = $user['address'];
-                        $_SESSION['connum'] = $user['contactno'];
-                        $_SESSION['email'] = $user['email'];
-                        header('location: games-landing.php');
-                    }
-                }
-            }
-        }
-        if(!$isTrue){ echo '<script> alert("Invalid password!"); </script>'; }
-    }
-}
-?>
     <div class="login-container position-relative d-flex justify-content-center align-items-center">
     <div class="row login-form">
             <div class="login-info">
@@ -52,19 +16,36 @@ if(isset($_POST['Submit'])){
             
             <div class="login-form2 position-relative d-flex justify-content-center align-items-center">
 
-                <form method="post">
+                <form action="formvalidation.inc.php" method="post">
                     <h3 class="login-title text-align-center">Log In</h3>
+                <?php
+                $fullurl= "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+
+                if(strpos($fullurl,"empty")){
+                    echo "<p class='login-error text-align-center m-1'>You did not fill in all fields!</p>";
+                }
+                if(strpos($fullurl,"doesnotexist")){
+                    echo "<p class='login-error text-align-center m-1'>User name does not exist!<br>
+                    Create an account <a href='signup.php'>here.</a>
+                    </p>";
+                }
+                ?>
                     <div class="login-input-container focus">
-                        <input type="text" name="username" class="login-input">
+                        <input type="text" name="LogIn_username" class="login-input">
                         <label for="">Username</label>
                         <span>Username</span>
                     </div>
                     <div class="login-input-container focus">
-                        <input type="password" name="password" class="login-input">
+                        <input type="password" name="LogIn_password" class="login-input">
                         <label for="">Password</label>
                         <span>Password</span>
                     </div>
-                    <input type="submit" name="Submit" value="Log in" class="login-btn">
+                    <?php    
+                if(strpos($fullurl,"Invalid")){
+                    echo "<p class='login-error text-align-center'>**Invalid username or password!**</p>";
+                }
+                ?>
+                    <input type="submit" name="LogInSubmit" value="Log in" class="login-btn">
                 </form>
             </div>
         </div>
