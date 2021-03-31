@@ -44,6 +44,18 @@ if(isset($_POST['LogInSubmit'])){
         exit();
     }
     //dito yung kapag di nag-eexist yung username sa database
+    if(isset($_POST['LogIn_username'])){
+        $query = mysqli_query($DBConnect,"SELECT uname from userinfo");
+        $userExists = false;
+        while($user = mysqli_fetch_array($query)){
+            if($_POST['LogIn_username']==$user['uname'])
+                $userExists = true;
+        }
+        if(!$userExists){
+            header("location: login.php?Invalid");
+            exit();
+        }
+    }
     if($_POST['LogIn_username']=="admin"){
         $query = mysqli_query($DBConnect,"SELECT pw from userinfo WHERE uname='admin'");
         $pw = mysqli_fetch_array($query);
