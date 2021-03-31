@@ -18,13 +18,12 @@
 }
 
 .contact-form2 {
-    background-image: linear-gradient(to top, #37ecba 0%, #72afd3 100%);
-
+  background: linear-gradient(184deg, rgba(235,94,80,1) 0%, rgba(235,94,80,1) 0%, rgba(242,148,139,1) 100%);
 }
 
 .contact-circle {
     border-radius: 50%;
-    background-image: linear-gradient(to top, #37ecba 0%, #72afd3 100%);
+    background: linear-gradient(184deg, rgba(235,94,80,1) 0%, rgba(235,94,80,1) 0%, rgba(242,148,139,1) 100%);
 }
 
 .contact-circle.one {
@@ -46,7 +45,7 @@
     position: absolute;
     width: 26px;
     height: 26px;
-    background-color: #72afd3;
+    background-color: #fff;
     transform: rotate(45deg);
     top: 50px;
     left: -13px;
@@ -114,11 +113,11 @@ textarea.contact-input {
 }
 
 .contact-btn {
-    padding: 0.6rem 1.3rem;
+    padding: 0.6rem 8.5rem;
     background-color: #fff;
     border: 2px solid #fafafa;
     font-size: 0.95rem;
-    color: #1abc9c;
+    color: rgba(235,94,80,1);
     line-height: 1;
     border-radius: 25px;
     outline: none;
@@ -152,7 +151,7 @@ textarea.contact-input {
     opacity: 0;
     transition: 0.3s;
     height: 5px;
-    background-color: #1abc9c;
+    background-color: rgba(235,94,80,1);
     top: 50%;
     transform: translateY(-50%);
 }
@@ -185,7 +184,7 @@ textarea.contact-input {
 }
 
 .contact-info .contact-title {
-    color: #1abc9c;
+    color: rgba(235,94,80,1);
 }
 
 .contact-information {
@@ -214,7 +213,7 @@ textarea.contact-input {
     width: 35px;
     height: 35px;
     border-radius: 5px;
-    background: linear-gradient(45deg, #1abc9c, #149279);
+    background: linear-gradient(184deg, rgba(235,94,80,1) 0%, rgba(242,148,139,1) 100%);
     color: #fff;
     text-align: center;
     line-height: 35px;
@@ -231,7 +230,7 @@ textarea.contact-input {
     position: absolute;
     width: 110px;
     height: 100px;
-    border: 22px solid #1abc9c;
+    border: 22px solid rgba(235,94,80,1);
     border-radius: 50%;
     bottom: -40px;
     right: 50px;
@@ -243,7 +242,7 @@ textarea.contact-input {
     width: 500px;
     height: 500px;
     border-radius: 50%;
-    background: linear-gradient(to bottom, #1cd4af, #159b80);
+    background: linear-gradient(184deg, rgba(235,94,80,1) 0%, rgba(242,148,139,1) 100%);
     bottom: 50%;
     right: 50%;
     transform: translate(-40%, 38%);
@@ -259,8 +258,13 @@ textarea.contact-input {
     top: calc(50% - 180px);
     left: calc(50% - 180px);
   }
-
-  
+.fa-map-marked-alt,.fa-at,.fa-address-book{
+  color: rgba(235,94,80,1);
+  font-size: 25px;
+}
+.contact-information p{
+  margin-left: 15px;
+}
 @media (max-width: 850px) {
     .contact-form {
       grid-template-columns: 1fr;
@@ -291,6 +295,9 @@ textarea.contact-input {
   
     .contact-social-media {
       padding: 1.5rem 0 0 0;
+    }
+    .contact-btn {
+      padding: 0.6rem 6rem;
     }
   }
   

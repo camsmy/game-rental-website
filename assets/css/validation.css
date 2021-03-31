@@ -1,0 +1,12 @@
+/* error message in contacts */
+.error{
+    background-color: #fafafa;
+    border-radius: 15px;
+}
+
+.login-error{
+    color: #000;
+    font-size: 12px;
+    background-color: #fafafa;
+    border-radius: 15px;
+}
