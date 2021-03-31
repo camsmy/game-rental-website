@@ -3,41 +3,58 @@ include 'head.php';
 ?>
 
 <body>
-    <?php
+<?php
 include 'navigation.php';
-?>
-<?php // OPENS THE DATABASE
-include 'opendb.php';
+include 'opendb.php';// OPENS THE DATABASE
 ?>
     <div class="login-container position-relative d-flex justify-content-center align-items-center">
         <div class="row login-form">
             <div class="signup-form2 position-relative d-flex justify-content-center align-items-center">
 
-                <form name="signup" method="post">
+                <form name="signup" method="post" action="formvalidation.inc.php">
                     <h3 class="login-title text-align-center">Sign up</h3>
+                    <?php
+                // $fullurl= "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+
+                // if(strpos($fullurl,"form=empty")){
+                //     echo "<p class='error text-align-center m-1'>You did not fill in all fields!</p>";
+                // }
+                // if(strpos($fullurl,"form=invalidemail")){
+                //     echo "<p class='error text-align-center m-1'>Your email is invalid!</p>";
+                // }
+                // if(strpos($fullurl,"form=phone")){
+                //     echo "<p class='error text-align-center m-1'>Your phone is invalid!</p>";
+                // }
+                // if(strpos($fullurl,"form=message")){
+                //     echo "<p class='error text-align-center m-1'>Message shoud be below 70 characters</p>";
+                // }
+                // if(strpos($fullurl,"mailsend")){
+                //     echo "<p class='error text-align-center m-1'>Message has been successfully sent!</p>";
+                // }
+                ?>
                     <div class="login-input-container focus">
-                        <input type="text" name="fname" class="login-input" required>
+                        <input type="text" name="fname" class="login-input">
                         <label for="">First Name</label>
                         <span>First Name</span>
                     </div>
                     <div class="login-input-container focus">
-                        <input type="text" name="mname" class="login-input" required>
+                        <input type="text" name="mname" class="login-input">
                         <label for="">Middle Name</label>
                         <span>Middle Name</span>
                     </div>
                     <div class="login-input-container focus">
-                        <input type="text" name="lname" class="login-input" required>
+                        <input type="text" name="lname" class="login-input">
                         <label for="">Last Name</label>
                         <span>Last Name</span>
                     </div>
                     <div class="login-input-container focus">
-                        <input type="text" name="address" class="login-input address" required>
+                        <input type="text" name="address" class="login-input address">
                         <label for="">Address</label>
                         <span>Address</span>
                     </div>
                     <div class="login-input-container focus">
                         <input type="tel" name="phonenum" class="login-input phonenum"
-                            placeholder="Format:639-1234-56789" pattern="[0-9]{3}-[0-9]{4}-[0-9]{5}" required>
+                            placeholder="Format:639-1234-56789" pattern="[0-9]{3}-[0-9]{4}-[0-9]{5}">
                         <label for="">Contact Number</label>
                         <span>Contact Number</span>
                     </div>

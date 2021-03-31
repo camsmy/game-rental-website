@@ -49,7 +49,7 @@ else{ include 'customer-navigation.php'; }
             <div class="contact-form2 position-relative">
                 <span class="contact-circle one position-absolute"></span>
                 <span class="contact-circle two position-absolute"></span>
-                <form action="include/formvalidation.inc.php" method="post">
+                <form action="formvalidation.inc.php" method="post">
                     <h3 class="contact-title">Contact Us</h3>
                     <?php
                 $fullurl= "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
