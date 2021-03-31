@@ -36,7 +36,9 @@ echo '<script> window.location="games-landing.php"; </script>';
                         <span>Username</span>
                     </div>
                     <div class="login-input-container focus">
-                        <input type="password" name="LogIn_password" class="login-input">
+                        <input type="password" id="password" name="LogIn_password" class="login-input">
+                        <i class="far fa-eye" id="eye-show" onclick="showpass()"></i>
+                        <i class="far fa-eye-slash" id="eye-hide" onclick="showpass()"></i>
                         <label for="">Password</label>
                         <span>Password</span>
                     </div>
@@ -64,6 +66,23 @@ echo '<script> window.location="games-landing.php"; </script>';
 include 'footer.php';
 ?>
     </footer>
+    
+    <script>
+        var state=false;
+        function showpass(){
+            if(state){
+                document.getElementById('password').setAttribute("type","password");
+                document.getElementById('eye-show').style.display = "none";
+                document.getElementById('eye-hide').style.display = "block";
+                state = false;
+            }else{
+                document.getElementById('password').setAttribute("type","text");
+                document.getElementById('eye-show').style.display = "block";
+                document.getElementById('eye-hide').style.display = "none";
+                state = true;
+            }
+        }
+    </script>
 </body>
 
 </html>
