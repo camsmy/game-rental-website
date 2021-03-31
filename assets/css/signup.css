@@ -24,7 +24,11 @@
   color: #fefefe;
   opacity: 1; /* Firefox */
 }
-
+.fa-check-circle{
+  color: #66CD42;
+  font-size: 20px;
+  padding-top: 2px;
+}
 @media (max-width: 850px) {
   
     .signup-form2:before {

@@ -95,4 +95,45 @@ if(isset($_POST['LogInSubmit'])){
         }
     }
 }
+
+//sign up form validation
+if(isset($_POST['SignUpSubmit'])){
+    $SignUp_name = $_POST['fname'];
+    $SignUp_mname = $_POST['mname'];
+    $SignUp_lname = $_POST['lname'];
+    $SignUp_address = $_POST['address'];
+    $SignUp_phone = $_POST['phonenum'];
+    $SignUp_uname = $_POST['uname'];
+    $SignUp_pass = $_POST['password'];
+    $SignUp_email = $_POST['email'];
+    $userExists = false;
+    if(empty($SignUp_name)||empty($SignUp_mname)||empty($SignUp_lname)||empty($SignUp_address)||empty($SignUp_phone)||empty($SignUp_uname)||empty($SignUp_pass)||empty($SignUp_email)){
+        header("Location: signup.php?empty");
+        exit();
+    }
+    elseif(!preg_match('/^[+]?[\d]+([\-][\d]+)*\d$/',$SignUp_phone)){
+        header("Location: signup.php?invalidphone&fname=$SignUp_name&mname=$SignUp_mname&lname=$SignUp_lname&address=$SignUp_address");
+        exit();
+    }
+    elseif(!filter_var($SignUp_email,FILTER_VALIDATE_EMAIL)){
+        header("Location: signup.php?invalidemail&fname=$SignUp_name&mname=$SignUp_mname&lname=$SignUp_lname&address=$SignUp_address&phonenum=$SignUp_phone&username=$SignUp_uname");
+        exit();
+    }
+    $query = mysqli_query($DBConnect,"SELECT uname from userinfo") or die("ERROR");
+    while($username = mysqli_fetch_array($query)){
+        echo $SignUp_uname.'<br>'.$username;
+        if($SignUp_uname ==$username['uname']){
+            $userExists = true;
+        }
+    }
+    if(!$userExists){
+        mysqli_query($DBConnect,"INSERT INTO userinfo (fname,mname,lname,address,contactno,uname,pw,email) VALUES
+        ('$SignUp_name','$SignUp_mname','$SignUp_lname','$SignUp_address','$SignUp_phone','$SignUp_uname','$SignUp_pass','$SignUp_email')") or die("Unable to signup");
+            header("location: signup.php?success");
+            exit();
+    }else{
+        header("location: signup.php?exist");
+        exit();
+    }
+}
 ?>
