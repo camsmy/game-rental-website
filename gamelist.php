@@ -54,7 +54,7 @@ include 'opendb.php';
                                    </div>
                            <?php    
                                }
-                           } 
+                           } $DBConnect -> close();
                    ?>
                 </div>
             </div>
@@ -64,7 +64,7 @@ include 'opendb.php';
     <?php
     if(isset($_POST['delete'])){
         $id = $_POST['sku'];
-
+        include 'opendb.php';
         if($DBConnect === false){
             die("ERROR: Could not connect. " . mysqli_connect_error());
             }
