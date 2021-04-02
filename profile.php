@@ -28,7 +28,7 @@ if(isset($_POST['back'])){
 ?>
       <div class="adminnavbar-main_content">
         <form action="<?php echo $_SERVER['PHP_SELF']?>" class="form-style-profile" method="post" enctype="multipart/form-data">
-        <div class="edit"><h1>User Information</h1>
+        <div class="edit"><h2>User Information</h2>
         <?php
         if(!isset($_POST['edit'])){
           echo '<input type="submit" name="edit" value="Edit" class="edit-btn">';
@@ -41,7 +41,7 @@ if(isset($_POST['back'])){
                 <div class="card-body">
                   <div class="row">
                     <div class="col-sm-3">
-                      <h4 class="mb-0">Username:</h4>
+                      <h5 class="mb-0">Username:</h5>
                     </div>
                     <div class="col-sm-9 text-secondary profile">
                       <?php 
@@ -56,7 +56,7 @@ if(isset($_POST['back'])){
                 <div class="card-body">
                   <div class="row">
                     <div class="col-sm-3">
-                      <h4 class="mb-0">Full Name:</h4>
+                      <h5 class="mb-0">Full Name:</h5>
                     </div>
                     <div class="col-sm-9 text-secondary profile">
                     <?php 
@@ -75,7 +75,7 @@ if(isset($_POST['back'])){
                 <div class="card-body">
                   <div class="row">
                     <div class="col-sm-3">
-                      <h4 class="mb-0">Home Address:</h4>
+                      <h5 class="mb-0">Home Address:</h5>
                     </div>
                     <div class="col-sm-9 text-secondary profile">
                     <?php 
@@ -94,7 +94,7 @@ if(isset($_POST['back'])){
                 <div class="card-body">
                   <div class="row">
                     <div class="col-sm-3">
-                      <h4 class="mb-0">Contact Number:</h4>
+                      <h5 class="mb-0">Contact Number:</h5>
                     </div>
                     <div class="col-sm-9 text-secondary profile">
                     <?php 
@@ -114,7 +114,7 @@ if(isset($_POST['back'])){
                 <div class="card-body">
                   <div class="row">
                     <div class="col-sm-3">
-                      <h4 class="mb-0">Email Address:</h4>
+                      <h5 class="mb-0">Email Address:</h5>
                     </div>
                     <div class="col-sm-9 text-secondary profile">
                     <?php 
@@ -133,10 +133,10 @@ if(isset($_POST['back'])){
                 <div class="card-body">
                   <div class="row">
                     <div class="col-sm-3">
-                      <h4 class="mb-0">Password:</h4>
+                      <h5 class="mb-0">Password:</h5>
                     </div>
                     <div class="col-sm-9 text-secondary profile">
-                      <sub>****************</sub><a href="changepw.php" style="font-size:0.5em">[Change Password]</a>
+                      <sub>****************</sub><a href="changepw.php" style="font-size:12">[Change Password]</a>
                     </div>
                   </div>
                 </div>
