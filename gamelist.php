@@ -16,13 +16,13 @@ if(isset($_POST['Edit'])){
         <div class = "glist-container">
             <div class = "glist-boxy">
                <div class = "row glist-tr">
-               <div class = "col glist-labels text-align-center">Product name</div>
-               <div class = "col glist-labels text-align-center">Sku</div>
-               <div class = "col glist-labels text-align-center">Price</div>
-               <div class = "col glist-labels text-align-center">Rent</div>
-               <div class = "col glist-labels text-align-center">Reserve</div>
-               <div class = "col glist-labels text-align-center">Avail</div>
-               <div class = "col glist-labels text-align-center">Total</div>
+               <div class = "col glist-labels text-align-center"><h4>Game</h4></div>
+               <div class = "col glist-labels text-align-center"><h4>Sku</h4></div>
+               <div class = "col glist-labels text-align-center"><h4>Price</h4></div>
+               <div class = "col glist-labels text-align-center"><h4>Rent</h4></div>
+               <div class = "col glist-labels text-align-center"><h4>Reserve</h4></div>
+               <div class = "col glist-labels text-align-center"><h4>Avail</h4></div>
+               <div class = "col glist-labels text-align-center"><h4>Total</h4></div>
                <div class = "col text-align-center">&nbsp;</div></div>
                <div class = "glist-contents">
                    <?php
