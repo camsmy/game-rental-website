@@ -41,9 +41,10 @@
             if (mysqli_num_rows($result) > 0) {
                 // output data of each row
                 while($row = mysqli_fetch_assoc($result)) {
+                    $game = mysqli_fetch_array(mysqli_query($DBConnect,"SELECT gname,price FROM gameinfo WHERE sku='".$row['res_game']."'")); //game name and price
                     echo '<div class="row rented-detail-head">';
                         echo '<div class="col rented-detail-text"><p>'.getOID($row["order_id"]).'</p></div>';
-                        echo '<div class="col rented-detail-text"><p>'.$row["rent_game"].'</p></div>';
+                        echo '<div class="col rented-detail-text"><p>'.$game["gname"].'</p></div>';
                         echo '<div class="col rented-detail-text"><p>'.$row["deadline"].'</p></div>';
                         echo '<div class="col rented-detail-text"><p>'.$row["penalty"].'</p></div>';
                     echo '</div>';

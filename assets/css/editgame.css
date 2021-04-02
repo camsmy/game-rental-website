@@ -1,0 +1,20 @@
+.editgame-container {
+    width: 100%;
+    min-height: 100vh;
+    padding: 2rem;
+    color:#fff;
+    background-color: #fefefe;
+}
+.edit-game {
+    font-weight: 500;
+    font-size: 1.5rem;
+    line-height: 1;
+    margin-bottom: 0.7rem;
+}
+.editgame-input{
+    padding:5px;
+    border-radius: 10px;
+}
+.editgame-input, .editgame-form{
+    width:100%;
+}

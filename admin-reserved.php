@@ -6,7 +6,7 @@ include 'opendb.php';
 if(isset($_POST['Cancel'])){
     include 'reserve-cancel.php';
 }
-if(isset($_POST['Rentg'])){
+if(isset($_POST['Rented'])){
     include 'rentgame.php';
 }
 ?>
@@ -45,9 +45,9 @@ if(isset($_POST['Rentg'])){
                         echo '<td>'.$game['price'].'</td>';
                         ?>
                         <form method="post">
-                            <td><input type="date" name="rent"></td>';
-                            <td><input type="submit" class="adreserved-button" name="Rented" value="Rent"></td>
-                            <td><input type="submit" class="adreserved-button" name="Cancel" value="Cancel"></td>
+                            <td><input class="adreserved-date"type="date" name="rent" required></td>
+                            <td class="adreserved-btn"><input type="submit" class="adreserved-button" name="Rented" value="Rent"></td>
+                            <td class="adreserved-btn"><input type="submit" class="adreserved-button" name="Cancel" value="Cancel"></td>
                             <input type="hidden" name="id" value="<?php echo $res['order_id'];?>">
                         </form>
                         <?php

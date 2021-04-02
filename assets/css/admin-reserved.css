@@ -59,19 +59,29 @@
 }
 
 .adreserved-button {
-    border: none;
+    border-color: #fff;
     color: white;
     background-color:rgba(235,94,80,1);
     padding: 15px 20px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
+    border-radius:10px;
     font-size: 16px;
     cursor: pointer;
 }
-
 .adreserved-button:hover {
     opacity: 0.8;
+    border-color:#000;
     background-color: transparent;
     color: black;
+}
+.adreserved-date{
+    border-color:rgba(235,94,80,1);
+    border-radius:10px;
+    padding-left:5px;
+    width:135px;
+}
+.adreserved-btn{
+    width:80px !important;
 }
