@@ -41,11 +41,11 @@ if(isset($_POST['Rent'])){
                 <div class="column gameinfo-col-2">
                     <?php echo '<h2>'.$gameinfo[0].'</h2>';
                         echo '<p>'.$gameinfo[5].'</p>';
-                        echo '<h4><b>Php '.$gameinfo[1].'</b></h4>';
+                        echo '<h3><b>Php '.$gameinfo[1].'</b></h3>';
                     ?>
                     <form action="" method="post">
-                        <input type="date" min="<?php echo date('Y-m-d');?>"name="pick" required> Choose date to pick up
-                        <br><input type="submit" value="Reserve the Game" name="Rent">
+                        <input type="date" class="gameinfo-date" min="<?php echo date('Y-m-d');?>"name="pick" required> Choose date to pick up
+                        <br><input type="submit" class="gameinfo-btn"value="Reserve the Game" name="Rent">
                     </form>
                 </div>
             </div>
