@@ -136,4 +136,31 @@ if(isset($_POST['SignUpSubmit'])){
         exit();
     }
 }
+
+
+//Change password validation
+if(isset($_POST['changePW'])){
+    if(empty($_POST['password'])||empty($_POST['newPassword'])||empty($_POST['confirmPassword'])){
+        header("location: changepw.php?empty");
+        exit();
+    }
+    if($_POST['password']!=$pass){
+        header("location: changepw.php?incorrect");
+        exit();
+    }else{
+        if($_POST['newPassword']!=$_POST['confirmPassword']){
+            header("location: changepw.php?match");
+            exit();
+        }else{
+            $newpass = $_POST['confirmPassword'];
+            mysqli_query($DBConnect,"UPDATE userinfo SET pw='".$newpass."' WHERE uname = '".$user."'") or die ("ERROR");
+            $_SESSION['pass'] = $newpass;
+            header("location: changepw.php?success");
+            echo '<script> 
+            window.location = "profile.php";
+            </script>';
+            exit();
+        }
+    }
+}
 ?>
