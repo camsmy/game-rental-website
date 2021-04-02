@@ -21,10 +21,10 @@
         </div>
         <div class="rented-body">
             <div class="row rented-detail-head">
-                <div class="col rented-detail-title">ORDER ID</div>
-                <div class="col rented-detail-title">NAME</div>
-                <div class="col rented-detail-title">DEADLINE</div>
-                <div class="col rented-detail-title">PENALTY</div>
+                <div class="col rented-detail-title"><h3>ORDER ID</h3></div>
+                <div class="col rented-detail-title"><h3>NAME</h3></div>
+                <div class="col rented-detail-title"><h3>DEADLINE</h3></div>
+                <div class="col rented-detail-title"><h3>PENALTY</h3></div>
             </div>
             <?php
             /* Attempt MySQL server connection. Assuming you are running MySQL

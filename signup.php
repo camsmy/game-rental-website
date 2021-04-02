@@ -136,7 +136,7 @@ include 'opendb.php';// OPENS THE DATABASE
                 document.getElementById('eye-hide').style.display = "block";
                 state = false;
             }else{
-                document.getElementById('password').setAttribute("type","password");
+                document.getElementById('password').setAttribute("type","text");
                 document.getElementById('eye-show').style.display = "block";
                 document.getElementById('eye-hide').style.display = "none";
                 state = true;
