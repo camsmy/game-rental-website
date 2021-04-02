@@ -1,0 +1,56 @@
+
+.adminnavbar-wrapper .adminreserved-main_content{
+    width:100%;
+    margin-left:200px;
+}
+.adminnavbar-wrapper .adminreserved-main_content .adminreserved-header{
+    padding:20px;
+    background:#fff;
+    color: #717171;
+    border-bottom: 1px solid #e0e4e8;
+}
+.adminnavbar-wrapper .adminreserved-main_content .adminreserved-info{
+    margin: 20px;
+    color: #717171;
+    line-height:25px;
+}
+.adreserved-container {
+    padding: 2rem;
+    margin-left: 15%;
+    width:95%;
+}
+
+.adreserved-table {
+    border-radius: 20px;
+    background-color:#6D7AE0;
+    box-shadow: 5px 10px #888888;
+    width: 100%;
+}
+
+.adreserved-labels{
+    font-size:25px;
+    font-weight: 400;
+    color: white;
+    width: 180px;
+    text-shadow: 3px 3px #959393;
+}
+
+.adreserved-row{
+    padding: 20px;
+}
+
+.adreserved-itemrow{
+    padding: 20px;
+    background-color:ivory;
+}
+.adreserved-itemrow td{
+    padding:10px;
+}
+
+.adreserved-row{
+    padding: 20px;
+}
+
+.adreserved-itemrow{
+    padding: 20px;
+}

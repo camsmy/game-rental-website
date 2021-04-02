@@ -5,8 +5,12 @@ include 'head.php';
 <?php
 include 'navigation.php';
 include 'opendb.php';
-if(isset($_SESSION['user']))
-echo '<script> window.location="games-landing.php"; </script>';
+if(isset($_SESSION['user'])){
+    switch($_SESSION['user']):
+        case "admin": echo '<script> window.location="dashboard.php"; </script>'; break;
+        default: '<script> window.location="games-landing.php"; </script>'; break;
+    endswitch;
+}
 ?>
     <div class="login-container position-relative d-flex justify-content-center align-items-center">
     <div class="row login-form">
