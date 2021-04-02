@@ -1,14 +1,12 @@
 .dashboard-col{
-    border-style: solid;
-    border-width:thin;
-    border-color: #000;
-    color:#000;
+    color:#E94C3D;
     border-radius: 10px;
-    box-shadow:1px 1px #000;
-}
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);}
 .dashboard-col h2{
     padding:1rem;
 }
 .dashboard-info{
     padding:2rem;
+    font-size: 35px;
+    color: #5C5C5C;
 }

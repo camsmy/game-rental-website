@@ -8,8 +8,40 @@
 .gameinfo-col-2{
     flex:60%;
 }
+.gameinfo-col-2 h3{
+    margin: 15px 0px;
+}
 .gameinfo-img{
-    width:100%;
+    width:300px;
     height:auto;
     padding: 1rem;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+.gameinfo-date{
+    border-color:rgba(235,94,80,1);
+    border-radius:10px;
+    padding-left:5px;
+    width:170px;
+    color: rgba(235,94,80,1);
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.gameinfo-btn{
+    padding: 10px 50px;
+    margin: 15px 0px;
+    background-color: #EC6558;
+    border: 2px solid #fafafa;
+    font-size: 0.95rem;
+    color: #ffffff;
+    line-height: 1;
+    border-radius: 25px;
+    outline: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.gameinfo-btn:hover {
+    background-color: #fff;
+    color: #000;
+    border: 2px solid #000;
 }

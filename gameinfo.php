@@ -36,26 +36,21 @@ if(isset($_POST['Rent'])){
         <div class="container gameinfo-container">
             <div class="gameinfo-row d-flex">
                 <div class="col-sm-12 gameinfo-col-1">
-                <?php  echo '<img src="data:image/jpeg;base64,'.base64_encode($gameinfo[3]).'" class="gallery-img">'; ?>
+                <?php  echo '<img src="data:image/jpeg;base64,'.base64_encode($gameinfo[3]).'" class="gameinfo-img">'; ?>
                 </div>
                 <div class="column gameinfo-col-2">
                     <?php echo '<h2>'.$gameinfo[0].'</h2>';
                         echo '<p>'.$gameinfo[5].'</p>';
-                        echo '<h4>Php '.$gameinfo[1].'</h4>';
+                        echo '<h3><b>Php '.$gameinfo[1].'</b></h3>';
                     ?>
                     <form action="" method="post">
-                        <input type="date" min="<?php echo date('Y-m-d');?>"name="pick" required> Choose date to pick up
-                        <br><input type="submit" value="Reserve the Game" name="Rent">
+                        <input type="date" class="gameinfo-date" min="<?php echo date('Y-m-d');?>"name="pick" required> Choose date to pick up
+                        <br><input type="submit" class="gameinfo-btn"value="Reserve the Game" name="Rent">
                     </form>
                 </div>
             </div>
         </div>
     </section>
-<script>
-window.onhashchange = function{
-    alert("wew");
-}
-</script>
 <div class="custom-shape-divider-top-1614623845 mt-5">
         <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
             <path

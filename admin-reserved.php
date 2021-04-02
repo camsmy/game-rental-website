@@ -17,7 +17,7 @@ if(isset($_POST['Rented'])){
             <table class="adreserved-table">
                 <thead>
                     <tr class="row adreserved-row">
-                        <th class = "col adreserved-labels text-align-center"><h4>Order Number</h4></th>
+                        <th class = "col adreserved-labels text-align-center"><h4>Order No.</h4></th>
                         <th class = "col adreserved-labels text-align-center"><h4>Customer</h4></th>
                         <th class = "col adreserved-labels text-align-center"><h4>Product</h4></th>
                         <th class = "col adreserved-labels text-align-center"><h4>Duration</h4></th>
@@ -47,8 +47,8 @@ if(isset($_POST['Rented'])){
                         ?>
                         <form method="post">
                             <td><input class="adreserved-date"type="date" min="<?php echo date('Y-m-d');?>" name="rent" required></td>
-                            <td class="adreserved-btn"><input type="submit" class="adreserved-button" name="Rented" value="Rent"></td>
-                            <td class="adreserved-btn"><input type="submit" class="adreserved-button" name="Cancel" value="Cancel"></td>
+                            <td class="adreserved-btn"><input type="submit" class="adreserved-button violet" name="Rented" value="Rent"></td>
+                            <td class="adreserved-btn"><input type="submit" class="adreserved-button red" name="Cancel" value="Cancel"></td>
                             <input type="hidden" name="id" value="<?php echo $res['order_id'];?>">
                         </form>
                         <?php

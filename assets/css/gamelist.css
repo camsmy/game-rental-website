@@ -11,28 +11,26 @@
 
 .glist-boxy {
     border-radius: 20px;
-    background-color:#6D7AE0;
-    box-shadow: 5px 10px #888888;
+    background: linear-gradient(184deg, rgba(235,94,80,1) 0%, rgba(235,94,80,1) 0%, rgba(242,148,139,1) 100%);
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
     width: 100%;
 }
 
 .glist-contents{
-    border-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
     background-color:ivory;
 }
 
 .glist-labels{
-    font-size:25px;
     font-weight: 400;
     color: white;
     width: 300px;
-    text-shadow: 3px 3px #959393;
 }
 
 .glist-list{
-    font-size: 20px;
-    font-weight: 100;
-    color: black;
+    font-weight: 300;
+    color: #5C5C5C;
     width: 200px;
 }
 
@@ -43,7 +41,6 @@
 .glist-addbtn {
     border: none;
     color: white;
-    background-color:rgba(235,94,80,1);
     padding: 15px 20px;
     text-align: center;
     text-decoration: none;
@@ -53,7 +50,6 @@
     margin-top: 20px;
     margin-right: 20px;
 }
-
 .glist-button {
     border: none;
     color: white;
