@@ -20,7 +20,7 @@ while($games=mysqli_fetch_array($query)){
 ?>
 <?php
 if(isset($_POST['Rent'])){
-    include 'rentgame.php';
+    include 'reservegame.php';
 }
 ?>
 <section>
