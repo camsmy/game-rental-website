@@ -11,7 +11,7 @@
 }
 .gcat-game:hover {
     box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-  }
+}
 .gcat-img{
     width:300px;
     height:300px;
@@ -26,7 +26,7 @@
     -ms-transform: translate(-50%, -50%);
     text-align: center;
 }
-.text {
+.text{
     color: #fafafa;
     font-weight: 800;
     font-size: 30px;
@@ -34,11 +34,11 @@
     padding: 14px 32px;
     border-radius: 15px;
     cursor: pointer;
-  }
+}
 .gcat-game:hover .gcat-img {
     opacity: 0.3;
 }
-  
+
 .gcat-game:hover .middle {
     opacity: 1;
 }

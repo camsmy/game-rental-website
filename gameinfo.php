@@ -51,11 +51,6 @@ if(isset($_POST['Rent'])){
             </div>
         </div>
     </section>
-<script>
-window.onhashchange = function{
-    alert("wew");
-}
-</script>
 <div class="custom-shape-divider-top-1614623845 mt-5">
         <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
             <path
