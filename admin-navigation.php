@@ -3,7 +3,7 @@
 <div class="adminnavbar-sidebar">
     <h2 class="admin-logo">KEJ<span>PlayStation</span></h2>
     <ul id="adnav">
-      <li class="adminnav-btn active"><a href="dashboard.php">Dashboard</a></li>
+      <li class="adminnav-btn"><a href="dashboard.php">Dashboard</a></li>
       <li class="adminnav-btn"><a href="gamelist.php">Games</a></li>
       <li class="adminnav-btn"><a href="admin-rented.php">Rented Items</a></li>
       <li class="adminnav-btn"><a href="admin-reserved.php">Reservations</a></li>
@@ -11,6 +11,7 @@
       <li class="adminnav-btn"><a href="logout.php">Logout</a></li>
     </ul>
 </div>
+<!--
 <script>
 
     var btns = document.getElementById("adnav").getElementsByClassName("adminnav-btn");
@@ -23,4 +24,4 @@
       this.className += " active";
   });
 }
-</script>
+</script>-->

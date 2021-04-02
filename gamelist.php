@@ -2,8 +2,12 @@
 include 'head.php';
 include 'admin-navigation.php';
 include 'opendb.php';
-?>
 
+if(isset($_POST['Edit'])){
+    $_SESSION['sku'] = $_POST['sku'];
+    header("location: editgame.php");
+}
+?>
 <section>
     <div class= "glist-backcolor">
         <form method="post" action="addgame.php">
@@ -30,8 +34,10 @@ include 'opendb.php';
 
 
                            if (mysqli_num_rows($result) > 0) {
+                               $_SESSION['count'] = 0;
                                while($row = mysqli_fetch_assoc($result)) {
                                    $total = $row["rent"] + $row["avail"];
+                                   $_SESSION['count']++;
                                ?>
                                    <div class = "glist-tr row">
                                         <div class="col glist-list text-align-center"><?php echo $row["gname"]; ?></div>
@@ -41,9 +47,9 @@ include 'opendb.php';
                                         <div class="col glist-list text-align-center"><?php echo $row["reserve"]; ?></div>
                                         <div class="col glist-list text-align-center"><?php echo $row["avail"]; ?></div>
                                         <div class="col glist-list text-align-center"><?php echo $total; ?></div>
-                                        <form method="post" action="gamelist-update.php" target="popUp" onsubmit="popup(this);">
+                                        <form method="post">
                                             <div class="col text-align-center">
-                                            <input type="submit" class = "glist-button" style="width:auto;" id="myBtn" name="Edit" value="Edit">
+                                            <input type="submit" class = "glist-button" style="width:auto;" name="Edit" value="Edit">
                                             </div><input type="hidden" name="sku" value="<?php echo $row["sku"]; ?>"/>
                                         </form>
                                         &nbsp;&nbsp;&nbsp;
@@ -66,30 +72,33 @@ include 'opendb.php';
     <?php
     if(isset($_POST['delete'])){
         $id = $_POST['sku'];
+        $isGood = true;
         include 'opendb.php';
         if($DBConnect === false){
             die("ERROR: Could not connect. " . mysqli_connect_error());
             }
-
-        $sql = "DELETE FROM gameinfo WHERE sku = '$id'";
-
-        if (mysqli_query($DBConnect, $sql)) {
-            mysqli_close($DBConnect);
-        } else {
-            echo "Error deleting of game";
+        $isrented = $isreserved = "";
+        $query = mysqli_query($DBConnect,"SELECT rent_game from rented") or die("ERROR");
+        while($rentgame = mysqli_fetch_array($query)){
+            if($id==$rentgame['rent_game'])
+                $isGood = false;
         }
-
+        $query = mysqli_query($DBConnect,"SELECT res_game from reserved") or die("ERROR");
+        while($resgame = mysqli_fetch_array($query)){
+            if($id==$resgame['res_game'])
+                $isGood = false;
+        }
+        if(!$isGood)
+            echo '<script>alert("Game still rented/reserved!");</script>';
+        else{
+            $sql = "DELETE FROM gameinfo WHERE sku = '$id'";
+            if (mysqli_query($DBConnect, $sql)) {
+                mysqli_close($DBConnect);
+                echo '<script>location.reload();</script>';
+            } else {
+                echo "Error deleting of game";
+            }
+        }
     }
 ?>
-
-<script>
-    function popup(form) {
-        window.open('', 'formpopup', 'view text','menubar=yes,scrollbars=yes,resizable=yes,width=250,height=300');
-        form.target = 'formpopup';
-    }
-    function here() {
-        window.focus()
-        location.reload();
-    }
-</script>    
 </section>
