@@ -14,43 +14,77 @@
     color: #717171;
     line-height:25px;
 }
-.adsuggestion-container {
+.adsuggest-container {
     padding: 2rem;
     margin-left: 15%;
     width:95%;
 }
 
-.adsuggestion-table {
+.adsuggest-table {
     border-radius: 20px;
     background-color:#6D7AE0;
     box-shadow: 5px 10px #888888;
     width: 100%;
+    align-content:center;
 }
 
 .adsuggest-labels{
     font-size:25px;
     font-weight: 400;
     color: white;
-    width: 180px;
+    width: 150px;
     text-shadow: 3px 3px #959393;
 }
 
-.adsuggestion-row{
+.adsuggest-row{
     padding: 20px;
 }
 
-.adsuggestion-itemrow{
+.adsuggest-itemrow{
     padding: 20px;
     background-color:ivory;
 }
-.adsuggestion-itemrow td{
+.adsuggest-itemrow td{
     padding:10px;
+    width:150px;
+    text-align:center;
 }
 
-.adsuggestion-row{
+.adsuggest-row{
     padding: 20px;
 }
 
-.adsuggestion-itemrow{
+.adsuggest-itemrow{
     padding: 20px;
+}
+
+.adsuggest-button {
+    border-color: #fff;
+    color: white;
+    background-color:rgba(235,94,80,1);
+    padding: 15px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border-radius:10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+.adsuggest-button:hover {
+    opacity: 0.8;
+    border-color:#000;
+    background-color: transparent;
+    color: black;
+}
+.adsuggest-date{
+    border-color:rgba(235,94,80,1);
+    border-radius:10px;
+    padding-left:5px;
+    width:135px;
+}
+.adsuggest-btn{
+    width:100px !important;
+}
+.adsuggest-mess, .mess-label{
+    width:75% !important;
 }
