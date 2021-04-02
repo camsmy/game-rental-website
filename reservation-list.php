@@ -10,16 +10,16 @@
         <div class="reserve-header">
             <div class= "row text-align-center reserve-top">
                 <div class= "col-xl-7 reserve-title p-2">
-                    RESERVATION LIST
+                    <h2>RESERVATION LIST</h2>
                 </div>
             </div>
         </div>
         <div class="reserve-body">
             <div class="row reserve-detail-head">
-                <div class="col reserve-detail-title">ORDER ID</div>
-                <div class="col reserve-detail-title">NAME</div>
-                <div class="col reserve-detail-title">PICK UP DATE</div>
-                <div class="col reserve-detail-title">PRICE</div>
+                <div class="col reserve-detail-title"><h4>ORDER ID</h4></div>
+                <div class="col reserve-detail-title"><h4>NAME</h4></div>
+                <div class="col reserve-detail-title"><h4>PICK UP DATE</h4></div>
+                <div class="col reserve-detail-title"><h4>PRICE</h4></div>
                 <div class="col"></div>
             </div>
             <?php
