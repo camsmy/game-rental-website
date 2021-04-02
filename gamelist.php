@@ -16,6 +16,7 @@ include 'opendb.php';
                <div class = "col glist-labels text-align-center">Sku</div>
                <div class = "col glist-labels text-align-center">Price</div>
                <div class = "col glist-labels text-align-center">Rent</div>
+               <div class = "col glist-labels text-align-center">Reserve</div>
                <div class = "col glist-labels text-align-center">Avail</div>
                <div class = "col glist-labels text-align-center">Total</div>
                <div class = "col text-align-center">&nbsp;</div></div>
@@ -24,7 +25,7 @@ include 'opendb.php';
                        if($DBConnect === false){
                            die("ERROR: Could not connect. " . mysqli_connect_error());
                            }
-                           $sql = "SELECT gname, sku, price, rent, avail FROM gameinfo";
+                           $sql = "SELECT gname, sku, price, rent, reserve, avail FROM gameinfo";
                            $result = mysqli_query($DBConnect, $sql);
 
 
@@ -37,6 +38,7 @@ include 'opendb.php';
                                         <div class="col glist-list text-align-center"><?php echo $row["sku"]; ?></div>
                                         <div class="col glist-list text-align-center"><?php echo $row["price"]; ?></div>
                                         <div class="col glist-list text-align-center"><?php echo $row["rent"]; ?></div>
+                                        <div class="col glist-list text-align-center"><?php echo $row["reserve"]; ?></div>
                                         <div class="col glist-list text-align-center"><?php echo $row["avail"]; ?></div>
                                         <div class="col glist-list text-align-center"><?php echo $total; ?></div>
                                         <form method="post" action="gamelist-update.php" target="popUp" onsubmit="popup(this);">

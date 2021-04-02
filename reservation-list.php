@@ -33,17 +33,18 @@
             die("ERROR: Could not connect. " . mysqli_connect_error());
             }
             $user = $_SESSION['user'];
-            $sql = "SELECT order_id, res_game, pickup, price FROM reserved WHERE customer='$user'";
+            $sql = "SELECT order_id, res_game, pickup FROM reserved WHERE customer='$user'";
             $result = mysqli_query($DBConnect, $sql);
             $temp = 0;
             if (mysqli_num_rows($result) > 0) {
                 // output data of each row
                 while($row = mysqli_fetch_assoc($result)) {
+                    $game = mysqli_fetch_array(mysqli_query($DBConnect,"SELECT gname,price FROM gameinfo WHERE sku='".$row['res_game']."'")); //game name and price
                     echo "<div class='row reserve-detail-head'>";
                         echo "<div class='col reserve-detail-text'>".getOID($row["order_id"])."</div>";
-                        echo "<div class='col reserve-detail-text'>".$row["res_game"]."</div>";
+                        echo "<div class='col reserve-detail-text'>".$game['gname']."</div>";
                         echo "<div class='col reserve-detail-text'>".$row["pickup"]."</div>";
-                        echo "<div class='col reserve-detail-text'>".$row["price"]."</div>";
+                        echo "<div class='col reserve-detail-text'>".$game['price']."</div>";
                         echo "<div class='col reserve-btn-container'>";
                             echo "<form action='reserve-cancel.php' method='POST'>";
                                 echo "<input type='hidden' name='id' value='".$row["order_id"]."'>";
