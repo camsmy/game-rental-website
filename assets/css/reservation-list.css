@@ -26,7 +26,8 @@
 .reserve-body {
     padding: 20px;
     min-height: 600px;
-    border-radius: 25px;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
     box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
     z-index: 800;
 }
@@ -44,8 +45,7 @@
 
 .reserve-body .reserve-detail-head .reserve-detail-text {
     color: #1A1818;
-    font-size:20px;
-    font-weight: 600;
+    font-weight: 500;
 }
 
 form{
