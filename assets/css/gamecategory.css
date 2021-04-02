@@ -2,24 +2,30 @@
     padding: 2rem;
 }
 .gcat-game{
-    background-color: #EC6558;
+    background-color: #fafafa;
     width:auto;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 }
+.gcat-game:hover {
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  }
 .gcat-img{
     width:300px;
     height:300px;
-    padding: 1rem;
+}
+.gcat-img{
+    
 }
 .gcat-h2{
     color: #000;
-    font-size:1em;
+    font-size:16px;
     font-weight: 600;
 }
 .gcat-h3{
     color: #000;
-    font-size:0.9em;
+    font-size:1em;
 }
 .gcat-row{
     display:flex;

@@ -35,7 +35,7 @@ if($gamecount==0){
     while($games=mysqli_fetch_array($query)){        
         if($temp%4 == 1)
         echo '<div class="gcat-row my-2 p-1 justify-content-flex-end align-items-center">';
-        echo '<div class="col-sm-1 m-2 p-1 gcat-game align-items-center">';
+        echo '<div class="col-sm-1 m-3 gcat-game align-items-center">';
         echo '<a href="gameinfo.php?gname='.$games['sku'].'"><img src="data:image/jpeg;base64,'.base64_encode($games['img'] ).'" class="gcat-img"></a>';
         echo '<div class="p-1 gcat-text text-align-left"><h2 class="gcat-h2">'.$games['gname'].'</h2><h3 class="gcat-h3">Php '.$games['price'].'</h3></div>';
         echo '</div>';
