@@ -36,12 +36,12 @@ if(isset($_POST['Rent'])){
         <div class="container gameinfo-container">
             <div class="gameinfo-row d-flex">
                 <div class="col-sm-12 gameinfo-col-1">
-                <?php  echo '<img src="data:image/jpeg;base64,'.base64_encode($gameinfo[3]).'" class="gallery-img">'; ?>
+                <?php  echo '<img src="data:image/jpeg;base64,'.base64_encode($gameinfo[3]).'" class="gameinfo-img">'; ?>
                 </div>
                 <div class="column gameinfo-col-2">
                     <?php echo '<h2>'.$gameinfo[0].'</h2>';
                         echo '<p>'.$gameinfo[5].'</p>';
-                        echo '<h4>Php '.$gameinfo[1].'</h4>';
+                        echo '<h4><b>Php '.$gameinfo[1].'</b></h4>';
                     ?>
                     <form action="" method="post">
                         <input type="date" min="<?php echo date('Y-m-d');?>"name="pick" required> Choose date to pick up

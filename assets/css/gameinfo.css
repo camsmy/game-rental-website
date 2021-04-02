@@ -9,7 +9,8 @@
     flex:60%;
 }
 .gameinfo-img{
-    width:100%;
+    width:300px;
     height:auto;
     padding: 1rem;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 }
