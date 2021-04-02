@@ -53,9 +53,13 @@ include 'opendb.php';
         if (mysqli_query($DBConnect, $sql)) {
             $rent_update = "UPDATE rented set rent_game = '$sku' WHERE rent_game = '$id'";
             if (mysqli_query($DBConnect, $rent_update)) {
-                mysqli_close($DBConnect);
-                echo "<script type='text/javascript'> reload(); </script>";
-        }} else {
+                $res_update = "UPDATE reserved set res_game = '$sku' WHERE res_game = '$id'";
+                if (mysqli_query($DBConnect, $res_update)) {
+                    mysqli_close($DBConnect);
+                    echo "<script type='text/javascript'> reload(); </script>";
+                }
+            }
+        } else {
             echo "Error updating game info";
         }
 
