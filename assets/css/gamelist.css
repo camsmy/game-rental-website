@@ -17,7 +17,8 @@
 }
 
 .glist-contents{
-    border-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
     background-color:ivory;
 }
 
@@ -40,7 +41,6 @@
 .glist-addbtn {
     border: none;
     color: white;
-    background-color:rgba(235,94,80,1);
     padding: 15px 20px;
     text-align: center;
     text-decoration: none;
@@ -50,7 +50,6 @@
     margin-top: 20px;
     margin-right: 20px;
 }
-
 .glist-button {
     border: none;
     color: white;

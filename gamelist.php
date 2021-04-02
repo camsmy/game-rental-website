@@ -11,7 +11,7 @@ if(isset($_POST['Edit'])){
 <section>
     <div class= "glist-backcolor">
         <form method="post" action="addgame.php">
-                <button type="submit" class = "glist-addbtn" style="width:auto;" name="add">Add New Product</button>
+                <button type="submit" class = "glist-addbtn red" style="width:auto;" name="add">Add New Product</button>
         </form><br><br>
         <div class = "glist-container">
             <div class = "glist-boxy">
@@ -49,13 +49,13 @@ if(isset($_POST['Edit'])){
                                         <div class="col glist-list text-align-center"><?php echo $total; ?></div>
                                         <form method="post">
                                             <div class="col text-align-center">
-                                            <input type="submit" class = "glist-button" style="width:auto;" name="Edit" value="Edit">
+                                            <input type="submit" class = "glist-button violet" style="width:auto;" name="Edit" value="Edit">
                                             </div><input type="hidden" name="sku" value="<?php echo $row["sku"]; ?>"/>
                                         </form>
                                         &nbsp;&nbsp;&nbsp;
                                         <form method="post" action="gamelist.php">
                                             <div class="col text-align-center">
-                                            <input type="submit" class = "glist-button" style="width:auto;" name="delete" value="Delete"/>
+                                            <input type="submit" class = "glist-button red" style="width:auto;" name="delete" value="Delete"/>
                                             </div>
                                             <input type="hidden" name="sku" value="<?php echo $row["sku"]; ?>"/>
                                         </form>
