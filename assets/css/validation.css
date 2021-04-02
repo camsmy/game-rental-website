@@ -10,3 +10,12 @@
     background-color: #fafafa;
     border-radius: 15px;
 }
+
+.note{
+    color: #000;
+    font-size: 11px;
+    background-color: #fafafa;
+    border-radius: 15px;
+    line-height: 15px;
+    display: none;
+}

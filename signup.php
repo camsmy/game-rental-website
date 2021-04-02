@@ -14,67 +14,109 @@ include 'opendb.php';// OPENS THE DATABASE
                 <form name="signup" method="post" action="formvalidation.inc.php">
                     <h3 class="login-title text-align-center">Sign up</h3>
                     <?php
-                // $fullurl= "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+                $fullurl= "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 
-                // if(strpos($fullurl,"form=empty")){
-                //     echo "<p class='error text-align-center m-1'>You did not fill in all fields!</p>";
-                // }
-                // if(strpos($fullurl,"form=invalidemail")){
-                //     echo "<p class='error text-align-center m-1'>Your email is invalid!</p>";
-                // }
-                // if(strpos($fullurl,"form=phone")){
-                //     echo "<p class='error text-align-center m-1'>Your phone is invalid!</p>";
-                // }
-                // if(strpos($fullurl,"form=message")){
-                //     echo "<p class='error text-align-center m-1'>Message shoud be below 70 characters</p>";
-                // }
-                // if(strpos($fullurl,"mailsend")){
-                //     echo "<p class='error text-align-center m-1'>Message has been successfully sent!</p>";
-                // }
+                if(strpos($fullurl,"success")){
+                echo "";
+                 echo "<p class='error text-align-center m-1'>
+                 <i class='fas fa-check-circle text-align-center'></i>
+                 You have signed up<br>successfully!</p>";
+                }
+                if(strpos($fullurl,"empty")){
+                   echo "<p class='error text-align-center m-1'>You did not fill in all the fields!</p>";
+                }
+                if(strpos($fullurl,"invalidphone")){
+                     echo "<p class='error text-align-center m-1'>Your phone is invalid!</p>";
+                }
+                if(strpos($fullurl,"invalidemail")){
+                     echo "<p class='error text-align-center m-1'>Your email is invalid!</p>";
+                }
+                if(strpos($fullurl,"exist")){
+                 echo "<p class='error text-align-center m-1'>The username you entered<br>already exist!</p>";
+                }
                 ?>
                     <div class="login-input-container focus">
-                        <input type="text" name="fname" class="login-input">
+                        <?php
+                        if(isset($_GET['fname'])){
+                            $fname = $_GET['fname'];
+                            echo '<input type="text" name="fname" class="login-input" value="'.$fname.'">';
+                        }else{
+                            echo '<input type="text" name="fname" class="login-input">';
+                        }
+                        ?>
                         <label for="">First Name</label>
                         <span>First Name</span>
                     </div>
                     <div class="login-input-container focus">
-                        <input type="text" name="mname" class="login-input">
+                        <?php
+                        if(isset($_GET['mname'])){
+                            echo '<input type="text" name="mname" class="login-input" value="'.$_GET['address'].'">';
+                        }else{
+                            echo '<input type="text" name="mname" class="login-input">';
+                        }
+                        ?>
                         <label for="">Middle Name</label>
                         <span>Middle Name</span>
                     </div>
                     <div class="login-input-container focus">
-                        <input type="text" name="lname" class="login-input">
+                    <?php
+                        if(isset($_GET['lname'])){
+                            echo '<input type="text" name="lname" class="login-input" value="'.$_GET['address'].'">';
+                        }else{
+                            echo '<input type="text" name="lname" class="login-input">';
+                        }
+                        ?>
                         <label for="">Last Name</label>
                         <span>Last Name</span>
                     </div>
                     <div class="login-input-container focus">
-                        <input type="text" name="address" class="login-input address">
+                    <?php
+                        if(isset($_GET['address'])){
+                            echo '<input type="text" name="address" class="login-input" value="'.$_GET['address'].'">';
+                        }else{
+                            echo '<input type="text" name="address" class="login-input">';
+                        }
+                        ?>
                         <label for="">Address</label>
                         <span>Address</span>
                     </div>
                     <div class="login-input-container focus">
-                        <input type="tel" name="phonenum" class="login-input phonenum"
-                            placeholder="Format:639-1234-56789" pattern="[0-9]{3}-[0-9]{4}-[0-9]{5}">
+                    <?php
+                        if(isset($_GET['phonenum'])){
+                            echo '<input type="text" name="phonenum" class="login-input phonenum" value="'.$_GET['phonenum'].'">';
+                        }else{
+                            echo '<input type="text" name="phonenum" class="login-input">';
+                        }
+                        ?>
                         <label for="">Contact Number</label>
                         <span>Contact Number</span>
                     </div>
                     <div class="login-input-container focus">
-                        <input type="text" name="uname" class="login-input address" required>
+                    <?php
+                        if(isset($_GET['username'])){
+                            echo '<input type="text" id="username"name="uname" class="login-input address" onclick="checkusername()" value="'.$_GET['username'].'">';
+                        }else{
+                            echo '<input type="text" id="username"name="uname" class="login-input address" onclick="checkusername()">';
+                        }
+                        ?>
+                        <!-- <input type="text" id="username"name="uname" class="login-input address" onclick="checkusername()"> -->
                         <label for="">Username</label>
                         <span>Username</span>
+                        <p class='note text-align-center m-1' id="note">Username cannot be changed after<br>signing up.</p>
                     </div>
                     <div class="login-input-container focus">
-                        <input type="password" name="password" class="login-input" id="password" required>
+                        <input type="password" name="password" class="login-input" id="password">
+                        <i class="far fa-eye" id="eye-show" onclick="showpass()"></i>
+                        <i class="far fa-eye-slash" id="eye-hide" onclick="showpass()"></i>
                         <label for="">Password</label>
                         <span>Password</span>
-                        <input type="checkbox" onclick="myFunction()">Show Password
                     </div>
                     <div class="login-input-container focus">
-                        <input type="email" name="email" class="contact-input" required>
+                        <input type="text" name="email" class="contact-input">
                         <label for="">Email</label>
                         <span>Email</span>
                     </div>
-                    <input type="submit" name="Submit" value="Sign Up" class="login-btn">
+                    <input type="submit" name="SignUpSubmit" value="Sign Up" class="login-btn">
                 </form>
 
             </div>
@@ -86,42 +128,29 @@ include 'opendb.php';// OPENS THE DATABASE
                     autem accusamus hic.</p>
             </div>
             <script>
-                function myFunction() {
-                    var x = document.getElementById("password");
-                    if (x.type === "password") {
-                        x.type = "text";
-                    } else {
-                        x.type = "password";
-                    }
-                }
-            </script>
-        </div>
-    </div>
-    <?php
-    if(isset($_POST['Submit'])){
-        $v1 = $_POST['fname'];
-        $v2 = $_POST['mname'];
-        $v3 = $_POST['lname'];
-        $v4 = $_POST['address'];
-        $v5 = $_POST['phonenum'];
-        $v6 = $_POST['uname'];
-        $v7 = $_POST['password'];
-        $v8 = $_POST['email'];
-        $userExists = false;
-        $query = mysqli_query($DBConnect,"SELECT uname from userinfo") or die("ERROR");
-        while($username = mysqli_fetch_array($query)){
-            echo $v6.'<br>'.$username;
-            if($v6 ==$username['uname']){
-                $userExists = true;
+        var state=false;
+        function showpass(){
+            if(state){
+                document.getElementById('password').setAttribute("type","password");
+                document.getElementById('eye-show').style.display = "none";
+                document.getElementById('eye-hide').style.display = "block";
+                state = false;
+            }else{
+                document.getElementById('password').setAttribute("type","password");
+                document.getElementById('eye-show').style.display = "block";
+                document.getElementById('eye-hide').style.display = "none";
+                state = true;
             }
         }
-        if(!$userExists){
-            echo '<script> alert("Signed up successfully!");</script>';
-            mysqli_query($DBConnect,"INSERT INTO userinfo (fname,mname,lname,address,contactno,uname,pw,email) VALUES ('$v1','$v2','$v3','$v4','$v5','$v6','$v7','$v8')") or die("Unable to signup");
-        }else{
-            echo '<script> alert("User already exists!"); window.location = "signup.php"; </script>';
+
+        function checkusername(){
+            if(document.getElementById('username')===document.activeElement){
+                document.getElementById('note').style.display = "block";
+            }
         }
-    }?>
+    </script>
+        </div>
+    </div>
     <div class="custom-shape-divider-top-1614623845 mt-5">
         <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
             <path

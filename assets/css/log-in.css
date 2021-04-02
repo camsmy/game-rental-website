@@ -196,7 +196,20 @@ textarea.login-input {
     align-items: center;
     font-size: 0.95rem;
 }
-
+.fa-eye,.fa-eye-slash{
+    color: #fafafa;
+    position: absolute;
+    right: 15px;
+    transform: translate(0,-50%);
+    top: 50%;
+    cursor:pointer;
+}
+.fa-eye{
+    display: none;
+}
+.fa-eye-slash{
+    display: block;
+}
 @media (max-width: 850px) {
     .login-form {
       grid-template-columns: 1fr;
