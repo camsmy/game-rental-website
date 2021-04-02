@@ -6,11 +6,8 @@ include 'opendb.php';
 if(isset($_POST['Cancel'])){
     include 'reserve-cancel.php';
 }
-if(isset($_POST['Rentg'])){
+if(isset($_POST['Rented'])){
     include 'rentgame.php';
-}
-if(isset($_POST['Back'])){
-    unset($_POST['Rented']);
 }
 ?>
     <div class="adminreserved-main_content">
@@ -19,12 +16,14 @@ if(isset($_POST['Back'])){
             <table class="adreserved-table">
                 <thead>
                     <tr class="row adreserved-row">
-                        <th class = "col adreserved-labels text-align-center">Order Number</th>
-                       <th class = "col adreserved-labels text-align-center">Customer</th>
-                       <th class = "col adreserved-labels text-align-center">Product</th>
-                       <th class = "col adreserved-labels text-align-center">Duration</th>
-                       <th class = "col adreserved-labels text-align-center">Pickup</th>
-                       <th class = "col adreserved-labels text-align-center">Price</th>
+                        <th class = "col adreserved-labels text-align-center"><h4>Order Number</h4></th>
+                        <th class = "col adreserved-labels text-align-center"><h4>Customer</h4></th>
+                        <th class = "col adreserved-labels text-align-center"><h4>Product</h4></th>
+                        <th class = "col adreserved-labels text-align-center"><h4>Duration</h4></th>
+                        <th class = "col adreserved-labels text-align-center"><h4>Pickup</h4></th>
+                        <th class = "col adreserved-labels text-align-center"><h4>Price</h4></th>
+                        <th class = "col adreserved-labels text-align-center"><h4>Deadline</h4></th>
+                        <th class = "col adreserved-labels text-align-center">&nbsp;</th></tr>
                     </tr>
                 </thead>
                 <tbody class="adreserved-items">
@@ -46,23 +45,10 @@ if(isset($_POST['Back'])){
                         echo '<td>'.$game['price'].'</td>';
                         ?>
                         <form method="post">
-                            <?php
-                            if(isset($_POST['Rented'])){
-                                echo '<script>alert("Choose a deadline");</script>';
-                                echo '<td><input type="date" name="rent"></td>';
-                            }
-                            ?>
-                            <td>
-                            <?php
-                            if(!isset($_POST['Rented'])){
-                                echo '<input type="submit" name="Rented" value="Rent">
-                                <input type="submit" name="Cancel" value="Cancel">';
-                            }else{
-                                echo '<input type="submit" name="Rentg" value="Rented">
-                                <input type="submit" name="Back" value="Back">';
-                            }?>
+                            <td><input class="adreserved-date"type="date" name="rent" required></td>
+                            <td class="adreserved-btn"><input type="submit" class="adreserved-button" name="Rented" value="Rent"></td>
+                            <td class="adreserved-btn"><input type="submit" class="adreserved-button" name="Cancel" value="Cancel"></td>
                             <input type="hidden" name="id" value="<?php echo $res['order_id'];?>">
-                        </td>
                         </form>
                         <?php
                         echo '</tr>';

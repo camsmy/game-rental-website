@@ -16,7 +16,7 @@ include 'opendb.php';
                 </thead>
                 <tbody class="adsuggestion-items">
                     <?php
-                    $query = mysqli_query($DBConnect,"SELECT * from suggestion ORDER BY date ASC");
+                    $query = mysqli_query($DBConnect,"SELECT * from suggestion ORDER BY date DESC");
                     while($suggest = mysqli_fetch_array($query)){
                         echo '<tr class="row adsuggestion-itemrow">';
                         echo '<td>'.$suggest['date'].'</td>';
