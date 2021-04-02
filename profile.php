@@ -7,18 +7,20 @@ include 'block.php';
 include 'customer-navigation.php';
 include 'opendb.php';
 $user = $_SESSION['user'];
-$fullname = $_SESSION['fullname'];
+$fname = $_SESSION['fname'];
+$mname = $_SESSION['mname'];
+$lname = $_SESSION['lname'];
 $address = $_SESSION['add'];
 $cnum = $_SESSION['connum'];
 $email = $_SESSION['email'];
 if(isset($_POST['editProfile'])){
   $_SESSION['add'] = $_POST['add'];
-  $fullname = explode(" ",$_POST['fname']);
-  //$surnames = array("De","Del","Dela","Delos","San","Santa","Sta.");
-  $_SESSION['fullname'] = $_POST['fname'];
+  $_SESSION['fname'] = $_POST['fname'];
+  $_SESSION['mname'] = $_POST['mname'];
+  $_SESSION['lname'] = $_POST['lname'];
   $_SESSION['connum'] = $_POST['contact'];
   $_SESSION['email'] = $_POST['email'];
-  mysqli_query($DBConnect,"UPDATE userinfo SET fname='".$fullname[0]."',mname='".$fullname[1]."',lname='".$fullname[2]."',address='".$_POST['add']."',
+  mysqli_query($DBConnect,"UPDATE userinfo SET fname='".$_POST['fname']."',mname='".$_POST['mname']."',lname='".$_POST['lname']."',address='".$_POST['add']."',
   contactno='".$_POST['contact']."',email='".$_POST['email']."' WHERE uname='".$user."'") or die("ERROR");
   echo '<script>window.location ="profile.php";</script>';
   header("Location: contact.php?success");
@@ -74,9 +76,9 @@ if(isset($_POST['back'])){
                     <div class="col-sm-9 text-secondary profile">
                     <?php 
                       if(!isset($_POST['edit'])){
-                        echo $fullname; 
+                        echo $fname; 
                       }else{
-                        echo '<input type="text" name="fname" class="editprofile-input" value="'.$fullname.'">';
+                        echo '<input type="text" name="fname" class="editprofile-input" value="'.$fname.'">';
                       }  
                       ?>
                     </div>
@@ -94,9 +96,9 @@ if(isset($_POST['back'])){
                     <div class="col-sm-9 text-secondary profile">
                     <?php 
                       if(!isset($_POST['edit'])){
-                        echo $fullname; 
+                        echo $mname; 
                       }else{
-                        echo '<input type="text" name="fname" class="editprofile-input" value="'.$fullname.'">';
+                        echo '<input type="text" name="mname" class="editprofile-input" value="'.$mname.'">';
                       }  
                       ?>
                     </div>
@@ -114,9 +116,9 @@ if(isset($_POST['back'])){
                     <div class="col-sm-9 text-secondary profile">
                     <?php 
                       if(!isset($_POST['edit'])){
-                        echo $fullname; 
+                        echo $lname; 
                       }else{
-                        echo '<input type="text" name="fname" class="editprofile-input" value="'.$fullname.'">';
+                        echo '<input type="text" name="lname" class="editprofile-input" value="'.$lname.'">';
                       }  
                       ?>
                     </div>

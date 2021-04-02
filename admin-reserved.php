@@ -3,6 +3,7 @@ include 'head.php';
 include 'adblock.php';
 include 'admin-navigation.php';
 include 'opendb.php';
+include 'reserve-autocancel.php';
 if(isset($_POST['Cancel'])){
     include 'reserve-cancel.php';
 }
@@ -45,7 +46,7 @@ if(isset($_POST['Rented'])){
                         echo '<td>'.$game['price'].'</td>';
                         ?>
                         <form method="post">
-                            <td><input class="adreserved-date"type="date" name="rent" required></td>
+                            <td><input class="adreserved-date"type="date" min="<?php echo date('Y-m-d');?>" name="rent" required></td>
                             <td class="adreserved-btn"><input type="submit" class="adreserved-button" name="Rented" value="Rent"></td>
                             <td class="adreserved-btn"><input type="submit" class="adreserved-button" name="Cancel" value="Cancel"></td>
                             <input type="hidden" name="id" value="<?php echo $res['order_id'];?>">

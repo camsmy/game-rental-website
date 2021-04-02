@@ -80,7 +80,9 @@ if(isset($_POST['LogInSubmit'])){
                         $isTrue = true;
                         $_SESSION['user'] = $user['uname'];
                         $_SESSION['pass'] = $user['pw'];
-                        $_SESSION['fullname'] = $user['fname']." ".$user['mname']." ".$user['lname'];
+                        $_SESSION['fname'] = $user['fname'];
+                        $_SESSION['mname'] = $user['mname'];
+                        $_SESSION['lname'] = $user['lname'];
                         $_SESSION['add'] = $user['address'];
                         $_SESSION['connum'] = $user['contactno'];
                         $_SESSION['email'] = $user['email'];
