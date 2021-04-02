@@ -52,7 +52,7 @@ if(isset($_POST['LogInSubmit'])){
                 $userExists = true;
         }
         if(!$userExists){
-            header("location: login.php?Invalid");
+            header("location: login.php?doesnotexist");
             exit();
         }
     }

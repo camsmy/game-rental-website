@@ -48,7 +48,7 @@ if(isset($_SESSION['user'])){
                     </div>
                     <?php    
                 if(strpos($fullurl,"Invalid")){
-                    echo "<p class='login-error text-align-center'>**Invalid username or password!**</p>";
+                    echo "<p class='login-error text-align-center m-1'>**Invalid username or password!**</p>";
                 }
                 ?>
                     <input type="submit" name="LogInSubmit" value="Log in" class="login-btn">
