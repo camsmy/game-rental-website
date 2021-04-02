@@ -21,6 +21,8 @@ if(isset($_POST['editProfile'])){
   mysqli_query($DBConnect,"UPDATE userinfo SET fname='".$fullname[0]."',mname='".$fullname[1]."',lname='".$fullname[2]."',address='".$_POST['add']."',
   contactno='".$_POST['contact']."',email='".$_POST['email']."' WHERE uname='".$user."'") or die("ERROR");
   echo '<script>window.location ="profile.php";</script>';
+  header("Location: contact.php?success");
+  exit();
 }
 if(isset($_POST['back'])){
   unset($_POST['edit']);
@@ -28,20 +30,30 @@ if(isset($_POST['back'])){
 ?>
       <div class="adminnavbar-main_content">
         <form action="<?php echo $_SERVER['PHP_SELF']?>" class="form-style-profile" method="post" enctype="multipart/form-data">
-        <div class="edit"><h1>User Information</h1>
+<?php
+                          $fullurl= "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+
+                          if(strpos($fullurl,"success")){
+                           echo "<p class='error text-align-center m-1'>
+                           <i class='fas fa-check-circle text-align-center'></i>
+                           You have edited your profile successfully!</p>";
+                          }
+?>
+        <div class="edit"><h2>User Information</h2>
         <?php
         if(!isset($_POST['edit'])){
           echo '<input type="submit" name="edit" value="Edit" class="edit-btn">';
         }else{
           echo '<input type="submit" name="back" value="Back" class="edit-btn">';
         }
+
         ?></div>
         <div class="col-md-8">
               <div class="card mb-3">
                 <div class="card-body">
                   <div class="row">
                     <div class="col-sm-3">
-                      <h4 class="mb-0">Username:</h4>
+                      <h5 class="mb-0">Username:</h5>
                     </div>
                     <div class="col-sm-9 text-secondary profile">
                       <?php 
@@ -56,7 +68,48 @@ if(isset($_POST['back'])){
                 <div class="card-body">
                   <div class="row">
                     <div class="col-sm-3">
-                      <h4 class="mb-0">Full Name:</h4>
+                      <!-- Edit mo to  -->
+                      <h5 class="mb-0">First Name:</h5>
+                    </div>
+                    <div class="col-sm-9 text-secondary profile">
+                    <?php 
+                      if(!isset($_POST['edit'])){
+                        echo $fullname; 
+                      }else{
+                        echo '<input type="text" name="fname" class="editprofile-input" value="'.$fullname.'">';
+                      }  
+                      ?>
+                    </div>
+                  </div>
+                </div>
+              </div>
+                  <hr>
+                  <div class="card mb-3">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <!-- Edit mo to  -->
+                      <h5 class="mb-0">Middle Name:</h5>
+                    </div>
+                    <div class="col-sm-9 text-secondary profile">
+                    <?php 
+                      if(!isset($_POST['edit'])){
+                        echo $fullname; 
+                      }else{
+                        echo '<input type="text" name="fname" class="editprofile-input" value="'.$fullname.'">';
+                      }  
+                      ?>
+                    </div>
+                  </div>
+                </div>
+              </div>
+                  <hr>
+                  <div class="card mb-3">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <!-- Edit mo to  -->
+                      <h5 class="mb-0">Last Name:</h5>
                     </div>
                     <div class="col-sm-9 text-secondary profile">
                     <?php 
@@ -75,7 +128,7 @@ if(isset($_POST['back'])){
                 <div class="card-body">
                   <div class="row">
                     <div class="col-sm-3">
-                      <h4 class="mb-0">Home Address:</h4>
+                      <h5 class="mb-0">Home Address:</h5>
                     </div>
                     <div class="col-sm-9 text-secondary profile">
                     <?php 
@@ -94,7 +147,7 @@ if(isset($_POST['back'])){
                 <div class="card-body">
                   <div class="row">
                     <div class="col-sm-3">
-                      <h4 class="mb-0">Contact Number:</h4>
+                      <h5 class="mb-0">Contact Number:</h5>
                     </div>
                     <div class="col-sm-9 text-secondary profile">
                     <?php 
@@ -114,7 +167,7 @@ if(isset($_POST['back'])){
                 <div class="card-body">
                   <div class="row">
                     <div class="col-sm-3">
-                      <h4 class="mb-0">Email Address:</h4>
+                      <h5 class="mb-0">Email Address:</h5>
                     </div>
                     <div class="col-sm-9 text-secondary profile">
                     <?php 
@@ -133,17 +186,17 @@ if(isset($_POST['back'])){
                 <div class="card-body">
                   <div class="row">
                     <div class="col-sm-3">
-                      <h4 class="mb-0">Password:</h4>
+                      <h5 class="mb-0">Password:</h5>
                     </div>
                     <div class="col-sm-9 text-secondary profile">
-                      <sub>****************</sub><a href="changepw.php" style="font-size:0.5em">[Change Password]</a>
+                      <sub>****************</sub><a href="changepw.php" style="font-size:12">[Change Password]</a>
                     </div>
                   </div>
                 </div>
               </div>
               <?php
               if(isset($_POST['edit'])){
-                echo '<div class="edit"><input type="submit" name="editProfile" value="Edit Profile" class="edit-btn" id="search"></div>';
+                echo '<div class="edit"><input type="submit" name="editProfile" value="Save Changes" class="edit-btn" id="search"></div>';
               }
                 ?>
             </form>

@@ -1,5 +1,6 @@
 <?php
     include 'opendb.php';
+    $message_status = false;
     /* Attempt MySQL server connection. Assuming you are running MySQL
     server with default setting (user 'root' with no password) */
     //$link = mysqli_connect("localhost", "root", "password", "dbname");
@@ -18,18 +19,17 @@
         $currentDateTime = date('Y-m-d');
         $sql = "INSERT INTO suggestion VALUES('$currentDateTime','$sg_msg')";
         if(mysqli_query($DBConnect, $sql)){
-            alert("Message successfully sent!");
+            // alert("Message successfully sent!");
+            $message_status = true;
         } else{
             alert("ERROR: Could not able to execute $sql");
+            header("Location: suggestion.php?=didnotsent");
+            $message_status = false;
             mysqli_error($DBConnect);
         }
     }
     // Close connection
     mysqli_close($DBConnect);
-?>
-
-
-<?php
     include 'head.php'; 
 ?>
 
@@ -37,22 +37,41 @@
     <?php
     include 'customer-navigation.php';
     include 'block.php';
+    if($message_status):
+    ?>
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12 confirm justify-content-center align-items-center">
+            <h2><i class="fas fa-check-square"></i>Message has successfully sent!</h2>
+            </div>
+        </div>
+    </div>
+    <?php
+    else:
     ?>
     <div class="suggestion-container">
         <div class="suggestion-form ">
                 <form action="<?php $_SERVER["PHP_SELF"]; ?>" method="post">
-                    <h3 class="suggestion-title">Suggestion</h3>
+                    <h2 class="suggestion-title">Suggestion</h2>
+                    <?php
+                $fullurl= "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+
+                if(strpos($fullurl,"didnotsent")){
+                 echo "<p class='error text-align-center m-1'>
+                 Your message failed to send. Please try again.";
+                }
+                ?>
                     <div class="suggestion-input-container suggestion-textarea focus">
                         <textarea name="suggestion-message" id="suggestion-message" class="suggestion-input"></textarea>
-                        <label for="">Message</label>
-                        <span>Message</span>
                     </div>
                     <input type="submit" name="submit" value="Send Message" class="suggestion-btn">
                 </form>             
             </div>
         </div>
     </div>
-
+    <?php 
+    endif;
+    ?>
 
     <div class="custom-shape-divider-top-1614623845 mt-5">
         <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
