@@ -17,18 +17,16 @@
 }
 
 .adrent-labels{
-    font-size:25px;
     font-weight: 400;
     color: white;
-    width: 180px;
-    text-shadow: 3px 3px #959393;
+    width: 160px;
 }
 
 .adrent-list{
-    font-size: 20px;
-    font-weight: 100;
+    font-size: 14px;
+    font-weight: 500;
     color: black;
-    width: 180px;
+    width: 160px;
     background-color:ivory;
 }
 
