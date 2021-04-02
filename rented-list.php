@@ -15,16 +15,16 @@
         <div class="rented-header">
             <div class= "row text-align-center rented-top">
                 <div class= "col-xl-7 rented-title p-2 ">
-                    RENTED LIST
+                    <h2>RENTED LIST</h2>
                 </div>
             </div>
         </div>
         <div class="rented-body">
             <div class="row rented-detail-head">
-                <div class="col rented-detail-title"><h3>ORDER ID</h3></div>
-                <div class="col rented-detail-title"><h3>NAME</h3></div>
-                <div class="col rented-detail-title"><h3>DEADLINE</h3></div>
-                <div class="col rented-detail-title"><h3>PENALTY</h3></div>
+                <div class="col rented-detail-title"><h4>ORDER ID</h4></div>
+                <div class="col rented-detail-title"><h4>NAME</h4></div>
+                <div class="col rented-detail-title"><h4>DEADLINE</h4></div>
+                <div class="col rented-detail-title"><h4>PENALTY</h4></div>
             </div>
             <?php
             /* Attempt MySQL server connection. Assuming you are running MySQL
@@ -42,10 +42,10 @@
                 // output data of each row
                 while($row = mysqli_fetch_assoc($result)) {
                     echo '<div class="row rented-detail-head">';
-                        echo '<div class="col rented-detail-text">'.getOID($row["order_id"]).'</div>';
-                        echo '<div class="col rented-detail-text">'.$row["rent_game"].'</div>';
-                        echo '<div class="col rented-detail-text">'.$row["deadline"].'</div>';
-                        echo '<div class="col rented-detail-text">'.$row["penalty"].'</div>';
+                        echo '<div class="col rented-detail-text"><p>'.getOID($row["order_id"]).'</p></div>';
+                        echo '<div class="col rented-detail-text"><p>'.$row["rent_game"].'</p></div>';
+                        echo '<div class="col rented-detail-text"><p>'.$row["deadline"].'</p></div>';
+                        echo '<div class="col rented-detail-text"><p>'.$row["penalty"].'</p></div>';
                     echo '</div>';
                 }
             } 
