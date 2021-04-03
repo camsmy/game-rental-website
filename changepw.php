@@ -5,9 +5,9 @@ include 'opendb.php';
 ?>
 <body>
 <?php
+	include 'customer-navigation.php';
 	$user = $_SESSION['user'];
 	$pass = $_SESSION['pass'];
-	include 'customer-navigation.php';
 ?>
 <div class="login-container position-relative d-flex justify-content-center align-items-center">
 	<div class="signup-form2 position-relative d-flex justify-content-center align-items-center">
