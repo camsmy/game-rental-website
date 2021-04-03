@@ -20,6 +20,10 @@ if(isset($_POST['editProfile'])){
   $laname = $_SESSION['lname'] = $_POST['lname'];
   $cont = $_POST['contact'];
   $emai = $_POST['email'];
+  if(empty($_POST['add'])||empty($_POST['fname'])||empty($_POST['mname'])||empty($_POST['lname'])||empty($_POST['contact'])||empty($_POST['email'])){
+    echo '<script>window.location="profile.php?empty";</script>';
+    exit();
+  }
   if(!preg_match('/^[+]?[\d]+([\-][\d]+)*\d$/',$cont)){
     //header("Location: profile.php?invalidphone&fname=$finame&mname=$miname&lname=$laname&address=$add&email=$emai");
     echo '<script>window.location = "profile.php?invalidphone&fname='.$finame.'&mname='.$miname.'&lname='.$laname.'&address='.$add.'&email='.$emai.'";</script>';
@@ -59,6 +63,10 @@ if(isset($_POST['back'])){
                           if(strpos($fullurl,"invalidemail")){
                             echo "<p class='error text-align-center m-1'>
                             Invalid email format!</p>";
+                          }
+                          if(strpos($fullurl,"empty")){
+                            echo "<p class='error text-align-center m-1'>
+                            You did not fill-in all fields!</p>";
                           }
 ?>
         <div class="edit"><h2>User Information</h2>
