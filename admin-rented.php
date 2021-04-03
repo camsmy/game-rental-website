@@ -65,6 +65,7 @@ include 'penalty.php';
                                         <th class="col text-align-center">
                                         <input type="submit" class = "adrent-button" style="width:auto;" name="delete" value="Delete"/>
                                         </th>
+                                        <input type="hidden" name="sku" value="<?php echo $row["rent_game"];?>"">
                                         <input type="hidden" name="id" value="<?php echo $row["order_id"]; ?>"/>
                                     </form>
                                 </tr>
@@ -79,20 +80,23 @@ include 'penalty.php';
     <?php
     if(isset($_POST['delete'])){
         $id = $_POST['id'];
-
+        $sku = $_POST['sku'];
         if($DBConnect === false){
             die("ERROR: Could not connect. " . mysqli_connect_error());
             }
-
-        $sql = "DELETE FROM rented WHERE order_id = '$id'";
-
-        if (mysqli_query($DBConnect, $sql)) {
+            $query = mysqli_query($DBConnect,"SELECT * from gameinfo where sku ='$sku'") or die("ERROR");
+        $game = mysqli_fetch_array($query);
+        $avail = $game['avail']+1;
+        $rent = $game['rent']-1;
+        $sql = "DELETE FROM rented WHERE order_id = '$id';
+        UPDATE gameinfo SET avail=$avail,rent=$rent WHERE sku ='$sku';
+        ";
+        if (mysqli_multi_query($DBConnect, $sql)) {
             mysqli_close($DBConnect);
             echo '<script>window.location = "admin-rented.php";</script>';
         } else {
             echo "Error deleting of game";
         }
-
     }
 ?>   
 </section>

@@ -14,17 +14,33 @@ $address = $_SESSION['add'];
 $cnum = $_SESSION['connum'];
 $email = $_SESSION['email'];
 if(isset($_POST['editProfile'])){
-  $_SESSION['add'] = $_POST['add'];
-  $_SESSION['fname'] = $_POST['fname'];
-  $_SESSION['mname'] = $_POST['mname'];
-  $_SESSION['lname'] = $_POST['lname'];
-  $_SESSION['connum'] = $_POST['contact'];
-  $_SESSION['email'] = $_POST['email'];
-  mysqli_query($DBConnect,"UPDATE userinfo SET fname='".$_POST['fname']."',mname='".$_POST['mname']."',lname='".$_POST['lname']."',address='".$_POST['add']."',
-  contactno='".$_POST['contact']."',email='".$_POST['email']."' WHERE uname='".$user."'") or die("ERROR");
-  echo '<script>window.location ="profile.php";</script>';
-  header("Location: contact.php?success");
-  exit();
+  $add = $_SESSION['add'] = $_POST['add'];
+  $finame = $_SESSION['fname'] = $_POST['fname'];
+  $miname = $_SESSION['mname'] = $_POST['mname'];
+  $laname = $_SESSION['lname'] = $_POST['lname'];
+  $cont = $_POST['contact'];
+  $emai = $_POST['email'];
+  if(empty($_POST['add'])||empty($_POST['fname'])||empty($_POST['mname'])||empty($_POST['lname'])||empty($_POST['contact'])||empty($_POST['email'])){
+    echo '<script>window.location="profile.php?empty";</script>';
+    exit();
+  }
+  if(!preg_match('/^[+]?[\d]+([\-][\d]+)*\d$/',$cont)){
+    //header("Location: profile.php?invalidphone&fname=$finame&mname=$miname&lname=$laname&address=$add&email=$emai");
+    echo '<script>window.location = "profile.php?invalidphone&fname='.$finame.'&mname='.$miname.'&lname='.$laname.'&address='.$add.'&email='.$emai.'";</script>';
+    exit();
+  }elseif(!filter_var($emai,FILTER_VALIDATE_EMAIL)){
+    echo '<script>window.location = "profile.php?invalidemail&fname='.$finame.'&mname='.$miname.'&lname='.$laname.'&address='.$add.'&contactno='.$cont.'";</script>';
+    exit();
+  }
+    else{
+    $_SESSION['connum'] = $_POST['contact'];
+    $_SESSION['email'] = $_POST['email'];
+    mysqli_query($DBConnect,"UPDATE userinfo SET fname='".$_POST['fname']."',mname='".$_POST['mname']."',lname='".$_POST['lname']."',address='".$_POST['add']."',
+    contactno='".$_POST['contact']."',email='".$_POST['email']."' WHERE uname='".$user."'") or die("ERROR");
+    echo '<script>window.location ="profile.php";</script>';
+    header("Location: contact.php?success");
+    exit();  
+  }
 }
 if(isset($_POST['back'])){
   unset($_POST['edit']);
@@ -39,6 +55,18 @@ if(isset($_POST['back'])){
                            echo "<p class='error text-align-center m-1'>
                            <i class='fas fa-check-circle text-align-center'></i>
                            You have edited your profile successfully!</p>";
+                          }
+                          if(strpos($fullurl,"invalidphone")){
+                            echo "<p class='error text-align-center m-1'>
+                            Invalid phone format!</p>";
+                           }
+                          if(strpos($fullurl,"invalidemail")){
+                            echo "<p class='error text-align-center m-1'>
+                            Invalid email format!</p>";
+                          }
+                          if(strpos($fullurl,"empty")){
+                            echo "<p class='error text-align-center m-1'>
+                            You did not fill-in all fields!</p>";
                           }
 ?>
         <div class="edit"><h2>User Information</h2>
@@ -156,7 +184,7 @@ if(isset($_POST['back'])){
                       if(!isset($_POST['edit'])){
                         echo $cnum; 
                       }else{
-                        echo '<input type="text" name="contact" class="editprofile-input" placeholder="Format:639-1234-56789" pattern="[0-9]{3}-[0-9]{4}-[0-9]{5}" value="'.$cnum.'">';
+                        echo '<input type="text" name="contact" class="editprofile-input" value="'.$cnum.'">';
                       }  
                       ?>
 
@@ -176,7 +204,7 @@ if(isset($_POST['back'])){
                       if(!isset($_POST['edit'])){
                         echo $email; 
                       }else{
-                        echo '<input type="email" name="email" class="editprofile-input" value="'.$email.'">';
+                        echo '<input type="text" name="email" class="editprofile-input" value="'.$email.'">';
                       }  
                       ?>
                     </div>
