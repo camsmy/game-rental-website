@@ -1,3 +1,4 @@
+<div class="container">
 <div class="search-container">
     <div class="search-form2 position-relative">
         <form action="gamegallery.php" method="post">
@@ -7,6 +8,7 @@
             </div>
         </form>
     </div>
+</div>
 </div>
 <?php
 if(isset($_POST['Search'])){
