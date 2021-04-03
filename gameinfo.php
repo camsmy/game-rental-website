@@ -4,6 +4,7 @@ include 'head.php';
 <body>
 <?php
 if(!isset($_GET['gname']))
+
     echo '<script> window.location="gamegallery.php"; </script>';
 include 'customer-navigation.php';
 include 'opendb.php';
@@ -48,6 +49,15 @@ if(isset($_POST['Rent'])){
                         ?>
                         <input type="date" class="gameinfo-date" min="<?php echo $today;?>"name="pick" required> Choose date to pick up
                         <br><input type="submit" class="gameinfo-btn" value="Reserve the Game" name="Rent">
+                        <?php
+                          $fullurl= "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+
+                          if(strpos($fullurl,"success")){
+                           echo "<p class='error m-1'>
+                           <i class='fas fa-check-circle text-align-center'></i>
+                           Game has been reserved!</p>";
+                          }
+                        ?>
                     </form>
                 </div>
             </div>

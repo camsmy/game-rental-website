@@ -8,5 +8,5 @@ $avail = $gameinfo[2];
 $pickup = $_POST['pick'];
 $reserved+=1;
 $query = mysqli_multi_query($DBConnect, "UPDATE gameinfo SET avail = $avail, reserve = $reserved WHERE sku = '$game'; INSERT INTO reserved (res_game,customer,pickup) VALUES('$game','$user','$pickup');");
-echo '<script> alert("Succesfully reserved!"); </script>';
+echo '<script> window.location="gameinfo.php?gname='.$game.'&success"; </script>';
 ?>
