@@ -15,6 +15,10 @@
     
     // Attempt insert query execution
     if(isset($_POST['submit'])) {
+        if(empty($_POST['suggestion-message'])){
+            header("Location: suggestion.php?=empty");
+            exit();
+        }
         $sg_msg = mysqli_real_escape_string($DBConnect, $_REQUEST['suggestion-message']);
         $currentDateTime = date('Y-m-d');
         $sql = "INSERT INTO suggestion VALUES('$currentDateTime','$sg_msg')";
@@ -60,6 +64,10 @@
                  echo "<p class='error text-align-center m-1'>
                  Your message failed to send. Please try again.";
                 }
+                if(strpos($fullurl,"empty")){
+                    echo "<p class='error text-align-center m-1'>
+                    You did not fill in the message field!";
+                   }
                 ?>
                     <div class="suggestion-input-container suggestion-textarea focus">
                         <textarea name="suggestion-message" id="suggestion-message" class="suggestion-input"></textarea>
