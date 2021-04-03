@@ -9,7 +9,7 @@ if(isset($_POST['emailsubmit'])){
     $sender_phone = $_POST['phone'];
     $sender_message = $_POST['message'];
     $email_subject = "You have a new email from your website!";
-    $to = 'vacas79507@bombaya.com';//change this email
+    $to = 'byxllaeheh@gmail.com';//change this email
     $body = "";
     if(empty($sender_email)||empty($sender_name)||empty($sender_phone)||empty($sender_message)){
         header("Location: contact.php?form=empty");
