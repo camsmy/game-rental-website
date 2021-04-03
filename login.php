@@ -8,7 +8,7 @@ include 'opendb.php';
 if(isset($_SESSION['user'])){
     switch($_SESSION['user']):
         case "admin": echo '<script> window.location="dashboard.php"; </script>'; break;
-        default: '<script> window.location="games-landing.php"; </script>'; break;
+        default: echo '<script> window.location="games-landing.php"; </script>'; break;
     endswitch;
 }
 ?>
