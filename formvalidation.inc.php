@@ -142,10 +142,15 @@ if(isset($_POST['SignUpSubmit'])){
 
 //Change password validation
 if(isset($_POST['changePW'])){
+    if(!isset($pass)){
+        echo 'wew';
+    }
     if(empty($_POST['password'])||empty($_POST['newPassword'])||empty($_POST['confirmPassword'])){
         header("location: changepw.php?empty");
         exit();
     }
+    $pass = $_SESSION['pass'];
+    $user = $_SESSION['user'];
     if($_POST['password']!=$pass){
         header("location: changepw.php?incorrect");
         exit();
@@ -158,9 +163,6 @@ if(isset($_POST['changePW'])){
             mysqli_query($DBConnect,"UPDATE userinfo SET pw='".$newpass."' WHERE uname = '".$user."'") or die ("ERROR");
             $_SESSION['pass'] = $newpass;
             header("location: changepw.php?success");
-            echo '<script> 
-            window.location = "profile.php";
-            </script>';
             exit();
         }
     }
