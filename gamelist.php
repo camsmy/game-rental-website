@@ -11,18 +11,18 @@ if(isset($_POST['Edit'])){
 <section>
     <div class= "glist-backcolor">
         <form method="post" action="addgame.php">
-                <button type="submit" class = "glist-addbtn" style="width:auto;" name="add">Add New Product</button>
+                <button type="submit" class = "glist-addbtn red" style="width:auto;" name="add">Add New Product</button>
         </form><br><br>
         <div class = "glist-container">
             <div class = "glist-boxy">
                <div class = "row glist-tr">
-               <div class = "col glist-labels text-align-center">Product name</div>
-               <div class = "col glist-labels text-align-center">Sku</div>
-               <div class = "col glist-labels text-align-center">Price</div>
-               <div class = "col glist-labels text-align-center">Rent</div>
-               <div class = "col glist-labels text-align-center">Reserve</div>
-               <div class = "col glist-labels text-align-center">Avail</div>
-               <div class = "col glist-labels text-align-center">Total</div>
+               <div class = "col glist-labels text-align-center"><h4>Game</h4></div>
+               <div class = "col glist-labels text-align-center"><h4>Sku</h4></div>
+               <div class = "col glist-labels text-align-center"><h4>Price</h4></div>
+               <div class = "col glist-labels text-align-center"><h4>Rent</h4></div>
+               <div class = "col glist-labels text-align-center"><h4>Reserve</h4></div>
+               <div class = "col glist-labels text-align-center"><h4>Avail</h4></div>
+               <div class = "col glist-labels text-align-center"><h4>Total</h4></div>
                <div class = "col text-align-center">&nbsp;</div></div>
                <div class = "glist-contents">
                    <?php
@@ -49,13 +49,13 @@ if(isset($_POST['Edit'])){
                                         <div class="col glist-list text-align-center"><?php echo $total; ?></div>
                                         <form method="post">
                                             <div class="col text-align-center">
-                                            <input type="submit" class = "glist-button" style="width:auto;" name="Edit" value="Edit">
+                                            <input type="submit" class = "glist-button violet" style="width:auto;" name="Edit" value="Edit">
                                             </div><input type="hidden" name="sku" value="<?php echo $row["sku"]; ?>"/>
                                         </form>
                                         &nbsp;&nbsp;&nbsp;
                                         <form method="post" action="gamelist.php">
                                             <div class="col text-align-center">
-                                            <input type="submit" class = "glist-button" style="width:auto;" name="delete" value="Delete"/>
+                                            <input type="submit" class = "glist-button red" style="width:auto;" name="delete" value="Delete"/>
                                             </div>
                                             <input type="hidden" name="sku" value="<?php echo $row["sku"]; ?>"/>
                                         </form>

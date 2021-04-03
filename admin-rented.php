@@ -9,13 +9,13 @@ include 'penalty.php';
     <div class = "adrent-container">
         <table class = "adrent-table">
            <tr class = "row adrent-row">
-           <th class = "col adrent-labels text-align-center">Order Number</th>
-           <th class = "col adrent-labels text-align-center">Customer</th>
-           <th class = "col adrent-labels text-align-center">Product Name</th>
-           <th class = "col adrent-labels text-align-center">Duration</th>
-           <th class = "col adrent-labels text-align-center">Deadline</th>
-           <th class = "col adrent-labels text-align-center">Price</th>
-           <th class = "col adrent-labels text-align-center">Penalty</th>
+           <th class = "col adrent-labels text-align-center"><h5>Order No.</h5></th>
+           <th class = "col adrent-labels text-align-center"><h5>Customer</h5></th>
+           <th class = "col adrent-labels text-align-center"><h5>Product Name</h5></th>
+           <th class = "col adrent-labels text-align-center"><h5>Duration</h5></th>
+           <th class = "col adrent-labels text-align-center"><h5>Deadline</h5></th>
+           <th class = "col adrent-labels text-align-center"><h5>Price</h5></th>
+           <th class = "col adrent-labels text-align-center"><h5>Penalty</h5></th>
            <th class = "col adrent-labels text-align-center">&nbsp;</th></tr>
            <div class = "adrent-items">
                <?php

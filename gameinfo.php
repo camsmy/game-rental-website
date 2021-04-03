@@ -36,12 +36,12 @@ if(isset($_POST['Rent'])){
         <div class="container gameinfo-container">
             <div class="gameinfo-row d-flex">
                 <div class="col-sm-12 gameinfo-col-1">
-                <?php  echo '<img src="data:image/jpeg;base64,'.base64_encode($gameinfo[3]).'" class="gallery-img">'; ?>
+                <?php  echo '<img src="data:image/jpeg;base64,'.base64_encode($gameinfo[3]).'" class="gameinfo-img">'; ?>
                 </div>
                 <div class="column gameinfo-col-2">
                     <?php echo '<h2>'.$gameinfo[0].'</h2>';
                         echo '<p>'.$gameinfo[5].'</p>';
-                        echo '<h4>Php '.$gameinfo[1].'</h4>';
+                        echo '<h3><b>Php '.$gameinfo[1].'</b></h3>';
                     ?>
                     <form action="" method="post">
                         <?php $today = date_format(date_add(date_create(),date_interval_create_from_date_string("1 day")),"Y-m-d");
@@ -53,11 +53,6 @@ if(isset($_POST['Rent'])){
             </div>
         </div>
     </section>
-<script>
-window.onhashchange = function{
-    alert("wew");
-}
-</script>
 <div class="custom-shape-divider-top-1614623845 mt-5">
         <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
             <path
