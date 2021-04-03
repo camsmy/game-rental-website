@@ -90,7 +90,7 @@ else{ include 'customer-navigation.php'; }
                         <label for="">Message</label>
                         <span>Message</span>
                     </div>
-                    <input type="submit" value="Send Mail" class="contact-btn" name="emailsubmit" onclick="sendEmail()">
+                    <input type="submit" value="Send Mail" class="contact-btn" name="emailsubmit">
                 </form>
             </div>
         </div>

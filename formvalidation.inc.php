@@ -28,8 +28,8 @@ if(isset($_POST['emailsubmit'])){
         exit();
     }else{
         $headers = "From: ".$sender_email;
-        $body .="Sender Name: ".$sender_name."\r\n";
-        $body .="Sender's Contact Number ".$sender_phone."\r\n";
+        // $body .="Sender Name: ".$sender_name."\r\n";
+        // $body .="Sender's Contact Number ".$sender_phone."\r\n";
         $body .="Message: ".$sender_message."\r\n";
         mail($to,$email_subject,$body,$headers);
         header("Location: contact.php?mailsend");
