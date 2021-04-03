@@ -44,7 +44,9 @@ if(isset($_POST['Rent'])){
                         echo '<h4>Php '.$gameinfo[1].'</h4>';
                     ?>
                     <form action="" method="post">
-                        <input type="date" min="<?php echo date('Y-m-d');?>"name="pick" required> Choose date to pick up
+                        <?php $today = date_format(date_add(date_create(),date_interval_create_from_date_string("1 day")),"Y-m-d");
+                        ?>
+                        <input type="date" min="<?php echo $today;?>"name="pick" required> Choose date to pick up
                         <br><input type="submit" value="Reserve the Game" name="Rent">
                     </form>
                 </div>
