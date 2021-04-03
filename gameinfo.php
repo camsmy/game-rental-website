@@ -7,6 +7,7 @@ if(!isset($_GET['gname']))
 
     echo '<script> window.location="gamegallery.php"; </script>';
 include 'customer-navigation.php';
+include 'block.php';
 include 'opendb.php';
 $game = $_GET['gname'];
 $gameinfo = array();
