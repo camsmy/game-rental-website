@@ -4,7 +4,41 @@ include 'head.php';
 
 <body>
     <?php
-if(!isset($_SESSION['user'])){ include 'navigation.php'; }
+if(!isset($_SESSION['user'])){ include 'navigation.php'; 
+    if(isset($_POST['emailsubmit'])){
+        $sender_name = $_POST['name'];
+        $sender_email = $_POST['email'];
+        $sender_phone = $_POST['phone'];
+        $sender_message = $_POST['message'];
+        $email_subject = "You have a new email from your website!";
+        $to = 'byxllaeheh@gmail.com';//change this email
+        $body = "";
+        if(empty($sender_email)||empty($sender_name)||empty($sender_phone)||empty($sender_message)){
+            // header("Location: contact.php?form=empty");
+            // exit();
+        }
+        elseif(!filter_var($sender_email,FILTER_VALIDATE_EMAIL)){
+            // header("Location: contact.php?form=invalidemail");
+            // exit();
+        }
+        elseif(!preg_match('/^[+]?[\d]+([\-][\d]+)*\d$/',$sender_phone)){
+            // header("Location: contact.php?form=phone");
+            // exit();
+        }
+        elseif(strlen($sender_message) > 70){
+            // header("Location: contact.php?form=message");
+            // exit();
+        }else{
+            $headers = "From: ".$sender_email;
+            // $body .="Sender Name: ".$sender_name."\r\n";
+            // $body .="Sender's Contact Number ".$sender_phone."\r\n";
+            $body .="Message: ".$sender_message."\r\n";
+            mail($to,$email_subject,$body,$headers);
+            header("Location: contact.php?mailsend");
+            exit();
+        }
+    }
+}
 else{ include 'customer-navigation.php'; }
 ?>
     <div class="contact-container position-relative d-flex justify-content-center align-items-center">
@@ -49,7 +83,7 @@ else{ include 'customer-navigation.php'; }
             <div class="contact-form2 position-relative">
                 <span class="contact-circle one position-absolute"></span>
                 <span class="contact-circle two position-absolute"></span>
-                <form action="formvalidation.inc.php" method="post">
+                <form action="formvalidation.inc.php" method="post" name="google-sheet">
                     <h3 class="contact-title">Contact Us</h3>
                     <?php
                 $fullurl= "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
@@ -109,6 +143,17 @@ else{ include 'customer-navigation.php'; }
 include 'footer.php';
 ?>
     </footer>
+    <script>
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbwe_wcNl7fNrM90whhlLDXuByG7ao8NGu-XCao69K3TGPcUXRKkhhmG9SQ_oYwO15nZ/exec'
+            const form = document.forms['google-sheet']
+          
+            form.addEventListener('submit', e => {
+              e.preventDefault()
+              fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            })
+          </script>
+
+
 </body>
 
 </html>
