@@ -47,18 +47,7 @@ if(isset($_POST['Rent'])){
                     <form action="" method="post">
                         <?php $today = date_format(date_add(date_create(),date_interval_create_from_date_string("1 day")),"Y-m-d");
                         ?>
-                        <input type="date" min="<?php echo $today;?>"name="pick" required> Choose date to pick up
-                        <br><input type="submit" value="Reserve the Game" name="Rent">
-                        <form action="<?php echo $_SERVER['PHP_SELF']?>" class="form-style-profile" method="post" enctype="multipart/form-data">
-<?php
-                          $fullurl= "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-
-                          if(strpos($fullurl,"success")){
-                           echo "<p class='error m-1'>
-                           <i class='fas fa-check-circle text-align-center'></i>
-                           Game successfully reserved!</p>";
-                          }
-?> 
+                        <br><input type="submit" class="gameinfo-btn" value="Reserve the Game" name="Rent">
                     </form>
                 </div>
             </div>
@@ -70,10 +59,6 @@ if(isset($_POST['Rent'])){
                 d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z"
                 class="shape-fill"></path>
         </svg>
-    </div>
-
-    <footer>
-        <?php
 include 'footer.php';
 ?>
     </footer>

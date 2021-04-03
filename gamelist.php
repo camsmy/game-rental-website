@@ -1,6 +1,7 @@
 <?php
 include 'head.php';
 include 'admin-navigation.php';
+include 'adblock.php';
 include 'opendb.php';
 
 if(isset($_POST['Edit'])){
