@@ -46,7 +46,10 @@ if(isset($_POST['Rented'])){
                         echo '<td>'.$game['price'].'</td>';
                         ?>
                         <form method="post">
-                            <td><input class="adreserved-date"type="date" min="<?php echo date('Y-m-d');?>" name="rent" required></td>
+                            <?php $today = date_format(date_add(date_create(),date_interval_create_from_date_string("1 day")),"Y-m-d");
+                            $max = date_format(date_add(date_create(),date_interval_create_from_date_string("14 days")),"Y-m-d");
+                            ?>
+                            <td><input class="adreserved-date"type="date" min="<?php echo $today;?>" max="<?php echo $max; ?>" name="rent" required></td>
                             <td class="adreserved-btn"><input type="submit" class="adreserved-button violet" name="Rented" value="Rent"></td>
                             <td class="adreserved-btn"><input type="submit" class="adreserved-button red" name="Cancel" value="Cancel"></td>
                             <input type="hidden" name="id" value="<?php echo $res['order_id'];?>">
