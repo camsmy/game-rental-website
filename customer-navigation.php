@@ -24,7 +24,7 @@
                             <ul>
                                 <li class="dropdown-link"><a href="index.php">Home</a></li>
                                 <li class="dropdown-link"><a href="suggestion.php">Suggestions</a></li>
-                                <li class="dropdown-link"><a href="contact.php">Contact Us</a></li>
+                                <!--<li class="dropdown-link"><a href="contact.php">Contact Us</a></li>-->
                                 <li class="dropdown-link"><a href="about.php">About</a></li>
                                 <li class="dropdown-link"><a href="profile.php">My Profile</a></li>
                                 <li class="dropdown-link"><a href="#">Log out</a></li>
