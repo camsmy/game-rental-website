@@ -50,7 +50,7 @@ include 'opendb.php';// OPENS THE DATABASE
                     <div class="login-input-container focus">
                         <?php
                         if(isset($_GET['mname'])){
-                            echo '<input type="text" name="mname" class="login-input" value="'.$_GET['address'].'">';
+                            echo '<input type="text" name="mname" class="login-input" value="'.$_GET['mname'].'">';
                         }else{
                             echo '<input type="text" name="mname" class="login-input">';
                         }
@@ -61,7 +61,7 @@ include 'opendb.php';// OPENS THE DATABASE
                     <div class="login-input-container focus">
                     <?php
                         if(isset($_GET['lname'])){
-                            echo '<input type="text" name="lname" class="login-input" value="'.$_GET['address'].'">';
+                            echo '<input type="text" name="lname" class="login-input" value="'.$_GET['lname'].'">';
                         }else{
                             echo '<input type="text" name="lname" class="login-input">';
                         }
