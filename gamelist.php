@@ -95,7 +95,7 @@ if(isset($_POST['Edit'])){
             $sql = "DELETE FROM gameinfo WHERE sku = '$id'";
             if (mysqli_query($DBConnect, $sql)) {
                 mysqli_close($DBConnect);
-                echo '<script>location.reload();</script>';
+                echo '<script>window.location = "gamelist.php";</script>';
             } else {
                 echo "Error deleting of game";
             }
