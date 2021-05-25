@@ -11,11 +11,11 @@
  Vanilla CSS
  HTML
  
- Developers
- Camille Monis (Front-end and Back-end)
- Charles Dominic Narag (Back-end and Database)
- Michael John Paje (Back-end)
- Kyle Garcia
- Trisha Ghael Garcia
- Ron Edward Poon
-[I'm an inline-style link](https://www.google.com)
+ Markup: <h3>Developers</h3>
+ * [Camille Monis](https://github.com/camsmy) (Front-end and Back-end)
+ * [Charles Dominic Narag](https://github.com/Dmncnrg) (Back-end and Database)
+ * [Michael John Paje](https://github.com/rinzuno) (Back-end)
+ * Kyle Garcia
+ * Trisha Ghael Garcia
+ * Ron Edward Poon
+ 
