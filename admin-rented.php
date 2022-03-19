@@ -59,7 +59,7 @@ include 'penalty.php';
                                         <th class="col adrent-list text-align-center"><?php echo $duration; ?></th>
                                     <?php }?>
                                     <th class="col adrent-list text-align-center"><?php echo $row["deadline"]; ?></th>
-                                    <th class="col adrent-list text-align-center"><?php echo $game_price; ?></th>
+                                    <th class="col adrent-list text-align-center"><?php echo number_format($game_price,2); ?></th>
                                     <th class="col adrent-list text-align-center"><?php echo $row["penalty"]; ?></th>
                                     <form method="post" action="admin-rented.php">
                                         <th class="col text-align-center">

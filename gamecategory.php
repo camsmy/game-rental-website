@@ -38,7 +38,7 @@ if($gamecount==0){
         echo '<div class="col-sm-1 m-3 gcat-game align-items-center">';
         echo '<a href="gameinfo.php?gname='.$games['sku'].'"><img src="data:image/jpeg;base64,'.base64_encode($games['img'] ).'" class="gcat-img"></a>';
         echo '<div class="middle"><div class="text">Rent</div></div>';
-        echo '<div class="p-1 gcat-text text-align-left"><h2 class="gcat-h2">'.$games['gname'].'</h2><h3 class="gcat-h3">Php '.$games['price'].'</h3></div>';
+        echo '<div class="p-1 gcat-text text-align-left"><h2 class="gcat-h2">'.$games['gname'].'</h2><h3 class="gcat-h3">Php '.number_format($games['price'],2).'</h3></div>';
         echo '</div>';
         if($temp%4==0)
             echo '</div>';

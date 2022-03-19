@@ -46,7 +46,7 @@
                         echo '<div class="col rented-detail-text"><p>'.getOID($row["order_id"]).'</p></div>';
                         echo '<div class="col rented-detail-text"><p>'.$game["gname"].'</p></div>';
                         echo '<div class="col rented-detail-text"><p>'.$row["deadline"].'</p></div>';
-                        echo '<div class="col rented-detail-text"><p>'.$row["penalty"].'</p></div>';
+                        echo '<div class="col rented-detail-text"><p>'.number_format($row["penalty"],2).'</p></div>';
                     echo '</div>';
                 }
             } 

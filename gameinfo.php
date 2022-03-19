@@ -43,7 +43,7 @@ if(isset($_POST['Rent'])){
                 <div class="column gameinfo-col-2">
                     <?php echo '<h2>'.$gameinfo[0].'</h2>';
                         echo '<p>'.$gameinfo[5].'</p>';
-                        echo '<h3><b>Php '.$gameinfo[1].'</b></h3>';
+                        echo '<h3><b>Php '.number_format($gameinfo[1],2).'</b></h3>';
                     ?>
                     <form action="" method="post">
                         <?php $today = date_format(date_add(date_create(),date_interval_create_from_date_string("1 day")),"Y-m-d");

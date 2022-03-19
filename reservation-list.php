@@ -45,7 +45,7 @@
                         echo "<div class='col reserve-detail-text'>".getOID($row["order_id"])."</div>";
                         echo "<div class='col reserve-detail-text'>".$game['gname']."</div>";
                         echo "<div class='col reserve-detail-text'>".$row["pickup"]."</div>";
-                        echo "<div class='col reserve-detail-text'>".$game['price']."</div>";
+                        echo "<div class='col reserve-detail-text'>".number_format($game['price'],2)."</div>";
                         echo "<div class='col reserve-btn-container'>";
                             echo "<form action='reserve-cancel.php' method='POST'>";
                                 echo "<input type='hidden' name='id' value='".$row["order_id"]."'>";

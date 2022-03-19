@@ -43,7 +43,7 @@ if(isset($_POST['Edit'])){
                                    <div class = "glist-tr row">
                                         <div class="col glist-list text-align-center"><?php echo $row["gname"]; ?></div>
                                         <div class="col glist-list text-align-center"><?php echo $row["sku"]; ?></div>
-                                        <div class="col glist-list text-align-center"><?php echo $row["price"]; ?></div>
+                                        <div class="col glist-list text-align-center"><?php echo number_format($row["price"],2); ?></div>
                                         <div class="col glist-list text-align-center"><?php echo $row["rent"]; ?></div>
                                         <div class="col glist-list text-align-center"><?php echo $row["reserve"]; ?></div>
                                         <div class="col glist-list text-align-center"><?php echo $row["avail"]; ?></div>

@@ -43,7 +43,7 @@ if(isset($_POST['Rented'])){
                         echo '<td>'.$game['gname'].'</td>';
                         echo '<td>'.$duration.'</td>';
                         echo '<td>'.$res['pickup'].'</td>';
-                        echo '<td>'.$game['price'].'</td>';
+                        echo '<td>'.number_format($game['price'],2).'</td>';
                         ?>
                         <form method="post">
                             <?php $today = date_format(date_add(date_create(),date_interval_create_from_date_string("1 day")),"Y-m-d");

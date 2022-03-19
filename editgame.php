@@ -39,7 +39,7 @@ if(isset($_POST['Edit'])){
                     <p>Game Name:</p><input type="text" name="gname" class="editgame-input " value="<?php echo $game['gname']?>"/>
                 </li>
                 <li>
-                    <p>Price:</p><input type="text" name="price" class="editgame-input" value="<?php echo $game['price']?>"/>
+                    <p>Price:</p><input type="text" name="price" class="editgame-input" value="<?php echo number_format($game['price'],2)?>"/>
                 </li><li>
                     <input type="submit" name="Edit" id="insert" value="Edit Game" class="editgame-input" />
                 </li>
